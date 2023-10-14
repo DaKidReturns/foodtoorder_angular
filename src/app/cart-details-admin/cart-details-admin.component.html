@@ -1,0 +1,20 @@
+<h3>Cart</h3>
+<div>Cart ID : {{cart.userId}}</div>
+<div> Items in cart: </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let d of cart.items">
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.cost}}</td>
+            <td>{{d.description}}</td>
+        </tr>
+    </tbody>
+</table>
+<div>Total Price: {{cart.amount}}</div>

@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">View Details</th>
+        <th scope="col">Delete User</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td><button class="btn btn-primary" (click)="viewUser(u.id)">View Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteUser(u.id)">Delete User</button></td>
+        </tr>
+    </tbody>
+</table>  

@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Amount</th>
+        <th scope="col">View Details</th>
+        <th scope="col">Delete Cart</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of arrCarts">
+            <td>{{c.userId}}</td>
+            <td>{{c.amount}}</td>
+            <td><button class="btn btn-primary" (click)="viewCart(c.userId)" >View Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteCart(c.userId)">Delete Cart</button></td>
+        </tr>
+    </tbody>
+</table>  

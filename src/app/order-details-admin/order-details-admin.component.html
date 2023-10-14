@@ -1,0 +1,21 @@
+<h3>Order</h3>
+<div>Order ID : {{orderItem.orderId}}</div>
+<div> Order Items: </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let d of orderItem.items">
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.cost}}</td>
+            <td>{{d.description}}</td>
+        </tr>
+    </tbody>
+</table>
+<div>Total Price: {{orderItem.amount}}</div>
+

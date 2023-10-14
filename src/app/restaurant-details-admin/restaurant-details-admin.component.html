@@ -1,0 +1,15 @@
+<div class="row">
+    <h2>{{restaurant.name}}</h2>
+    <img src="/assets/images/restaurants/{{restaurant.image}}" alt="" srcset="" width="40px" />
+    <div>
+        Address:
+    </div>
+    <div *ngFor="let a of restaurant.addresses">
+        {{a.houseNo}}, {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}
+    </div>
+    <h3>Items:</h3>
+
+        <div class="card" *ngFor="let d of restaurant.menu" style="width: 18rem;" >
+            <div class="card-header">{{d.name}}</div>
+    </div>
+</div>

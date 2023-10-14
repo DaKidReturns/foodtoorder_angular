@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">User Id</th>
+        <th scope="col">Amount</th>
+        <th scope="col">View Details</th>
+        <th scope="col">Delete Order</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of arrOrders">
+            <td>{{o.orderId}}</td>
+            <td>{{o.userId}}</td>
+            <td>{{o.amount}}</td>
+            <td><button class="btn btn-primary" (click)="viewOrder(o.orderId)" >View Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteOrder(o.orderId)">Delete Order</button></td>
+        </tr>
+    </tbody>
+</table>  

@@ -1,0 +1,10 @@
+<div class="row">
+    <div *ngFor="let r of arrRestaurants" class="card" style="width: 18rem;" >
+        <div class="card-header">{{r.name}}</div>
+        <img src="/assets/images/restaurants/{{r.image}}" class="card-img-top" alt="..." width="14rem" height="200rem">
+        <div class="card-body"></div>
+        <div *ngFor="let a of r.addresses">Avaliable at: {{a.street}}</div>
+        <button class="btn btn-primary" name="Show More" (click)="viewDetails(r.id)">Show More</button>
+        <button class="btn btn-primary" name="Show More"  *ngIf="role=='admin'">Delete Restaurant</button>
+    </div>
+</div>

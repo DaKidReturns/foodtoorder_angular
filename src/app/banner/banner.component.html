@@ -1,0 +1,169 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FoodToOrder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/home'">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/aboutus'">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/restaurants'">Restaurents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/admin'">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/owner'">Owner</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/contactus'">Contact us</a>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInModal">
+                        Sign In
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#signUpModal">
+                        Sign Up
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        Cart
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="cartModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-dialog">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signInModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signInModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="signInModalLabel">Sign In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" #email class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword5" class="form-label">Password</label>
+                    <input type="password" #password id="inputPassword5" class="form-control"
+                        aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                        Your password must be 8-20 characters long, contain letters and numbers, and must
+                        not contain spaces, special characters, or emoji.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"
+                    (click)="VerifyCredentials(email,password)">Submit</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="signUpModalLabel">Sign In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="formControlInputFirstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="formControlInputFirstName" placeholder="First Name">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputLastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="formControlInputLastName" placeholder="Last Name">
+                </div>
+                <div class="mb-3">
+                    <label for="emailFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                        Your password must be 8-20 characters long, contain letters and numbers, and must
+                        not contain spaces, special characters, or emoji.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmInputPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmInputPassword" class="form-control"
+                        aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                        Your password must be 8-20 characters long, contain letters and numbers, and
+                        must
+                        not contain spaces, special characters, or emoji.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputMobile" class="form-label">Mobile Number</label>
+                    <input type="tel" class="form-control" id="formControlInputMobile" placeholder="Mobile Number">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputHouseNumber" class="form-label">House Number</label>
+                    <input type="text" class="form-control" id="formControlInputHouseNumber" placeholder="house Number">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputStreet" class="form-label">Street</label>
+                    <input type="text" class="form-control" id="formControlInputStreet" placeholder="street">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputArea" class="form-label">Area</label>
+                    <input type="text" class="form-control" id="formControlInputArea" placeholder="Area">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="formControlInputCity" placeholder="City">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputCountry" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="formControlInputCountry" placeholder="Country">
+                </div>
+                <div class="mb-3">
+                    <label for="formControlInputPincode" class="form-label">PinCode</label>
+                    <input type="text" class="form-control" id="formControlInputPincode" placeholder="Pin Code">
+                </div>
+                <div class="mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label for="flexCheckDefault">By checking this box you accept the privacy policy and terms and conditions</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
