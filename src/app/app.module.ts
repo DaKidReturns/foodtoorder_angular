@@ -27,6 +27,7 @@ import { OrderDetailsAdminComponent } from './order-details-admin/order-details-
 import { CartDetailsAdminComponent } from './cart-details-admin/cart-details-admin.component';
 import { RestaurantDetailsAdminComponent } from './restaurant-details-admin/restaurant-details-admin.component';
 import { UserDetailsAdminComponent } from './user-details-admin/user-details-admin.component';
+import { RestaurantOwnerViewComponent } from './restaurant-owner-view/restaurant-owner-view.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { UserDetailsAdminComponent } from './user-details-admin/user-details-adm
     OrderDetailsAdminComponent,
     CartDetailsAdminComponent,
     RestaurantDetailsAdminComponent,
-    UserDetailsAdminComponent
+    UserDetailsAdminComponent,
+    RestaurantOwnerViewComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class RestaurantService {
         new Dish(21, "Sweet rice", 130, ""),
         new Dish(7, "Chiken Biriyani", 200, ""),
         new Dish(14, "Mint Lime", 30, ""),
-      ], "CapitalistCafe.jpg",3
+        ], "CapitalistCafe.jpg", 5,
     ),
     new Restaurant(2, "Communist Cold Drinks", [
       new Address(1, 89, "the street", "Red Area", "Sickle and hammer", "Solid State", "TryCount", "456724"),
@@ -30,7 +30,7 @@ export class RestaurantService {
       new Dish(5, "Paneer Makani", 150, ""),
       new Dish(18, "Mango Lassi", 40, ""),
       new Dish(22, "Seera", 40, "")
-    ], "CommunistColdDrinks.jpg",3
+        ], "CommunistColdDrinks.jpg", 4
     ),
     new Restaurant(3, "Democratic Bar", [
       new Address(1, 22, "For the street", "for the Area", "for the City", "for the State", "for the country", "437829"),
@@ -44,7 +44,7 @@ export class RestaurantService {
       new Dish(5, "Paneer Makani", 150, ""),
       new Dish(18, "Mango Lassi", 40, ""),
       new Dish(22, "Seera", 40, "")
-    ], "DemocraticBar.jpg",3
+    ], "DemocraticBar.jpg", 4
     ),
   ]
   constructor() { }
@@ -64,4 +64,15 @@ export class RestaurantService {
     if(index == -1 ) return;
     this.arrRestaurants.splice(index,1)
   }
+
+    getRestaurantByOwnerId(ownerId: number) {
+        console.log(ownerId)
+        var arrReturnRestaurants: Restaurant[] = []
+        for (let i = 0; i < this.arrRestaurants.length; i++) {
+            if (this.arrRestaurants[i].ownerId == ownerId) {
+                arrReturnRestaurants.push(this.arrRestaurants[i])
+            }
+        }
+        return arrReturnRestaurants;
+    }
 }
