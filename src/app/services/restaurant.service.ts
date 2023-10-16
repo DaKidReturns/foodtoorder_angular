@@ -80,6 +80,6 @@ export class RestaurantService {
     }
 
     addRestaurant(restaurant:Restaurant){
-      
+      this.arrRestaurants.push(restaurant)
     }
 }

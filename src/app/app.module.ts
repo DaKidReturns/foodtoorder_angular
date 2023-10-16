@@ -36,8 +36,6 @@ import { CartDetailsAdminComponent } from './cart-details-admin/cart-details-adm
 import { RestaurantDetailsAdminComponent } from './restaurant-details-admin/restaurant-details-admin.component';
 import { UserDetailsAdminComponent } from './user-details-admin/user-details-admin.component';
 import { RestaurantOwnerViewComponent } from './restaurant-owner-view/restaurant-owner-view.component';
-import { DemoFornNgModelComponent } from './demo-forn-ng-model/demo-forn-ng-model.component';
-import { DemoFormNgModelComponent } from './demo-form-ng-model/demo-form-ng-model.component';
 import { SignupformComponent } from './forms/signupform/signupform.component';
 import { ContactusFormComponent } from './forms/contactus-form/contactus-form.component';
 import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
@@ -70,8 +68,6 @@ import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-rest
     RestaurantDetailsAdminComponent,
     UserDetailsAdminComponent,
     RestaurantOwnerViewComponent,
-    DemoFornNgModelComponent,
-    DemoFormNgModelComponent,
     SignupformComponent,
     ContactusFormComponent,
     UpdateuserComponent,
