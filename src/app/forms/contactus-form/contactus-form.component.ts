@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Enquiry } from 'src/app/models/enquiry';
 
 @Component({
   selector: 'app-contactus-form',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ContactusFormComponent {
   contactUsForm:FormGroup
-
+  submitted:boolean = false
+  enquiry:Enquiry= new Enquiry()
   constructor(fb:FormBuilder){
     this.contactUsForm=fb.group({
       name:[''],
@@ -19,6 +21,15 @@ export class ContactusFormComponent {
   }
 
   OnSubmit(contactFormValue:string){
+    this.submitted = true
+    if(this.contactUsForm.invalid){
+      return
+    }
+    this.enquiry.Name = this.contactUsForm.value.name
+    this.enquiry.PhoneNumber= this.contactUsForm.value.phoneNumber
+    this.enquiry.Email = this.contactUsForm.value.email
+    this.enquiry.Description = this.contactUsForm.value.description
 
+    console.log(this.enquiry)
   }
 }
