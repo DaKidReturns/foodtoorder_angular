@@ -43,4 +43,11 @@ export class UserService {
     this.arrUsers.push(u)
     console.log(this.arrUsers)
   }
+  updateUser(u:User){
+    var index = this.arrUsers.findIndex((usr) => usr.id == u.id)
+    this.arrUsers[index] = u
+    // this.arrUsers.splice(index,1)
+    // this.arrUsers.fill(u,index,index+1)
+    console.log(this.arrUsers)
+  }
 }
