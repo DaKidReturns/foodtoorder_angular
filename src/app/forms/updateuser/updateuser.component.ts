@@ -5,11 +5,12 @@ import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-signupform',
-  templateUrl: './signupform.component.html',
-  styleUrls: ['./signupform.component.scss']
+  selector: 'app-updateuser',
+  templateUrl: './updateuser.component.html',
+  styleUrls: ['./updateuser.component.scss']
 })
-export class SignupformComponent{
+
+export class UpdateuserComponent {
   signUpForm: FormGroup
   arrUsers: User[] = []
   user:User=new User()
@@ -34,10 +35,15 @@ export class SignupformComponent{
       "role":[""]
     })
     this.arrUsers = userService.getUsers()
+    this.currentUserRole = localStorage.getItem('role')??'user';
   }
 
   get fc(){
     return this.signUpForm.controls
+  }
+
+  onChangeType(event:any){
+
   }
 
   OnSubmit(value:string){
@@ -96,3 +102,4 @@ export class SignupformComponent{
     this.userService.addUser(this.user);
   }
 }
+

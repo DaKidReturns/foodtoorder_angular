@@ -28,7 +28,7 @@ export class UserService {
   }
 
   getUserById(userId: number): User {
-    return this.arrUsers.find((u) => u.id == userId) ?? new User(0, "", "", "", "", "", "", new Address())
+    return this.arrUsers.find((u) => u.id == userId) ?? new User()
     // for (let i=0; i<this.arrUsers.length; i++){
     //   if(arrUser[i].)
     // }
