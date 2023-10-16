@@ -11,7 +11,14 @@ export class ContactusFormComponent {
 
   constructor(fb:FormBuilder){
     this.contactUsForm=fb.group({
-      
+      name:[''],
+      phoneNumber:[''],
+      email:[''],
+      description:['']
     })
+  }
+
+  OnSubmit(contactFormValue:string){
+
   }
 }

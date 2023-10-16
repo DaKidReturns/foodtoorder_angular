@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +28,6 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RestaurantownerComponent } from './restaurantowner/restaurantowner.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurantAdminComponent } from './restaurant-admin/restaurant-admin.component';
 import { CartAdminComponent } from './cart-admin/cart-admin.component';
 import { OrderAdminComponent } from './order-admin/order-admin.component';
@@ -31,9 +39,11 @@ import { RestaurantOwnerViewComponent } from './restaurant-owner-view/restaurant
 import { DemoFornNgModelComponent } from './demo-forn-ng-model/demo-forn-ng-model.component';
 import { DemoFormNgModelComponent } from './demo-form-ng-model/demo-form-ng-model.component';
 import { SignupformComponent } from './forms/signupform/signupform.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactusFormComponent } from './forms/contactus-form/contactus-form.component';
 import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
+import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-restaurant-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +74,8 @@ import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
     DemoFormNgModelComponent,
     SignupformComponent,
     ContactusFormComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    AddRestaurantFormComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +84,17 @@ import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
     MatTabsModule,
     MatDividerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatExpansionModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

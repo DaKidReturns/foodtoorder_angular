@@ -78,4 +78,8 @@ export class RestaurantService {
         }
         return arrReturnRestaurants;
     }
+
+    addRestaurant(restaurant:Restaurant){
+      
+    }
 }
