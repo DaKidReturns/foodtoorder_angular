@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'owner',component:RestaurantownerComponent,canActivate:[restaurantOwnerGuard()]},
   {path:'admin',component:AdminComponent,canActivate:[adminGuard()]},
   {path:'userdetails/:userId',component:UserDetailsAdminComponent,canActivate:[adminGuard()]},
-  {path:'restaurantdetailsadmin/:rid',component:RestaurantDetailsAdminComponent,canActivate:[adminGuard()]},
+  {path:'restaurantdetailsadmin/:rid',component:RestaurantDetailsAdminComponent,canActivate:[()=>(adminGuard()||restaurantOwnerGuard())]},
   {path:'cartadmindetails/:cartId',component:CartDetailsAdminComponent,canActivate:[adminGuard()]},
   {path:'orderadmindetails/:orderId',component:OrderDetailsAdminComponent,canActivate:[adminGuard()]},
   {path:'**',component:PagenotfoundComponent}

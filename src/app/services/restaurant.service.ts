@@ -59,9 +59,12 @@ export class RestaurantService {
     }
     return new Restaurant(0, "", [], [], "");
   }
+
   deleteRestaurantById(id:number){
+   
     var index = this.arrRestaurants.findIndex((rest)=> rest.id==id) 
     if(index == -1 ) return;
+    console.log("Deleting restaurant"+index)
     this.arrRestaurants.splice(index,1)
   }
 

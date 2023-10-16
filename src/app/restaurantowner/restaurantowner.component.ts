@@ -13,7 +13,7 @@ export class RestaurantownerComponent {
     arrRestaurants: Restaurant[] = []
     constructor(private restaurantService: RestaurantService, private router: Router) {
         this.ownerId = parseInt(localStorage.getItem("userId") ?? "-1")
-        this.arrRestaurants = restaurantService.getRestaurantByOwnerId(this.ownerId)
+        this.arrRestaurants = this.restaurantService.getRestaurantByOwnerId(this.ownerId)
     }
 
     viewDetails(rid: number) {
@@ -23,5 +23,6 @@ export class RestaurantownerComponent {
     deleteRestaurant(rid: number) {
         console.log(rid)
         this.restaurantService.deleteRestaurantById(rid)
+        this.arrRestaurants = this.restaurantService.getRestaurantByOwnerId(this.ownerId)
     }
 }

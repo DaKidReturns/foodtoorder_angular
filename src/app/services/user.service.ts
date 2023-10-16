@@ -10,7 +10,7 @@ export class UserService {
   addr1 = new Address(1, 89, "the street", "Red Area", "Sickle and hammer", "Solid State", "TryCount", "456724")
   arrUsers = [
     new User(1, "Brian", "Cranston", "user", "12/04/1976", "breakinggood@gmail.com", "JesseWhereIsTheProduct", "22/1 Albaquerque"),
-    new User(2, "Gandalf", "White", "admin", "01/03/1800", "mageSupereme@Elfmail.com", "Youshallnotpass", "45 MiddleEarth"),
+    new User(2, "Gandalf", "White", "admin", "01/03/1800", "mage@elfmail.com", "Youshallnotpass", "45 MiddleEarth"),
       new User(3, "Jonathan", "Jostar", "restaurantowner", "12/04/1888", "theultimateGentleman@gmail.com", "Diowhydidyoudothis", "22/1 London"),
       new User(4, "Store", "Owner", "restaurantowner", "12/05/2003", "storeowner@gmail.com", "owner", "Address"),
       new User(5, "Store", "Owener2", "restaurantowner", "03/12/2001", "store2owner@gmail.com", "owner", "")
