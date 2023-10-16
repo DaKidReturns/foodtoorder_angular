@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-banner',
@@ -16,7 +17,7 @@ export class BannerComponent {
     //     new User(4, "Jonathan", "Jostar", "restaurantowner", "12/04/1888", "sample@mail.com", "hellothere", "22/1 London")
     //   ]
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, fb:FormBuilder) {
         this.arrUsers = userService.getUsers()
     }
 

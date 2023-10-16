@@ -8,7 +8,7 @@ export class Address{
     country:string
     pincode:string
 
-    constructor(id:Number,hn:number, st:string,ar:string,ct: string,state:string, country:string, pincode:string){
+    constructor(id:Number=0,hn:number=0, st:string="",ar:string="",ct: string="",state:string="", country:string="", pincode:string=""){
         this.id=id
         this.houseNo = hn
         this.street=st
