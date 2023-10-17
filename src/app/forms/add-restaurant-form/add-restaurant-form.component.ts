@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl, FormArray} from '@angular/forms';
 import { Address } from 'src/app/models/address';
+import { Dish } from 'src/app/models/dish';
 import { Restaurant } from 'src/app/models/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
@@ -13,7 +14,7 @@ import { RestaurantService } from 'src/app/services/restaurant.service';
 export class AddRestaurantFormComponent {
   arrRestaurants:Restaurant[]=[]
   public addressForm:FormGroup
-  restaurant:Restaurant= new Restaurant()
+  restaurant:Restaurant
   
   firstFormGroup = this._formBuilder.group({
     'restaurantName': ['', Validators.required],
@@ -31,6 +32,7 @@ export class AddRestaurantFormComponent {
   countThirdFormSubmit: number=0;
   
   constructor(private _formBuilder: FormBuilder, private restaurantService:RestaurantService) {
+    this.restaurant = new Restaurant(0,"",[],[],"",0)
     this.restaurantService.getRestaurants().subscribe((data)=>{this.arrRestaurants=data});
     
     this.addressForm = this._formBuilder.group({
@@ -40,9 +42,11 @@ export class AddRestaurantFormComponent {
     this.dishesFormGroup = this._formBuilder.group({
       dishesFormArray : this._formBuilder.array([this.createDishesFormGroup()])
     })
+    
   }
 
   saveFirstStepData(formData:FormGroup){
+    // Set the restaurant Id
     let tempId = 0
     let maxId = 0
     this.arrRestaurants.forEach((r)=>{
@@ -52,14 +56,17 @@ export class AddRestaurantFormComponent {
     })
     tempId = maxId +1;
     console.log(formData)
+
     this.restaurant.id = tempId
     this.restaurant.name = formData.value['restaurantName']
     this.restaurant.image = formData.value['restaurantImage']
+    console.log(this.restaurant)
   }
 
   saveSecondStepData(formData:FormGroup){
     this.countSecondFormSubmit++;
     if(this.countSecondFormSubmit == this.count){
+      console.log(this.count)
       let addressArr = Object.values(formData)
       let count = 1;
       addressArr.forEach((a)=>{})
@@ -96,7 +103,7 @@ export class AddRestaurantFormComponent {
   private createAddressFormGroup():FormGroup{
     this.count++
     return new FormGroup({
-        'id':new FormControl('',Validators.required),
+        'id':new FormControl(''),
         'houseNo':new FormControl('',Validators.required),
         'street':new FormControl('',Validators.required),
         'area':new FormControl('',Validators.required),
@@ -106,7 +113,6 @@ export class AddRestaurantFormComponent {
         'pincode':new FormControl('',Validators.required),
     });
   }
-
 
   dishesFormArrayG() : FormArray{
     return this.dishesFormGroup.get("dishesFormArray") as FormArray
@@ -127,38 +133,18 @@ export class AddRestaurantFormComponent {
     }
   }
 
-
-
-  // saveSecondStepData(formData:FormGroup){
-  //   this.countSecondFormSubmit++;
-  //   if(this.countSecondFormSubmit == this.count){
-  //     let addressArr = Object.values(formData)
-  //     let count = 1;
-  //     addressArr.forEach((a)=>{})
-  //     this.addresses = addressArr
-
-  //     let temp = JSON.parse(JSON.stringify(this.addresses))
-  //     this.restaurant.addresses = temp[0]
-  //     this.restaurant.addresses.forEach((a,i)=>{
-  //       a.id = i+1
-  //     })
-  //     console.log(this.restaurant.addresses);
-  //     this.restaurantService.addRestaurant(this.restaurant)
-  //   }
-  // }
-
   saveThirdStepData(formGroup:FormGroup){
     this.countThirdFormSubmit++;
     if(this.countThirdFormSubmit == this.dishCount){
       let dishes = Object.values(formGroup)
-      dishes.forEach((d)=>{
-        // console.log(d);
-      })
       let temp = JSON.parse(JSON.stringify(dishes)) // This will remove any empty forms from the input
-      this.restaurant.menu = temp
+      console.log(temp)
+      this.restaurant.menu = temp[0]
+      this.restaurant.menu.forEach((item,i)=>{
+        item.id = i+1
+      })
       console.log(this.restaurant)
-      // let temp =JSON.parse()
-      this.restaurantService.addRestaurant(this.restaurant)
+      this.restaurantService.addRestaurant(this.restaurant).subscribe()
     }
     
   }

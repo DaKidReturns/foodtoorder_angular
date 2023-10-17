@@ -22,7 +22,7 @@ export class RestaurantownerComponent {
 
     deleteRestaurant(rid: number) {
         console.log(rid)
-        this.restaurantService.deleteRestaurantById(rid)
+        this.restaurantService.deleteRestaurantById(rid).subscribe()
         this.arrRestaurants = this.restaurantService.getRestaurantByOwnerId(this.ownerId)
     }
 }

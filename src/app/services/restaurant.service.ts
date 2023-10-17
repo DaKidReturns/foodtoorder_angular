@@ -81,15 +81,17 @@ export class RestaurantService {
     .pipe(catchError(this.httpError))
   }
 
-  deleteRestaurantById(id:number){
-   
-    var index = this.arrRestaurants.findIndex((rest)=> rest.id==id) 
-    if(index == -1 ) return;
-    console.log("Deleting restaurant"+index)
-    this.arrRestaurants.splice(index,1)
+  deleteRestaurantById(id:number):Observable<Restaurant>{
+    
+    return this.httpClient.delete<Restaurant>(this.baseUrl+'/restaurant/'+id).pipe(catchError(this.httpError))
+    // var index = this.arrRestaurants.findIndex((rest)=> rest.id==id) 
+    // if(index == -1 ) return;
+    // console.log("Deleting restaurant"+index)
+    // this.arrRestaurants.splice(index,1)
   }
 
-    getRestaurantByOwnerId(ownerId: number) {  //TODO: CHANGE THIS FUNCTION TO ACCEPT DATA FROM SERVER
+    getRestaurantByOwnerId(ownerId: number){  //TODO: CHANGE THIS FUNCTION TO ACCEPT DATA FROM SERVER
+//      return this.httpClient.get<Restaurant>(this.baseUrl+"/restaurants")
         console.log(ownerId)
         var arrReturnRestaurants: Restaurant[] = []
         for (let i = 0; i < this.arrRestaurants.length; i++) {
@@ -100,7 +102,9 @@ export class RestaurantService {
         return arrReturnRestaurants;
     }
 
-    addRestaurant(restaurant:Restaurant){
-      this.arrRestaurants.push(restaurant)
+    addRestaurant(restaurant:Restaurant):Observable<Restaurant>{
+      return this.httpClient.post<Restaurant>(this.baseUrl+'/restaurants', JSON.stringify(restaurant),this.httpHeader)
+      .pipe(catchError(this.httpError))
+      // return this.arrRestaurants.push(restaurant)
     }
 }

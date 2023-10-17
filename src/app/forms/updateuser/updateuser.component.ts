@@ -80,15 +80,6 @@ export class UpdateuserComponent {
       return
     }
     console.log(value)
-    // var maxId = 0
-    // var tempId = 0
-    // this.arrUsers.forEach((user)=>{
-    //   if(maxId < user.id){
-    //     maxId = user.id
-    //   }
-    // })
-    // tempId = maxId+1
-    // console.log(tempId)
 
     let firstName = this.updateForm.value.firstName
     let lastName = this.updateForm.value.lastName
@@ -111,7 +102,6 @@ export class UpdateuserComponent {
       city==null         || country==null     ||
       pincode==null      
       ){
-      // do this if any fields are null
         return;
       }
     this.user = new User(

@@ -17,6 +17,6 @@ export class RestaurantAdminComponent {
     this.router.navigate(['restaurantdetailsadmin/'+i])
   }
   deleteRestaurant(i:number){
-    this.restaurantService.deleteRestaurantById(i)
+    this.restaurantService.deleteRestaurantById(i).subscribe()
   }
 }
