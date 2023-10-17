@@ -372,6 +372,44 @@
         "country": "Rising Sun",
         "pincode": "648212"
       }
+    },
+    {
+      "id": 5,
+      "firstName": "Sanoj",
+      "lastName": "Saji",
+      "role": "user",
+      "dob": "",
+      "email": "sanoj@gmail.com",
+      "password": "1234",
+      "address": {
+        "id": 0,
+        "houseNo": 12,
+        "street": "street",
+        "area": "area",
+        "state": "solid state",
+        "city": "country",
+        "country": "country",
+        "pincode": "348204"
+      }
+    },
+    {
+      "id": 6,
+      "firstName": "Herta",
+      "lastName": "Space",
+      "role": "user",
+      "dob": "",
+      "email": "Herta@kurukuru.com",
+      "password": "kururin",
+      "address": {
+        "id": 0,
+        "houseNo": 12,
+        "street": "Star railcurrve",
+        "area": "emanator",
+        "state": "dfajl",
+        "city": "Jarillo 6",
+        "country": "Jarillo 6",
+        "pincode": "318792"
+      }
     }
   ],
   "orders": [
@@ -508,6 +546,47 @@
         }
       ],
       "amount": 140
+    },
+    {
+      "id": 3,
+      "items": [
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        }
+      ],
+      "amount": 140
+    },
+    {
+      "id": 4,
+      "items": [
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        }
+      ],
+      "amount": 140
+    },
+    {
+      "id": 5,
+      "items": [],
+      "amount": 0
     }
   ]
 }

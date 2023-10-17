@@ -1,1 +1,4 @@
-<p>cart works!</p>
+<div class="mb-3" *ngFor="let i of cart.items">
+    <div>{{i.name}}</div>
+    <div>{{i.cost}}</div>
+</div>

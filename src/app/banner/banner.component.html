@@ -48,14 +48,6 @@
     </div>
 </nav>
 
-<div class="modal fade" id="cartModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-dialog">
-
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="signInModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signInModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -99,6 +91,19 @@
             </div>
             <div class="modal-body">
                 <app-signupform></app-signupform>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cartModalLabel">Cart</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-cart></app-cart>
             </div>
         </div>
     </div>

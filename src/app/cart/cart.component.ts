@@ -13,6 +13,7 @@ export class CartComponent {
   
   constructor(private cartService:CartService){
     this.loggedInUserId = parseInt(localStorage.getItem('userId')??'-1') ?? -1
+      cartService.getCartById(this.loggedInUserId).subscribe((data) => { this.cart = data })
   }
   
 }

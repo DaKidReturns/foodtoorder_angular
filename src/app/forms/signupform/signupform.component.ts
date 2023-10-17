@@ -100,7 +100,7 @@ export class SignupformComponent{
      // location.reload()
 
     });
-    this.cartService.addCart(new Cart(this.user.id))
+      this.cartService.addCart(new Cart(this.user.id)).subscribe(() => { })
 
   }
 }

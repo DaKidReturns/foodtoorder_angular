@@ -43,7 +43,7 @@ export class CartService {
   constructor(private httpClient:HttpClient) { }
 
   addCart(cart:Cart):Observable<Cart>{
-    return this.httpClient.get<Cart>(this.base_url+'/carts/'+cart.id)
+      return this.httpClient.post<Cart>(this.base_url + '/carts/' + cart.id, JSON.stringify(cart), this.httpHeader)
     .pipe(catchError(this.httpError))
     //this.arrCart.push(cart)
   }
