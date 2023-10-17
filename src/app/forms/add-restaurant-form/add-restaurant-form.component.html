@@ -18,7 +18,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <mat-step [stepControl]="addressForm" label="Fill out your address">
         <form [formGroup]="addressForm" (ngSubmit)="saveSecondStepData(addressForm.value)">
             <mat-toolbar color="primary" class="my-2">Add/Remove multiple address of Restaurant</mat-toolbar>
             <div formArrayName="form_array_address">
@@ -59,6 +59,40 @@
                         </button>
                         <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add"
                             (click)="addAddressFormGroup()" matTooltip="Add">
+                            <mat-icon>add_circle_outline</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <!--Third step adding the dishes-->
+    <mat-step label="Fill out the dishes in the restaurant" [stepControl]="dishesFormGroup">
+        <form [formGroup]="dishesFormGroup" (ngSubmit)="saveThirdStepData(dishesFormGroup.value)">
+            <mat-toolbar color="primary">Add/Remove multiple dishes of the restaurant</mat-toolbar>
+            <div formArrayName="dishesFormArray">
+                <div class="row" *ngFor="let dish of dishesFormArrayG().controls;let i=index" [formGroupName]="i">
+                    <mat-form-field>
+                        <mat-label>Dish Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Name of the dish" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Price</mat-label>
+                        <input matInput type="text" formControlName="cost" placeholder="How much it costs" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Description</mat-label>
+                        <input matInput type="text" formControlName="description" placeholder="Enter a description so your customers know the dish better">
+                    </mat-form-field>
+                    <div class="col-3">
+                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear" (click)="removeOrClearDishes(i)" matTooltip="Remove">
+                            <mat-icon>highlight_off</mat-icon>
+                        </button>
+                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add Dishes" (click)="addDishesFormGroup()" matTooltip="Add">
                             <mat-icon>add_circle_outline</mat-icon>
                         </button>
                     </div>

@@ -19,20 +19,26 @@ export class AddRestaurantFormComponent {
     'restaurantName': ['', Validators.required],
     'restaurantImage':['',Validators.required]
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  
+  dishesFormGroup:FormGroup
   
   isLinear = false;
   count:number = 0;
   countSecondFormSubmit:number = 0;
   addresses: Address[]=[]
+
+  dishCount:number=0
+  countThirdFormSubmit: number=0;
   
   constructor(private _formBuilder: FormBuilder, private restaurantService:RestaurantService) {
     this.arrRestaurants=this.restaurantService.getRestaurants();
     
     this.addressForm = this._formBuilder.group({
       form_array_address:this._formBuilder.array([this.createAddressFormGroup()])
+    })
+
+    this.dishesFormGroup = this._formBuilder.group({
+      dishesFormArray : this._formBuilder.array([this.createDishesFormGroup()])
     })
   }
 
@@ -65,7 +71,6 @@ export class AddRestaurantFormComponent {
         a.id = i+1
       })
       console.log(this.restaurant.addresses);
-      this.restaurantService.addRestaurant(this.restaurant)
     }
   }
 
@@ -100,6 +105,72 @@ export class AddRestaurantFormComponent {
         'country':new FormControl('',Validators.required),
         'pincode':new FormControl('',Validators.required),
     });
+  }
+
+
+  dishesFormArrayG() : FormArray{
+    return this.dishesFormGroup.get("dishesFormArray") as FormArray
+  }
+
+  addDishesFormGroup(){
+    const dishesFormArray = this.dishesFormGroup.get('dishesFormArray')as FormArray
+    dishesFormArray.push(this.createDishesFormGroup())
+  }
+
+  removeOrClearDishes(i:number){
+    const dishesFormArray = this.dishesFormGroup.get('dishesFormArray')as FormArray
+    if(dishesFormArray.length>1){
+      dishesFormArray.removeAt(i)
+    }
+    else{
+      dishesFormArray.reset()
+    }
+  }
+
+
+
+  // saveSecondStepData(formData:FormGroup){
+  //   this.countSecondFormSubmit++;
+  //   if(this.countSecondFormSubmit == this.count){
+  //     let addressArr = Object.values(formData)
+  //     let count = 1;
+  //     addressArr.forEach((a)=>{})
+  //     this.addresses = addressArr
+
+  //     let temp = JSON.parse(JSON.stringify(this.addresses))
+  //     this.restaurant.addresses = temp[0]
+  //     this.restaurant.addresses.forEach((a,i)=>{
+  //       a.id = i+1
+  //     })
+  //     console.log(this.restaurant.addresses);
+  //     this.restaurantService.addRestaurant(this.restaurant)
+  //   }
+  // }
+
+  saveThirdStepData(formGroup:FormGroup){
+    this.countThirdFormSubmit++;
+    if(this.countThirdFormSubmit == this.dishCount){
+      let dishes = Object.values(formGroup)
+      dishes.forEach((d)=>{
+        // console.log(d);
+      })
+      let temp = JSON.parse(JSON.stringify(dishes)) // This will remove any empty forms from the input
+      this.restaurant.menu = temp
+      console.log(this.restaurant)
+      // let temp =JSON.parse()
+      this.restaurantService.addRestaurant(this.restaurant)
+    }
+    
+  }
+
+  private createDishesFormGroup():FormGroup{
+    this.dishCount++;
+    return new FormGroup({
+      'id':new FormControl(''),
+      'name':new FormControl(''),
+      'cost':new FormControl(''),
+      'description':new FormControl('')
+    })
   }
 }
 
