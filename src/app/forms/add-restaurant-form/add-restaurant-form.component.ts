@@ -114,7 +114,7 @@ export class AddRestaurantFormComponent {
     });
   }
 
-  dishesFormArrayG() : FormArray{
+  dishesFormArray() : FormArray{
     return this.dishesFormGroup.get("dishesFormArray") as FormArray
   }
 

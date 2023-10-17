@@ -249,6 +249,51 @@
       ],
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg",
       "ownerId": 0
+    },
+    {
+      "id": 5,
+      "name": "",
+      "addresses": [],
+      "menu": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": "Rice but fried"
+        },
+        {
+          "id": 2,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": ""
+        },
+        {
+          "id": 6,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": ""
+        }
+      ],
+      "image": "",
+      "ownerId": 0
     }
   ],
   "users": [

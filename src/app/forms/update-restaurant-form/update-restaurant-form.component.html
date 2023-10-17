@@ -2,9 +2,14 @@
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button>
 <mat-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup" (ngSubmit)="saveFirstStepData(firstFormGroup)">
+    <mat-step [stepControl]="nameImageFormGroup">
+        <form [formGroup]="nameImageFormGroup" (ngSubmit)="saveFirstStepData(nameImageFormGroup)">
+            <mat-label>Select the restaurant you want to edit</mat-label>            
             <ng-template matStepLabel>Fill out your name</ng-template>
+            <select formControlName="id" id="id" class="form-select" (change)="onChangeType($event)">
+                <option selected>Select a value</option>
+                <option *ngFor="let r of arrRestaurants" [ngValue]="r.id">{{r.name}}</option>
+            </select>
             <mat-form-field>
                 <mat-label>Restaurant Name</mat-label>
                 <input matInput placeholder="Click to enter name...." formControlName="restaurantName" required>
@@ -75,7 +80,7 @@
         <form [formGroup]="dishesFormGroup" (ngSubmit)="saveThirdStepData(dishesFormGroup.value)">
             <mat-toolbar color="primary">Add/Remove multiple dishes of the restaurant</mat-toolbar>
             <div formArrayName="dishesFormArray">
-                <div class="row" *ngFor="let dish of dishesFormArray().controls;let i=index" [formGroupName]="i">
+                <div class="row" *ngFor="let dish of dishesFormArray().controls; let i=index" [formGroupName]="i">
                     <mat-form-field>
                         <mat-label>Dish Name</mat-label>
                         <input matInput formControlName="name" placeholder="Name of the dish" required>

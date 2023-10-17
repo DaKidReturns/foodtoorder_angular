@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,8 @@ import { SignupformComponent } from './forms/signupform/signupform.component';
 import { ContactusFormComponent } from './forms/contactus-form/contactus-form.component';
 import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
 import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-restaurant-form.component';
+import { UpdateRestaurantFormComponent } from './forms/update-restaurant-form/update-restaurant-form.component';
+import { AddCartFormComponent } from './forms/add-cart-form/add-cart-form.component';
 
 
 
@@ -72,7 +75,9 @@ import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-rest
     SignupformComponent,
     ContactusFormComponent,
     UpdateuserComponent,
-    AddRestaurantFormComponent
+    AddRestaurantFormComponent,
+    UpdateRestaurantFormComponent,
+    AddCartFormComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +96,7 @@ import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-rest
     MatToolbarModule,
     MatIconModule,
     MatExpansionModule,
+    MatSelectModule,
     HttpClientModule
 
   ],

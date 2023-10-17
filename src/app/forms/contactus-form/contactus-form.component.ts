@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Enquiry } from 'src/app/models/enquiry';
 
 @Component({
@@ -13,10 +13,10 @@ export class ContactusFormComponent {
   enquiry:Enquiry= new Enquiry()
   constructor(fb:FormBuilder){
     this.contactUsForm=fb.group({
-      name:[''],
-      phoneNumber:[''],
-      email:[''],
-      description:['']
+      name:['',Validators.required],
+      phoneNumber:['',Validators.required],
+      email:['',Validators.required],
+      description:['',Validators.required]
     })
   }
 
