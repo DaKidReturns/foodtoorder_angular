@@ -12,7 +12,7 @@ export class RestaurantDetailsAdminComponent {
   restaurant:Restaurant = new Restaurant(0,"",[],[],"");
   constructor(private activateRoute:ActivatedRoute,private  restaurantService:RestaurantService){
     this.activateRoute.params.subscribe((params:Params)=>{
-      this.restaurant=restaurantService.getRestaurantById(params['rid'])
+      restaurantService.getRestaurantById(params['rid']).subscribe((data)=>this.restaurant=data)
     })
   }
 }

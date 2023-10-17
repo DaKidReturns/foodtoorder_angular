@@ -14,7 +14,7 @@ export class UserDetailsAdminComponent {
   
   constructor(private activatedRoute:ActivatedRoute, private userService:UserService){
     this.activatedRoute.params.subscribe((params:Params)=>{
-      this.user = userService.getUserById(params['userId'])
+      userService.getUserById(params['userId']).subscribe((data)=>{this.user = data})
     })
   }
 }

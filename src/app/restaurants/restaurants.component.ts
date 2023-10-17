@@ -15,7 +15,7 @@ export class RestaurantsComponent implements OnInit{
 
   constructor(private restaurantService:RestaurantService, private router:Router){
     
-    this.arrRestaurants=restaurantService.getRestaurants()
+    restaurantService.getRestaurants().subscribe((data)=>{this.arrRestaurants=data});
     this.role = localStorage.getItem('role') ??""
 
   }

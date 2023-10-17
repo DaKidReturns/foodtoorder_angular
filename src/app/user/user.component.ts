@@ -24,6 +24,6 @@ export class UserComponent implements OnInit{
     this.router.navigate(['userdetails/'+i])
   }
   deleteUser(i:number){
-    this.userService.deleteUserById(i)
+    this.userService.deleteUserById(i).subscribe()
   }
 }

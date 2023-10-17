@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RestaurantAdminComponent {
   arrRestaurants:Restaurant[]=[]
   constructor(private restaurantService:RestaurantService, private router:Router ){
-    this.arrRestaurants=restaurantService.getRestaurants()
+    restaurantService.getRestaurants().subscribe((data)=>this.arrRestaurants=data);
   }
   viewDetails(i:number){
     this.router.navigate(['restaurantdetailsadmin/'+i])

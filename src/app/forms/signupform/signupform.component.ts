@@ -93,6 +93,10 @@ export class SignupformComponent{
       )
     )
 
-    this.userService.addUser(this.user);
+    this.userService.addUser(this.user).subscribe(()=>{
+     // location.reload()
+
+    });
+
   }
 }

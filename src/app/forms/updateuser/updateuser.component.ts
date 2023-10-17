@@ -51,24 +51,25 @@ export class UpdateuserComponent {
     var idObtained = event.target.value
     console.log(idObtained.split(":")[1].trim())    
     this.idUpdated = parseInt(idObtained.split(":")[1].trim())
-    var user = this.userService.getUserById(this.idUpdated)
-
-    this.updateForm.get('id')?.setValue(user.id)
-    this.updateForm.get('firstName')?.setValue(user.firstName)
-    this.updateForm.get('lastName')?.setValue(user.lastName)
-    this.updateForm.get('email')?.setValue(user.email)
-    this.updateForm.get('password')?.setValue(user.password)
-    this.updateForm.get('confirmPassword')?.setValue(user.password)
-    // this.updateForm.get('mobileNumber')?.setValue(user.)
-    this.updateForm.get('houseNumber')?.setValue(user.address.houseNo)
-    this.updateForm.get('street')?.setValue(user.address.street)
-    this.updateForm.get('area')?.setValue(user.address.area)
-    this.updateForm.get('city')?.setValue(user.address.city)
-    this.updateForm.get('state')?.setValue(user.address.state)
-    this.updateForm.get('country')?.setValue(user.address.country)
-    this.updateForm.get('pincode')?.setValue(user.address.pincode)
-    this.updateForm.get('role')?.setValue(user.role)
-    // event.currentTarget
+    //var user:User
+    this.userService.getUserById(this.idUpdated).subscribe((data)=>{
+      var user = data
+      this.updateForm.get('id')?.setValue(user.id)
+      this.updateForm.get('firstName')?.setValue(user.firstName)
+      this.updateForm.get('lastName')?.setValue(user.lastName)
+      this.updateForm.get('email')?.setValue(user.email)
+      this.updateForm.get('password')?.setValue(user.password)
+      this.updateForm.get('confirmPassword')?.setValue(user.password)
+      // this.updateForm.get('mobileNumber')?.setValue(user.)
+      this.updateForm.get('houseNumber')?.setValue(user.address.houseNo)
+      this.updateForm.get('street')?.setValue(user.address.street)
+      this.updateForm.get('area')?.setValue(user.address.area)
+      this.updateForm.get('city')?.setValue(user.address.city)
+      this.updateForm.get('state')?.setValue(user.address.state)
+      this.updateForm.get('country')?.setValue(user.address.country)
+      this.updateForm.get('pincode')?.setValue(user.address.pincode)
+      this.updateForm.get('role')?.setValue(user.role)
+    })
   }
 
   OnSubmit(value:string){
@@ -124,7 +125,7 @@ export class UpdateuserComponent {
       )
     )
 
-    this.userService.updateUser(this.user);
+    this.userService.updateUser(this.user).subscribe();
   }
 }
 

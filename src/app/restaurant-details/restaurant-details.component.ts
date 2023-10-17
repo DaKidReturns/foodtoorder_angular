@@ -13,7 +13,7 @@ export class RestaurantDetailsComponent {
   constructor(private activateRoute:ActivatedRoute,private restaturantService:RestaurantService){
     this.activateRoute.params.subscribe((params:Params)=>{
       console.log("Details for "+params['rid']);
-      this.restaurant=restaturantService.getRestaurantById(params['rid']);
+      restaturantService.getRestaurantById(params['rid']).subscribe((data)=>this.restaurant=data);
     })
   }
 }

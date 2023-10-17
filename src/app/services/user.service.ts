@@ -46,38 +46,38 @@ export class UserService {
     
   }
 
-  // getUsers() {
-  //   // console.log(JSON.stringify(this.arrUsers))
-  //   return this.arrUsers
-
-  // }
-
   getUsers():Observable<User[]>{
     return this.httpClient.get<User[]>(this.base_url+'/users')
     .pipe(catchError(this.httpError));
   }
 
-  getUserById(userId: number): User {
-    return this.arrUsers.find((u) => u.id == userId) ?? new User()
-    // for (let i=0; i<this.arrUsers.length; i++){
-    //   if(arrUser[i].)
-    // }
+  // getUserById(userId: number): User {
+  //   return this.arrUsers.find((u) => u.id == userId) ?? new User()
+  // }
+  getUserById(userId:number):Observable<User>{
+    return this.httpClient.get<User>(this.base_url+'/users/'+userId).pipe(catchError(this.httpError))
   }
-  deleteUserById(i: number) {
-    var index = this.arrUsers.findIndex((usr) => usr.id == i)
-    if (index == -1) return;
-    this.arrUsers.splice(index, 1)
+  
+  deleteUserById(i: number): Observable<User> {
+    // var index = this.arrUsers.findIndex((usr) => usr.id == i)
+    // if (index == -1) return;
+    // this.arrUsers.splice(index, 1)
+    return this.httpClient.delete<User>(this.base_url+'/users/'+i).pipe(catchError(this.httpError))
   }
 
-  addUser(u: User) {
-    this.arrUsers.push(u)
-    console.log(this.arrUsers)
+  addUser(u: User): Observable<User> {
+    // this.arrUsers.push(u)
+    // console.log(this.arrUsers)
+    return this.httpClient.post<User>(this.base_url+'/users',JSON.stringify(u),this.httpHeader)
+    .pipe(catchError(this.httpError))
   }
-  updateUser(u: User) {
-    var index = this.arrUsers.findIndex((usr) => usr.id == u.id)
-    this.arrUsers[index] = u
-    // this.arrUsers.splice(index,1)
-    // this.arrUsers.fill(u,index,index+1)
-    console.log(this.arrUsers)
+  updateUser(u: User):Observable<User> {
+    return this.httpClient.put<User>(this.base_url+'/users/'+u.id, JSON.stringify(u),this.httpHeader)
+
+    // var index = this.arrUsers.findIndex((usr) => usr.id == u.id)
+    // this.arrUsers[index] = u
+    // // this.arrUsers.splice(index,1)
+    // // this.arrUsers.fill(u,index,index+1)
+    // console.log(this.arrUsers)
   }
 }

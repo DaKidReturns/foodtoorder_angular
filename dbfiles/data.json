@@ -298,6 +298,25 @@
         "country": "Rising Sun",
         "pincode": "648212"
       }
+    },
+    {
+      "id": 6,
+      "firstName": "Heavens",
+      "lastName": "Door",
+      "role": "user",
+      "dob": "",
+      "email": "father@newCastle.com",
+      "password": "siq*7Pz;-@Y>7t;",
+      "address": {
+        "id": 0,
+        "houseNo": 12,
+        "street": "Stone Ocean",
+        "area": "GreensVille",
+        "state": "Hello",
+        "city": "america",
+        "country": "america",
+        "pincode": "123432"
+      }
     }
   ],
   "orders": [

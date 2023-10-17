@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Restaurant } from '../models/restaurant';
 import { Address } from '../models/address';
 import { Dish } from '../models/dish';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,17 +49,36 @@ export class RestaurantService {
     ], "DemocraticBar.jpg", 4
     ),
   ]
-  constructor() { }
-  getRestaurants() {
-    return this.arrRestaurants
+
+  baseUrl = "http://localhost:3000"
+  httpHeader = { 
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
   }
 
-  getRestaurantById(id: number) {
-    for (let i = 0; i < this.arrRestaurants.length; i++) {
-      if (this.arrRestaurants[i].id == id)
-        return this.arrRestaurants[i];
+  constructor(private httpClient:HttpClient) { }
+
+  httpError(error:HttpErrorResponse){
+    let msg=''
+    if(error.error instanceof ErrorEvent){
+      msg = error.error.message
     }
-    return new Restaurant(0, "", [], [], "");
+    else{
+      msg='Error code:${error.status}\nMessage:${error.message}'
+    }
+    console.log(msg)
+    return throwError(msg)
+  }
+
+  getRestaurants():Observable<Restaurant[]> {
+    return this.httpClient.get<Restaurant[]>(this.baseUrl+'/restaurants')
+    .pipe(catchError(this.httpError));
+  }
+
+  getRestaurantById(id: number):Observable<Restaurant> {
+    return this.httpClient.get<Restaurant>(this.baseUrl+'/restaurants/'+id)
+    .pipe(catchError(this.httpError))
   }
 
   deleteRestaurantById(id:number){
@@ -68,7 +89,7 @@ export class RestaurantService {
     this.arrRestaurants.splice(index,1)
   }
 
-    getRestaurantByOwnerId(ownerId: number) {
+    getRestaurantByOwnerId(ownerId: number) {  //TODO: CHANGE THIS FUNCTION TO ACCEPT DATA FROM SERVER
         console.log(ownerId)
         var arrReturnRestaurants: Restaurant[] = []
         for (let i = 0; i < this.arrRestaurants.length; i++) {
