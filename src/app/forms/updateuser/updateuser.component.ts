@@ -36,7 +36,7 @@ export class UpdateuserComponent {
       "pincode":["",Validators.required],
       "role":[""]
     })
-    this.arrUsers = userService.getUsers()
+    userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
     this.currentUserRole = localStorage.getItem('role')??'user';
   }
 

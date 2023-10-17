@@ -12,7 +12,7 @@ export class UserComponent implements OnInit{
   // @Input() userName:string='initial';
   users:User[]=[]
   constructor(private userService:UserService,private router:Router){
-    this.users = userService.getUsers()  
+    userService.getUsers().subscribe(data=>{this.users = data}) 
   }
 
 

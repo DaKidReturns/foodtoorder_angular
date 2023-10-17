@@ -15,7 +15,7 @@ export class ContentComponent {
   arrUsers:User[]=[]
   
   constructor(private userService:UserService, private restaurantServie:RestaurantService){
-    this.arrUsers=userService.getUsers()
+    userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
   }
 
   

@@ -10,11 +10,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let o of arrOrders">
-            <td>{{o.orderId}}</td>
+            <td>{{o.id}}</td>
             <td>{{o.userId}}</td>
             <td>{{o.amount}}</td>
-            <td><button class="btn btn-primary" (click)="viewOrder(o.orderId)" >View Details</button></td>
-            <td><button class="btn btn-danger" (click)="deleteOrder(o.orderId)">Delete Order</button></td>
+            <td><button class="btn btn-primary" (click)="viewOrder(o.id)" >View Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteOrder(o.id)">Delete Order</button></td>
         </tr>
     </tbody>
 </table>  

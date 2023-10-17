@@ -18,7 +18,7 @@ export class BannerComponent {
     //   ]
 
     constructor(private userService: UserService, fb:FormBuilder) {
-        this.arrUsers = userService.getUsers()
+      userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
     }
 
   VerifyCredentials(email: HTMLInputElement, password: HTMLInputElement) {

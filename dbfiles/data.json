@@ -1,0 +1,439 @@
+{
+  "restaurants": [
+    {
+      "id": 2,
+      "name": "Communist Cold Drinks",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": 89,
+          "street": "the street",
+          "area": "Red Area",
+          "state": "Solid State",
+          "city": "Sickle and hammer",
+          "country": "TryCount",
+          "pincode": "456724"
+        },
+        {
+          "id": 2,
+          "houseNo": 65,
+          "street": "Golden Wind",
+          "area": "I 93 area",
+          "state": "Happy state",
+          "city": "What a wonderful city",
+          "country": "Star and red flag",
+          "pincode": "2374312"
+        }
+      ],
+      "menu": [
+        {
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": ""
+        },
+        {
+          "id": 18,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 22,
+          "name": "Seera",
+          "cost": 40,
+          "description": ""
+        }
+      ],
+      "image": "CommunistColdDrinks.jpg",
+      "ownerId": 4
+    },
+    {
+      "id": 3,
+      "name": "Democratic Bar",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": 22,
+          "street": "For the street",
+          "area": "for the Area",
+          "state": "for the State",
+          "city": "for the City",
+          "country": "for the country",
+          "pincode": "437829"
+        },
+        {
+          "id": 2,
+          "houseNo": 420,
+          "street": "By the street",
+          "area": "By the Area",
+          "state": "By the State",
+          "city": "By the City",
+          "country": "By the country",
+          "pincode": "237892"
+        },
+        {
+          "id": 3,
+          "houseNo": 892,
+          "street": "To the street",
+          "area": "To the Area",
+          "state": "To the State",
+          "city": "To the City",
+          "country": "To the country",
+          "pincode": "294873"
+        }
+      ],
+      "menu": [
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        },
+        {
+          "id": 21,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": ""
+        },
+        {
+          "id": 18,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 22,
+          "name": "Seera",
+          "cost": 40,
+          "description": ""
+        }
+      ],
+      "image": "DemocraticBar.jpg",
+      "ownerId": 4
+    },
+    {
+      "name": "Boring Restaurant",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": 22,
+          "street": "Fine street",
+          "area": "Greener Area",
+          "state": "Oil State",
+          "city": "Star Stripped City",
+          "country": "Uncle's country",
+          "pincode": "777888"
+        },
+        {
+          "id": 2,
+          "houseNo": 32,
+          "street": "White Street",
+          "area": "Golden area",
+          "state": "Plasma State",
+          "city": "WhiteFlag",
+          "country": "Rising Sun",
+          "pincode": "648212"
+        }
+      ],
+      "menu": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        },
+        {
+          "id": 21,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": ""
+        },
+        {
+          "id": 7,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": ""
+        },
+        {
+          "id": 14,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": ""
+        }
+      ],
+      "image": "CapitalistCafe.jpg",
+      "ownerId": 5,
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Brian",
+      "lastName": "Cranston",
+      "role": "user",
+      "dob": "12/04/1976",
+      "email": "breakinggood@gmail.com",
+      "password": "JesseWhereIsTheProduct",
+      "address": {
+        "id": 1,
+        "houseNo": 22,
+        "street": "Rich Street",
+        "area": "Greener Area",
+        "state": "Oil State",
+        "city": "Star Stripped City",
+        "country": "Uncle's country",
+        "pincode": "777888"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Gandalf",
+      "lastName": "White",
+      "role": "admin",
+      "dob": "01/03/1800",
+      "email": "mage@elfmail.com",
+      "password": "Youshallnotpass",
+      "address": {
+        "id": 1,
+        "houseNo": 22,
+        "street": "For the street",
+        "area": "for the Area",
+        "state": "for the State",
+        "city": "for the City",
+        "country": "for the country",
+        "pincode": "437829"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Jonathan",
+      "lastName": "Jostar",
+      "role": "restaurantowner",
+      "dob": "12/04/1888",
+      "email": "theultimateGentleman@gmail.com",
+      "password": "Diowhydidyoudothis",
+      "address": {
+        "id": 2,
+        "houseNo": 32,
+        "street": "White Street",
+        "area": "Golden area",
+        "state": "Over Engineered State",
+        "city": "WhiteFlag",
+        "country": "Rising Sun",
+        "pincode": "648212"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "Store",
+      "lastName": "Owner",
+      "role": "restaurantowner",
+      "dob": "12/05/2003",
+      "email": "storeowner@gmail.com",
+      "password": "owner",
+      "address": {
+        "id": 2,
+        "houseNo": 32,
+        "street": "White Street",
+        "area": "Golden area",
+        "state": "Over Engineered State",
+        "city": "WhiteFlag",
+        "country": "Rising Sun",
+        "pincode": "648212"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "Store",
+      "lastName": "Owener2",
+      "role": "restaurantowner",
+      "dob": "03/12/2001",
+      "email": "store2owner@gmail.com",
+      "password": "owner",
+      "address": {
+        "id": 2,
+        "houseNo": 32,
+        "street": "White Street",
+        "area": "Golden area",
+        "state": "Over Engineered State",
+        "city": "WhiteFlag",
+        "country": "Rising Sun",
+        "pincode": "648212"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": 12,
+      "userId": 1,
+      "items": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        },
+        {
+          "id": 18,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 21,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": ""
+        }
+      ],
+      "amount": 450,
+      "oderDate": "12/03/2021"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "items": [
+        {
+          "id": 7,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": ""
+        },
+        {
+          "id": 14,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": ""
+        },
+        {
+          "id": 29,
+          "name": "Gulab Jamun",
+          "cost": 10,
+          "description": ""
+        }
+      ],
+      "amount": 240,
+      "oderDate": "31/03/2022"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "items": [
+        {
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": ""
+        },
+        {
+          "id": 18,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 22,
+          "name": "Seera",
+          "cost": 40,
+          "description": ""
+        }
+      ],
+      "amount": 270,
+      "oderDate": "21/04/2023"
+    }
+  ],
+  "carts": [
+    {
+      "userId": 1,
+      "items": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Chicken Chilli",
+          "cost": 120,
+          "description": ""
+        }
+      ],
+      "amount": 300
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        }
+      ],
+      "amount": 140
+    }
+  ]
+}

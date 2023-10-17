@@ -38,10 +38,10 @@ export class OrderService {
   }
 
   getOrderById(i:number){
-    return this.arrOrders.find((order)=>order.orderId==i)?? new Order(0,0,[],0,"");
+    return this.arrOrders.find((order)=>order.id==i)?? new Order(0,0,[],0,"");
   }
   deleteOrderById(i:number){
-    var index = this.arrOrders.findIndex((ord)=> ord.orderId==i) 
+    var index = this.arrOrders.findIndex((ord)=> ord.id==i) 
     if(index == -1 ) return;
     this.arrOrders.splice(index,1)
   }

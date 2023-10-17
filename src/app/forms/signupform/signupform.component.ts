@@ -33,7 +33,7 @@ export class SignupformComponent{
       "pincode":["",Validators.required],
       "role":[""]
     })
-    this.arrUsers = userService.getUsers()
+    userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
   }
 
   get fc(){
