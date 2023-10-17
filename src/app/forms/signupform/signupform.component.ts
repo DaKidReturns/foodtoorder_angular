@@ -1,7 +1,10 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Address } from 'src/app/models/address';
+import { Cart } from 'src/app/models/cart';
 import { User } from 'src/app/models/user';
+import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,7 +19,7 @@ export class SignupformComponent{
   submitted:boolean = false
   currentUserRole:string = 'user'
 
-  constructor(private userService:UserService, fb:FormBuilder) {
+  constructor(private userService:UserService, private cartService:CartService, fb:FormBuilder) {
     this.signUpForm = fb.group({
       "firstName": ["",Validators.required],
       "lastName": ["",Validators.required],
@@ -97,6 +100,7 @@ export class SignupformComponent{
      // location.reload()
 
     });
+    this.cartService.addCart(new Cart(this.user.id))
 
   }
 }

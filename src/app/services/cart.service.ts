@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Dish } from '../models/dish';
 import { Cart } from '../models/cart';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,19 +20,50 @@ export class CartService {
         new Dish(12, "Lemon Tea", 20, ""),
       ], 140)
   ]
-  constructor() { }
 
-  getCartById(cartId: number):Cart {
-    return this.arrCart.find((cart)=>cart.userId=cartId) ?? new Cart(0,[],0);
+  base_url = "http://localhost:3000"
+  httpHeader = {
+    headers:new HttpHeaders({
+      'Content-Type':'application/json'
+    })
   }
 
-  getAllCart(){
+  httpError(error:HttpErrorResponse){
+    let msg= ''
+    if(error.error instanceof ErrorEvent){
+      msg=error.error.message
+    }
+    else{
+      msg = 'Error code:${error.status}\nMessgae:${error.message}'
+    }
+    console.error(msg)
+    return throwError(msg)
+  }
+
+  constructor(private httpClient:HttpClient) { }
+
+  addCart(cart:Cart):Observable<Cart>{
+    return this.httpClient.get<Cart>(this.base_url+'/carts/'+cart.id)
+    .pipe(catchError(this.httpError))
+    //this.arrCart.push(cart)
+  }
+  getCartById(cartId: number):Observable<Cart> {
+    return this.httpClient.get<Cart>(this.base_url+'/carts/'+cartId)
+    .pipe(catchError(this.httpError))
+    //return this.arrCart.find((cart)=>cart.userId=cartId) ?? new Cart(0,[],0);
+  }
+
+  getAllCart():Observable<Cart[]>{
     // return 
-    return this.arrCart;
+    return this.httpClient.get<Cart[]>(this.base_url+'/carts')
+    .pipe(catchError(this.httpError))
+    //return this.arrCart;
   }
-  deleteCartById(i:number){
-    var index = this.arrCart.findIndex((cart)=>cart.userId==i)
-    if(index == -1) return;
-    this.arrCart.splice(index,1)
+  deleteCartById(i:number):Observable<Cart> {
+    return this.httpClient.delete<Cart>(this.base_url+'/carts/'+i)
+    .pipe(catchError(this.httpError))
+    // var index = this.arrCart.findIndex((cart)=>cart.userId==i)
+    // if(index == -1) return;
+    // this.arrCart.splice(index,1)
   }
 }

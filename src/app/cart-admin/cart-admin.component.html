@@ -9,10 +9,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let c of arrCarts">
-            <td>{{c.userId}}</td>
+            <td>{{c.id}}</td>
             <td>{{c.amount}}</td>
-            <td><button class="btn btn-primary" (click)="viewCart(c.userId)" >View Details</button></td>
-            <td><button class="btn btn-danger" (click)="deleteCart(c.userId)">Delete Cart</button></td>
+            <td><button class="btn btn-primary" (click)="viewCart(c.id)" >View Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteCart(c.id)">Delete Cart</button></td>
         </tr>
     </tbody>
 </table>  

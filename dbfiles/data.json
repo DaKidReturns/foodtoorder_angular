@@ -474,7 +474,7 @@
   ],
   "carts": [
     {
-      "userId": 1,
+      "id": 1,
       "items": [
         {
           "id": 1,
@@ -492,7 +492,7 @@
       "amount": 300
     },
     {
-      "userId": 2,
+      "id": 2,
       "items": [
         {
           "id": 4,

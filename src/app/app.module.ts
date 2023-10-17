@@ -44,6 +44,7 @@ import { UpdateuserComponent } from './forms/updateuser/updateuser.component';
 import { AddRestaurantFormComponent } from './forms/add-restaurant-form/add-restaurant-form.component';
 import { UpdateRestaurantFormComponent } from './forms/update-restaurant-form/update-restaurant-form.component';
 import { AddCartFormComponent } from './forms/add-cart-form/add-cart-form.component';
+import { AddOrderFormComponent } from './forms/add-order-form/add-order-form.component';
 
 
 
@@ -77,7 +78,8 @@ import { AddCartFormComponent } from './forms/add-cart-form/add-cart-form.compon
     UpdateuserComponent,
     AddRestaurantFormComponent,
     UpdateRestaurantFormComponent,
-    AddCartFormComponent
+    AddCartFormComponent,
+    AddOrderFormComponent
   ],
   imports: [
     BrowserModule,
