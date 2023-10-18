@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl, FormArray} from '@angular/forms';
+
 import { Address } from 'src/app/models/address';
-import { Dish } from 'src/app/models/dish';
 import { Restaurant } from 'src/app/models/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
@@ -143,7 +143,7 @@ export class AddRestaurantFormComponent {
       this.restaurant.menu.forEach((item,i)=>{
         item.id = i+1
       })
-      console.log(this.restaurant)
+      // console.log(this.restaurant)
       this.restaurantService.addRestaurant(this.restaurant).subscribe()
     }
     

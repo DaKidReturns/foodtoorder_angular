@@ -6,13 +6,14 @@ export class Order{
     items:Dish[]
     amount:number
     oderDate:string
-
-    constructor(ono:number,uid:number,items:Dish[],amount:number,d:string){
+    quantity:number[]
+    constructor(ono:number=-1,uid:number=-1,items:Dish[]=[],amount:number=0,d:string="",quantity:number[]=[]){
         this.id=ono
         this.userId=uid
         this.items=items
         this.amount = amount
         this.oderDate=d
+        this.quantity = quantity
     }
     
 }

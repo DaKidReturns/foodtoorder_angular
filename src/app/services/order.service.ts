@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../models/order';
 import { Dish } from '../models/dish';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { Cart } from '../models/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -29,20 +32,47 @@ export class OrderService {
         new Dish(5, "Paneer Makani", 150, ""),
         new Dish(18, "Mango Lassi", 40, ""),
         new Dish(22, "Seera", 40, "")
-      ], 270, "21/04/2023")]
-      
-  constructor() { }
+      ], 270, "21/04/2023")
+  ]
 
-  getAllOrders() {
-    return this.arrOrders;
+  base_url = "http://localhost:3000"
+  httpHeader = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+  
+  httpError(error:HttpErrorResponse){
+    let msg= ''
+    if(error.error instanceof ErrorEvent){
+      msg=error.error.message
+    }
+    else{
+      msg = 'Error code:${error.status}\nMessgae:${error.message}'
+    }
+    console.error(msg)
+    return throwError(msg)
+  }
+  constructor(private httpClient:HttpClient) { }
+
+  getAllOrders():Observable<Order[]> {
+    return this.httpClient.get<Order[]>(this.base_url+'/orders')
+    .pipe(catchError(this.httpError))
+    // return this.arrOrders;
   }
 
-  getOrderById(i:number){
-    return this.arrOrders.find((order)=>order.id==i)?? new Order(0,0,[],0,"");
+  getOrderById(i: number):Observable<Order> {
+    return this.httpClient.get<Order>(this.base_url + '/orders/' + i)
+    // return this.arrOrders.find((order) => order.id == i) ?? new Order(0, 0, [], 0, "");
   }
-  deleteOrderById(i:number){
-    var index = this.arrOrders.findIndex((ord)=> ord.id==i) 
-    if(index == -1 ) return;
-    this.arrOrders.splice(index,1)
+  deleteOrderById(i: number) : Observable<Order>{
+    return this.httpClient.delete<Order>(this.base_url + '/orders/' + i)
+    // var index = this.arrOrders.findIndex((ord) => ord.id == i)
+    // if (index == -1) return;
+    // this.arrOrders.splice(index, 1)
+  }
+  addOrder(order:Order){
+    return this.httpClient.post<Order>(this.base_url+'/orders/'+order.id,this.httpHeader)
+    .pipe(catchError(this.httpError))
   }
 }

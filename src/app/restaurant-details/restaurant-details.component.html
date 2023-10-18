@@ -1,6 +1,6 @@
 <div class="row">
     <h2>{{restaurant.name}}</h2>
-    <img src="/assets/images/restaurants/{{restaurant.image}}" alt="" srcset="" width="1000rem" />
+    <img src="{{restaurant.image}}" alt="" srcset="" width="1000rem" />
     <div>
         We are @
     </div>
@@ -11,5 +11,9 @@
 
         <div class="card" *ngFor="let d of restaurant.menu" style="width: 18rem;" >
             <div class="card-header">{{d.name}}</div>
-    </div>
+            <div class="card-body">
+                <div>Price:   {{d.cost}}</div>
+            </div>
+            <!-- <button class="btn btn-primary" name="Add To Cart" (click)="addItemToUserCart(d)">Add To Cart</button> -->
+        </div>
 </div>

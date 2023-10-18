@@ -83,7 +83,7 @@ export class RestaurantService {
 
   deleteRestaurantById(id:number):Observable<Restaurant>{
     
-    return this.httpClient.delete<Restaurant>(this.baseUrl+'/restaurant/'+id).pipe(catchError(this.httpError))
+    return this.httpClient.delete<Restaurant>(this.baseUrl+'/restaurants/'+id).pipe(catchError(this.httpError))
     // var index = this.arrRestaurants.findIndex((rest)=> rest.id==id) 
     // if(index == -1 ) return;
     // console.log("Deleting restaurant"+index)

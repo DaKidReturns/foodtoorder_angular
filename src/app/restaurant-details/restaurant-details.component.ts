@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RestaurantService } from '../services/restaurant.service';
 import { Restaurant } from '../models/restaurant';
+import { CartService } from '../services/cart.service';
+import { Cart } from '../models/cart';
 
 @Component({
   selector: 'app-restaurant-details',
@@ -10,10 +12,22 @@ import { Restaurant } from '../models/restaurant';
 })
 export class RestaurantDetailsComponent {
   restaurant:Restaurant = new Restaurant(0,"",[],[],"");
-  constructor(private activateRoute:ActivatedRoute,private restaturantService:RestaurantService){
+  currentUserId:number=-1
+  constructor(private activateRoute:ActivatedRoute,private restaturantService:RestaurantService, private cartService:CartService){
     this.activateRoute.params.subscribe((params:Params)=>{
       console.log("Details for "+params['rid']);
       restaturantService.getRestaurantById(params['rid']).subscribe((data)=>this.restaurant=data);
     })
+
+  }
+
+  addItemToUserCart(cart:Cart){
+
+    this.currentUserId = parseInt(localStorage.getItem('userId')??"-1")??-1
+    if(this.currentUserId==-1) return
+
+    var userCart:Cart 
+    this.cartService.getCartById(this.currentUserId).subscribe((cart)=>userCart)
+    
   }
 }

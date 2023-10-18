@@ -14,7 +14,7 @@ export class OrderDetailsAdminComponent {
 
   constructor(private orderservice:OrderService, private activatedRoute:ActivatedRoute){
     this.activatedRoute.params.subscribe((params:Params)=>{
-      this.orderItem=orderservice.getOrderById(params['orderId'])
+      orderservice.getOrderById(params['orderId']).subscribe((value)=>this.orderItem=value)
     })
   }
 }

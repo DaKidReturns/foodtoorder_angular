@@ -51,7 +51,7 @@
           "description": ""
         }
       ],
-      "image": "CommunistColdDrinks.jpg",
+      "image": "/assets/images/restaurants/CommunistColdDrinks.jpg",
       "ownerId": 4
     },
     {
@@ -133,7 +133,7 @@
           "description": ""
         }
       ],
-      "image": "DemocraticBar.jpg",
+      "image": "/assets/images/restaurants/DemocraticBar.jpg",
       "ownerId": 4
     },
     {
@@ -198,7 +198,7 @@
           "description": ""
         }
       ],
-      "image": "CapitalistCafe.jpg",
+      "image": "/assets/images/restaurants/CapitalistCafe.jpg",
       "ownerId": 5,
       "id": 1
     },
@@ -248,51 +248,6 @@
         }
       ],
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg",
-      "ownerId": 0
-    },
-    {
-      "id": 5,
-      "name": "",
-      "addresses": [],
-      "menu": [
-        {
-          "id": 1,
-          "name": "Fried Rice",
-          "cost": 180,
-          "description": "Rice but fried"
-        },
-        {
-          "id": 2,
-          "name": "Chilli Chiken",
-          "cost": 120,
-          "description": ""
-        },
-        {
-          "id": 3,
-          "name": "Lemon Tea",
-          "cost": 20,
-          "description": ""
-        },
-        {
-          "id": 4,
-          "name": "Sweet rice",
-          "cost": 130,
-          "description": ""
-        },
-        {
-          "id": 5,
-          "name": "Chiken Biriyani",
-          "cost": 200,
-          "description": ""
-        },
-        {
-          "id": 6,
-          "name": "Mint Lime",
-          "cost": 30,
-          "description": ""
-        }
-      ],
-      "image": "",
       "ownerId": 0
     }
   ],
@@ -448,6 +403,13 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
       "amount": 450,
       "oderDate": "12/03/2021"
     },
@@ -473,6 +435,11 @@
           "cost": 10,
           "description": ""
         }
+      ],
+      "quantity": [
+        1,
+        1,
+        1
       ],
       "amount": 240,
       "oderDate": "31/03/2022"
@@ -506,6 +473,12 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1,
+        1,
+        1
+      ],
       "amount": 270,
       "oderDate": "21/04/2023"
     }
@@ -527,6 +500,10 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1
+      ],
       "amount": 300
     },
     {
@@ -544,6 +521,10 @@
           "cost": 20,
           "description": ""
         }
+      ],
+      "quantity": [
+        1,
+        1
       ],
       "amount": 140
     },
@@ -563,6 +544,10 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1
+      ],
       "amount": 140
     },
     {
@@ -581,11 +566,16 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1
+      ],
       "amount": 140
     },
     {
       "id": 5,
       "items": [],
+      "quantity": [],
       "amount": 0
     }
   ]

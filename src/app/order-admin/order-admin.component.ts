@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class OrderAdminComponent {
   arrOrders:Order[]=[]
   constructor(private orderService:OrderService, private router:Router){
-    this.arrOrders = orderService.getAllOrders();;
+    orderService.getAllOrders().subscribe((data)=>this.arrOrders = data);
   }
 
   viewOrder(i:number){
