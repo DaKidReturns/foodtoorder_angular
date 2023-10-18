@@ -401,6 +401,36 @@
           "name": "Sweet rice",
           "cost": 130,
           "description": ""
+        },
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": ""
         }
       ],
       "quantity": [
@@ -408,9 +438,14 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1
       ],
-      "amount": 450,
+      "amount": 980,
       "oderDate": "12/03/2021"
     },
     {
@@ -434,14 +469,35 @@
           "name": "Gulab Jamun",
           "cost": 10,
           "description": ""
+        },
+        {
+          "id": 1,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "Gulab Jamun",
+          "cost": 10,
+          "description": ""
         }
       ],
       "quantity": [
         1,
         1,
+        1,
+        1,
+        1,
         1
       ],
-      "amount": 240,
+      "amount": 480,
       "oderDate": "31/03/2022"
     },
     {
@@ -473,14 +529,38 @@
           "description": ""
         }
       ],
+      "amount": 270,
+      "oderDate": "21/04/2023",
       "quantity": [
         1,
         1,
         1,
         1
+      ]
+    },
+    {
+      "id": 16,
+      "userId": 2,
+      "items": [
+        {
+          "id": 1,
+          "name": "eggs",
+          "cost": 5,
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "chicen",
+          "cost": 180,
+          "description": ""
+        }
       ],
-      "amount": 270,
-      "oderDate": "21/04/2023"
+      "amount": 240,
+      "oderDate": "",
+      "quantity": [
+        12,
+        1
+      ]
     }
   ],
   "carts": [
@@ -500,10 +580,6 @@
           "description": ""
         }
       ],
-      "quantity": [
-        1,
-        1
-      ],
       "amount": 300
     },
     {
@@ -521,10 +597,6 @@
           "cost": 20,
           "description": ""
         }
-      ],
-      "quantity": [
-        1,
-        1
       ],
       "amount": 140
     },
@@ -544,10 +616,6 @@
           "description": ""
         }
       ],
-      "quantity": [
-        1,
-        1
-      ],
       "amount": 140
     },
     {
@@ -566,16 +634,11 @@
           "description": ""
         }
       ],
-      "quantity": [
-        1,
-        1
-      ],
       "amount": 140
     },
     {
       "id": 5,
       "items": [],
-      "quantity": [],
       "amount": 0
     }
   ]

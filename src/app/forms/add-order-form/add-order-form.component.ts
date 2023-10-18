@@ -50,7 +50,7 @@ export class AddOrderFormComponent {
     })
   }
 
-  saveFirstStepData(formData: any) {
+  saveFirstStepData(formData: FormGroup) {
     let tempId = 0
     let maxId = 0
 
@@ -58,9 +58,8 @@ export class AddOrderFormComponent {
       if (order.id > maxId)
         maxId = order.id
     })
-    this.newOrder.id = maxId
-    let userid = JSON.parse(formData)[0]
-    this.newOrder.userId = parseInt(userid.id)
+    this.newOrder.id = maxId+1
+    this.newOrder.userId = this.idUpdated
     console.log(this.newOrder)
   }
 
@@ -79,8 +78,9 @@ export class AddOrderFormComponent {
       this.newOrder.items.forEach((item,index)=>{
         this.newOrder.amount += item.cost * this.newOrder.quantity[index]
       })
-      // console.log(this.newOrder);
-      this.orderService.addOrder(this.newOrder)
+      this.newOrder.oderDate=""
+      console.log(this.newOrder);
+      this.orderService.addOrder(this.newOrder).subscribe()
     }
   }
 

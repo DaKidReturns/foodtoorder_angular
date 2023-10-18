@@ -1,0 +1,67 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button> -->
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="userFormGroup">
+        <form [formGroup]="userFormGroup" (ngSubmit)="saveFirstStepData(userFormGroup)">
+            <mat-label>Select the User whose order is to be edited</mat-label>
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <select formControlName="userId" id="userId" class="form-select" (change)="onSelectUser($event)">
+                <option selected>Select a value</option>
+                <option *ngFor="let u of arrUsers" [ngValue]="u.id">{{u.firstName}} {{u.lastName}}</option>
+            </select>
+            <mat-label *ngIf="showOrderSelect">Select the Order from the list</mat-label>
+            <select formControlName="orderId" id="orderId" class="form-select" *ngIf="showOrderSelect" (change)="onSelectOrder($event)">
+                <option selected>Select a value</option>
+                <option *ngFor="let o of arrUserOrders" [ngValue]="o.id">{{o.id}}</option>
+            </select>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="itemFormGroup" label="Fill out the items">
+        <form [formGroup]="itemFormGroup" (ngSubmit)="saveSecondStepData(itemFormGroup.value)">
+            <mat-toolbar color="primary" class="my-2">Add/Remove multiple items from the order</mat-toolbar>
+            <div formArrayName="itemFormArray">
+                <div class="row" *ngFor="let item of itemFormArray.controls; let i= index" [formGroupName]="i">
+                    <mat-form-field>
+                        <mat-label>Item Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Name of item" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Cost</mat-label>
+                        <input matInput formControlName="cost" placeholder="Cost of the item" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Quantity</mat-label>
+                        <input matNativeControl number formControlName="quantity" placeholder="Number of item" required>
+                    </mat-form-field>
+
+                    <div class="col-3">
+                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove/clear"
+                            (click)="removeOrClearItems(i)" matTooltip="Remove">
+                            <mat-icon>highlight_off</mat-icon>
+                        </button>
+                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add"
+                            (click)="addItemFormGroup()" matTooltip="Add">
+                            <mat-icon>add_circle_outline</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-stepper>

@@ -71,8 +71,11 @@ export class OrderService {
     // if (index == -1) return;
     // this.arrOrders.splice(index, 1)
   }
-  addOrder(order:Order){
-    return this.httpClient.post<Order>(this.base_url+'/orders/'+order.id,this.httpHeader)
+  addOrder(order:Order): Observable<Order>{
+    return this.httpClient.post<Order>(this.base_url+'/orders',JSON.stringify(order),this.httpHeader)
     .pipe(catchError(this.httpError))
+  }
+  updateOrder(order:Order):Observable<Order>{
+    return this.httpClient.put<Order>(this.base_url+"/orders/"+order.id,JSON.stringify(order),this.httpHeader)
   }
 }
