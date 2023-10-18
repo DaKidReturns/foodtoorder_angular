@@ -82,6 +82,14 @@ export class CartService {
       cart.items.push(item)
       cart.quantity.push(1)
     }
+    return this.updateCart(cart)
+    // this.updateCartAmount(cart)
+    // return this.httpClient.put<Cart>(this.base_url+'/carts/'+cart.id,JSON.stringify(cart),this.httpHeader)
+    // .pipe(catchError(this.httpError))
+  }
+
+  updateCart(cart:Cart):Observable<Cart>{
+    this.updateCartAmount(cart)
     return this.httpClient.put<Cart>(this.base_url+'/carts/'+cart.id,JSON.stringify(cart),this.httpHeader)
     .pipe(catchError(this.httpError))
   }

@@ -1,4 +1,8 @@
-<div class="mb-3" *ngFor="let i of cart.items">
+<div class="mb-3" *ngFor="let i of cart.items; let in=index">
     <div>{{i.name}}</div>
-    <div>{{i.cost}}</div>
+    <div>{{i.cost}} x {{cart.quantity[in]}} : {{i.cost*cart.quantity[in]}}</div> 
+    <div style="container:fluid;">
+        <button type="button" class="btn btn-danger">Remove from cart</button>
+        <button type="button" style="margin:1%" class="btn btn-danger">Add again</button>
+    </div>
 </div>
