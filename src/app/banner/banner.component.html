@@ -27,19 +27,24 @@
                 </li>
 
                 <li>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInModal"
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInModal" *ngIf="!isLoggedIn()"
                         >
                         Sign In
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal" *ngIf="!isLoggedIn()">
                         Sign Up
                     </button>
                 </li>
                 <li>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal" *ngIf="isLoggedIn()">
                         Cart
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-danger"  (click)="logOut()" *ngIf="isLoggedIn()">
+                        LogOut
                     </button>
                 </li>
 

@@ -204,7 +204,7 @@
     },
     {
       "id": 4,
-      "name": "Heavens",
+      "name": "Heavens Door",
       "addresses": [
         {
           "id": 1,
@@ -212,7 +212,7 @@
           "street": "big street",
           "area": "da hood",
           "state": "Peace of mind",
-          "city": "Greensville",
+          "city": "Peace of mind",
           "country": "go",
           "pincode": "213342"
         },
@@ -222,7 +222,7 @@
           "street": "thecht",
           "area": "getsagtst",
           "state": "knenks",
-          "city": "othejthing",
+          "city": "knenks",
           "country": "jioosths",
           "pincode": "123421"
         }
@@ -379,36 +379,6 @@
           "description": ""
         },
         {
-          "id": 4,
-          "name": "Chilli Chiken",
-          "cost": 120,
-          "description": ""
-        },
-        {
-          "id": 12,
-          "name": "Lemon Tea",
-          "cost": 20,
-          "description": ""
-        },
-        {
-          "id": 18,
-          "name": "Mango Lassi",
-          "cost": 40,
-          "description": ""
-        },
-        {
-          "id": 21,
-          "name": "Sweet rice",
-          "cost": 130,
-          "description": ""
-        },
-        {
-          "id": 1,
-          "name": "Fried Rice",
-          "cost": 180,
-          "description": ""
-        },
-        {
           "id": 2,
           "name": "Chilli Chiken",
           "cost": 120,
@@ -438,14 +408,9 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1
       ],
-      "amount": 980,
+      "amount": 490,
       "oderDate": "12/03/2021"
     },
     {
@@ -527,11 +492,39 @@
           "name": "Seera",
           "cost": 40,
           "description": ""
+        },
+        {
+          "id": 1,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "Seera",
+          "cost": 50,
+          "description": ""
         }
       ],
-      "amount": 270,
+      "amount": 750,
       "oderDate": "21/04/2023",
       "quantity": [
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -628,34 +621,14 @@
           "name": "Lemon Tea",
           "cost": 20,
           "description": ""
-        },
-        {
-          "id": 2,
-          "name": "Veg pulav",
-          "cost": 140,
-          "description": ""
-        },
-        {
-          "id": 5,
-          "name": "Paneer Makani",
-          "cost": 150,
-          "description": ""
-        },
-        {
-          "id": 18,
-          "name": "Mango Lassi",
-          "cost": 40,
-          "description": ""
         }
       ],
       "quantity": [
         1,
-        1,
-        1,
-        2,
-        1
+        2
       ],
-      "amount": 620
+      "amount": 160,
+      "restaurantId": 3
     },
     {
       "id": 3,

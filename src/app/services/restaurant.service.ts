@@ -107,4 +107,9 @@ export class RestaurantService {
       .pipe(catchError(this.httpError))
       // return this.arrRestaurants.push(restaurant)
     }
+    updateRestaurant(restaurant:Restaurant):Observable<Restaurant>{
+      return this.httpClient.put<Restaurant>(this.baseUrl+'/restaurants/'+restaurant.id, JSON.stringify(restaurant),this.httpHeader)
+      .pipe(catchError(this.httpError))
+      // return this.arrRestaurants.push(restaurant)
+    }
 }

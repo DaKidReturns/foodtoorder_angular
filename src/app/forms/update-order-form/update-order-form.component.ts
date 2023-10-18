@@ -85,6 +85,8 @@ export class UpdateOrderFormComponent {
       let itemArr = Object.values(itemFormGroup)
       let temp = JSON.parse(JSON.stringify(itemArr))[0]
       console.log(temp)
+      this.orderUpdated.items=[]
+      this.orderUpdated.quantity=[]
       temp.forEach((item: any, index: number) => {
         this.orderUpdated.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, ""))
         this.orderUpdated.quantity.push(parseInt(item.quantity)??0)
@@ -99,6 +101,7 @@ export class UpdateOrderFormComponent {
   }
 
   onSelectUser(event: any) {
+    this.clearPreviousEntry()
     this.arrUserOrders.splice(0,this.arrUserOrders.length)
     var idObtained = event.target.value
     // console.log(idObtained.split(":")[1].trim())
@@ -149,5 +152,10 @@ export class UpdateOrderFormComponent {
   addItemFormGroup(){
     const itemFormArray = this.itemFormGroup.get('itemFormArray')as FormArray
     itemFormArray.push(this.createItemFormArray())
+  }
+
+  clearPreviousEntry(){
+    this.itemFormArray.clear()
+    this.userFormGroup.get('orderId')?.reset()
   }
 }

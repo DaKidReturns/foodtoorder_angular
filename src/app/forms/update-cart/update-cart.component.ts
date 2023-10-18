@@ -84,6 +84,7 @@ export class UpdateCartComponent {
   }
 
   onSelectUser(event: any) {
+    this.clearAllItems()
     var idObtained = event.target.value
     // console.log(idObtained.split(":")[1].trim())
     this.userIdUpdated = parseInt(idObtained.split(":")[1].trim())

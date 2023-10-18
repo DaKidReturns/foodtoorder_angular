@@ -25,6 +25,11 @@ export class BannerComponent {
     return localStorage.getItem('userId')!=null
   }
 
+  logOut(){
+    localStorage.removeItem('userId')
+    localStorage.removeItem('role')
+  }
+
   VerifyCredentials(email: HTMLInputElement, password: HTMLInputElement) {
 
     var foundUser = this.arrUsers.find((u) => u.email == email.value)

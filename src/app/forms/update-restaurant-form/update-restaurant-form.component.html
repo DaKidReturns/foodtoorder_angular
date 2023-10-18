@@ -27,7 +27,7 @@
         <form [formGroup]="addressForm" (ngSubmit)="saveSecondStepData(addressForm.value)">
             <mat-toolbar color="primary" class="my-2">Add/Remove multiple address of Restaurant</mat-toolbar>
             <div formArrayName="form_array_address">
-                <div class="row" *ngFor="let restaurant of form_array_address().controls; let i= index"
+                <div class="row" *ngFor="let restaurant of form_array_address.controls; let i= index"
                     [formGroupName]="i">
                     <mat-form-field>
                         <mat-label>House Number</mat-label>
@@ -80,7 +80,7 @@
         <form [formGroup]="dishesFormGroup" (ngSubmit)="saveThirdStepData(dishesFormGroup.value)">
             <mat-toolbar color="primary">Add/Remove multiple dishes of the restaurant</mat-toolbar>
             <div formArrayName="dishesFormArray">
-                <div class="row" *ngFor="let dish of dishesFormArray().controls; let i=index" [formGroupName]="i">
+                <div class="row" *ngFor="let dish of dishesFormArray.controls; let i=index" [formGroupName]="i">
                     <mat-form-field>
                         <mat-label>Dish Name</mat-label>
                         <input matInput formControlName="name" placeholder="Name of the dish" required>

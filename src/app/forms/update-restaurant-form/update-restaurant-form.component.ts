@@ -54,11 +54,12 @@ export class UpdateRestaurantFormComponent {
   }
 
   onChangeType(event:any){
+    this.clearPreviousEntry()
     var idObtained = event.target.value
     console.log(idObtained.split(":")[1].trim())    
     this.idUpdated = parseInt(idObtained.split(":")[1].trim())
     this.restaurantService.getRestaurantById(this.idUpdated).subscribe((data)=>{
-      console.log(data)
+      //console.log(data)
       this.nameImageFormGroup.get('id')?.setValue(data.id)
       this.nameImageFormGroup.get('restaurantName')?.setValue(data.name)
       this.nameImageFormGroup.get('restaurantImage')?.setValue(data.image)
@@ -78,11 +79,11 @@ export class UpdateRestaurantFormComponent {
     })
   }
 
-  form_array_address():FormArray{
+  get form_array_address():FormArray{
     return this.addressForm.get("form_array_address") as FormArray
   }
 
-  dishesFormArray() : FormArray{
+  get dishesFormArray() : FormArray{
     return this.dishesFormGroup.get("dishesFormArray") as FormArray
   }
 
@@ -98,6 +99,18 @@ export class UpdateRestaurantFormComponent {
     }
     else{
       dishesFormArray.reset()
+    }
+  }
+
+
+  clearPreviousEntry(){
+    
+    if(this.form_array_address.length>=1){
+      this.form_array_address.clear()
+    }
+
+    if(this.dishesFormArray.length>=1){
+      this.dishesFormArray.clear()
     }
   }
 
@@ -118,17 +131,7 @@ export class UpdateRestaurantFormComponent {
 
   saveFirstStepData(formData: FormGroup) {
     // Set the restaurant Id
-    let tempId = 0
-    let maxId = 0
-    this.arrRestaurants.forEach((r) => {
-      if (r.id > maxId) {
-        maxId = r.id
-      }
-    })
-    tempId = maxId + 1;
-    console.log(formData)
-
-    this.restaurant.id = tempId
+    this.restaurant.id = formData.value['id']
     this.restaurant.name = formData.value['restaurantName']
     this.restaurant.image = formData.value['restaurantImage']
     console.log(this.restaurant)
@@ -159,7 +162,7 @@ export class UpdateRestaurantFormComponent {
         item.id = i+1
       })
       console.log(this.restaurant)
-      this.restaurantService.addRestaurant(this.restaurant).subscribe()
+      this.restaurantService.updateRestaurant(this.restaurant).subscribe()
     }
     
   }

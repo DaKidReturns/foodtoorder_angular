@@ -23,15 +23,22 @@ export class RestaurantDetailsComponent {
   }
 
   addItemToUserCart(dish:Dish){
-    console.log(dish)
+    // console.log(dish)
     this.currentUserId = parseInt(localStorage.getItem('userId')??"-1")??-1
     if(this.currentUserId==-1) return
 
     var userCart:Cart 
     this.cartService.getCartById(this.currentUserId).subscribe((cart)=>{
       userCart = cart
+      if(userCart.restaurantId!=this.restaurant.id){
+        cart.items=[]
+        cart.amount=0
+        cart.quantity=[]
+        //cart.restaurantId=-1
+        cart.restaurantId=this.restaurant.id
+      }
       this.cartService.addItemToCart(dish,cart).subscribe()
-    })
+    })  
     
   }
 }

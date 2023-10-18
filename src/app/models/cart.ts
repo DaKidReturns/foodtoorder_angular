@@ -5,10 +5,19 @@ export class Cart{
     items:Dish[]
     amount:number
     quantity:number[]
-    constructor(uid:number=-1,items:Dish[]=[],amount:number=0,quantity=[]){
+    restaurantId:number
+
+    constructor(uid:number=-1,items:Dish[]=[],amount:number=0,quantity=[],restId:number=-1 ){
         this.id=uid
         this.items=items
         this.amount = amount
         this.quantity = quantity
+        this.restaurantId = restId
+    }
+    clear(){
+        this.items=[]
+        this.amount=0
+        this.quantity=[]
+        this.restaurantId=-1
     }
 }
