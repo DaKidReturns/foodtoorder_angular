@@ -596,7 +596,25 @@
           "name": "Lemon Tea",
           "cost": 20,
           "description": ""
+        },
+        {
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": ""
         }
+      ],
+      "quantity": [
+        1,
+        1,
+        1,
+        1
       ],
       "amount": 140
     },
@@ -616,6 +634,10 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1
+      ],
       "amount": 140
     },
     {
@@ -634,12 +656,17 @@
           "description": ""
         }
       ],
+      "quantity": [
+        1,
+        1
+      ],
       "amount": 140
     },
     {
       "id": 5,
       "items": [],
-      "amount": 0
+      "amount": 0,
+      "quantity": []
     }
   ]
 }

@@ -66,4 +66,23 @@ export class CartService {
     // if(index == -1) return;
     // this.arrCart.splice(index,1)
   }
+
+  updateCartAmount(cart:Cart){
+    cart.amount=0;
+    cart.items.forEach((item,index)=>{
+      cart.amount+=item.cost*cart.quantity[index]
+    })
+  }
+
+  addItemToCart(item:Dish,cart:Cart):Observable<Cart>{
+    let index = cart.items.findIndex((cartItem)=>cartItem.name==item.name)
+    if(index != -1){
+      cart.quantity[index] += 1
+    }else{
+      cart.items.push(item)
+      cart.quantity.push(1)
+    }
+    return this.httpClient.put<Cart>(this.base_url+'/carts/'+cart.id,JSON.stringify(cart),this.httpHeader)
+    .pipe(catchError(this.httpError))
+  }
 }

@@ -4,6 +4,7 @@ import { RestaurantService } from '../services/restaurant.service';
 import { Restaurant } from '../models/restaurant';
 import { CartService } from '../services/cart.service';
 import { Cart } from '../models/cart';
+import { Dish } from '../models/dish';
 
 @Component({
   selector: 'app-restaurant-details',
@@ -15,19 +16,22 @@ export class RestaurantDetailsComponent {
   currentUserId:number=-1
   constructor(private activateRoute:ActivatedRoute,private restaturantService:RestaurantService, private cartService:CartService){
     this.activateRoute.params.subscribe((params:Params)=>{
-      console.log("Details for "+params['rid']);
+      // console.log("Details for "+params['rid']);
       restaturantService.getRestaurantById(params['rid']).subscribe((data)=>this.restaurant=data);
     })
 
   }
 
-  addItemToUserCart(cart:Cart){
-
+  addItemToUserCart(dish:Dish){
+    console.log(dish)
     this.currentUserId = parseInt(localStorage.getItem('userId')??"-1")??-1
     if(this.currentUserId==-1) return
 
     var userCart:Cart 
-    this.cartService.getCartById(this.currentUserId).subscribe((cart)=>userCart)
+    this.cartService.getCartById(this.currentUserId).subscribe((cart)=>{
+      userCart = cart
+      this.cartService.addItemToCart(dish,cart).subscribe()
+    })
     
   }
 }
