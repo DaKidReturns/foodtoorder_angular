@@ -38,7 +38,8 @@ export class UpdateRestaurantFormComponent {
     this.nameImageFormGroup = this.formBuilder.group({
       'id':[''],
       'restaurantName': ['', Validators.required],
-      'restaurantImage': ['', Validators.required]
+      'restaurantImage': ['', Validators.required],
+      'ownerId':['',Validators.required]
     })
     this.addressForm = this.formBuilder.group({
       form_array_address: this.formBuilder.array([])
@@ -63,6 +64,7 @@ export class UpdateRestaurantFormComponent {
       this.nameImageFormGroup.get('id')?.setValue(data.id)
       this.nameImageFormGroup.get('restaurantName')?.setValue(data.name)
       this.nameImageFormGroup.get('restaurantImage')?.setValue(data.image)
+      this.nameImageFormGroup.get('ownerId')?.setValue(data.ownerId)
       
       data.addresses.forEach((value,i)=>{
         const form_array_addresses = this.addressForm.get('form_array_address') as FormArray
@@ -134,6 +136,7 @@ export class UpdateRestaurantFormComponent {
     this.restaurant.id = formData.value['id']
     this.restaurant.name = formData.value['restaurantName']
     this.restaurant.image = formData.value['restaurantImage']
+    this.restaurant.ownerId = parseInt(formData.value['ownerId'])??0
     console.log(this.restaurant)
   }
 

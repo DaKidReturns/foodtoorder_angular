@@ -10,13 +10,17 @@
                 <option selected>Select a value</option>
                 <option *ngFor="let r of arrRestaurants" [ngValue]="r.id">{{r.name}}</option>
             </select>
-            <mat-form-field>
+            <mat-form-field style="margin:1em">
                 <mat-label>Restaurant Name</mat-label>
                 <input matInput placeholder="Click to enter name...." formControlName="restaurantName" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field style="margin:1em">
                 <mat-label>Image Url</mat-label>
                 <input matInput placeholder="Image Url" formControlName="restaurantImage" required>
+            </mat-form-field>
+            <mat-form-field style="margin:1em">
+                <mat-label>Owner Id</mat-label>
+                <input matInput placeholder="Owner ID number" formControlName="ownerId" required>
             </mat-form-field>
             <div>
                 <button mat-button matStepperNext>Next</button>

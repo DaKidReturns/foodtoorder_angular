@@ -10,7 +10,7 @@
           "street": "the street",
           "area": "Red Area",
           "state": "Solid State",
-          "city": "Sickle and hammer",
+          "city": "Solid State",
           "country": "TryCount",
           "pincode": "456724"
         },
@@ -20,39 +20,39 @@
           "street": "Golden Wind",
           "area": "I 93 area",
           "state": "Happy state",
-          "city": "What a wonderful city",
+          "city": "Happy state",
           "country": "Star and red flag",
           "pincode": "2374312"
         }
       ],
       "menu": [
         {
-          "id": 2,
+          "id": 1,
           "name": "Veg pulav",
           "cost": 140,
           "description": ""
         },
         {
-          "id": 5,
+          "id": 2,
           "name": "Paneer Makani",
           "cost": 150,
           "description": ""
         },
         {
-          "id": 18,
+          "id": 3,
           "name": "Mango Lassi",
           "cost": 40,
           "description": ""
         },
         {
-          "id": 22,
+          "id": 4,
           "name": "Seera",
           "cost": 40,
           "description": ""
         }
       ],
       "image": "/assets/images/restaurants/CommunistColdDrinks.jpg",
-      "ownerId": 4
+      "ownerId": 3
     },
     {
       "id": 3,
@@ -296,8 +296,8 @@
       "lastName": "Jostar",
       "role": "restaurantowner",
       "dob": "12/04/1888",
-      "email": "theultimateGentleman@gmail.com",
-      "password": "Diowhydidyoudothis",
+      "email": "abc@gmail.com",
+      "password": "abc",
       "address": {
         "id": 2,
         "houseNo": 32,
@@ -611,35 +611,29 @@
       "id": 2,
       "items": [
         {
-          "id": 4,
-          "name": "Chilli Chiken",
-          "cost": 120,
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
           "description": ""
         },
         {
-          "id": 12,
-          "name": "Lemon Tea",
-          "cost": 20,
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
           "description": ""
         }
       ],
       "quantity": [
-        1,
-        2
+        2,
+        1
       ],
-      "amount": 160,
-      "restaurantId": 3
+      "amount": 430,
+      "restaurantId": 2
     },
     {
       "id": 3,
       "items": [
         {
-          "id": 4,
-          "name": "Chilli Chiken",
-          "cost": 120,
-          "description": ""
-        },
-        {
           "id": 12,
           "name": "Lemon Tea",
           "cost": 20,
@@ -647,10 +641,10 @@
         }
       ],
       "quantity": [
-        1,
-        1
+        2
       ],
-      "amount": 140
+      "amount": 40,
+      "restaurantId": 3
     },
     {
       "id": 4,

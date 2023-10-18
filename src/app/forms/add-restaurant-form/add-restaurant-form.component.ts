@@ -18,7 +18,8 @@ export class AddRestaurantFormComponent {
   
   firstFormGroup = this._formBuilder.group({
     'restaurantName': ['', Validators.required],
-    'restaurantImage':['',Validators.required]
+    'restaurantImage':['',Validators.required],
+    'ownerId':['',Validators.required]
   });
   
   dishesFormGroup:FormGroup
@@ -60,6 +61,7 @@ export class AddRestaurantFormComponent {
     this.restaurant.id = tempId
     this.restaurant.name = formData.value['restaurantName']
     this.restaurant.image = formData.value['restaurantImage']
+    this.restaurant.ownerId = parseInt(formData.value['ownerId'])??0
     console.log(this.restaurant)
   }
 

@@ -29,14 +29,16 @@ export class RestaurantDetailsComponent {
 
     var userCart:Cart 
     this.cartService.getCartById(this.currentUserId).subscribe((cart)=>{
-      userCart = cart
-      if(userCart.restaurantId!=this.restaurant.id){
+      // userCart = cart
+      if(cart.restaurantId!=this.restaurant.id){
+        // console.log("Not matchting "+cart.restaurantId+"  &&  "+this.restaurant.id)
         cart.items=[]
         cart.amount=0
         cart.quantity=[]
         //cart.restaurantId=-1
         cart.restaurantId=this.restaurant.id
       }
+      console.log(cart)
       this.cartService.addItemToCart(dish,cart).subscribe()
     })  
     

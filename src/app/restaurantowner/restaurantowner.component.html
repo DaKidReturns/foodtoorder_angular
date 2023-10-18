@@ -5,6 +5,7 @@
         <th scope="col">Name</th>
         <th scope="col">Picture</th>
         <th scope="col">View Details</th>
+        <th scope="col">Edit Restaurant</th>
         <th scope="col">Delete Restaurant</th>
       </tr>
     </thead>
@@ -16,7 +17,9 @@
                 class="card-img-top" alt="..." width="14rem" height="200rem">
             </td>
             <td><button class="btn btn-primary" (click)="viewDetails(r.id)" >View Details</button></td>
+            <td><button class="btn btn-primary" (click)="editRestaurant(r.id)">Edit Restaurant</button></td>
             <td><button class="btn btn-danger" (click)="deleteRestaurant(r.id)">Delete Restaurant</button></td>
-        </tr>
+            
+          </tr>
     </tbody>
 </table>  
