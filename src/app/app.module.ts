@@ -48,6 +48,7 @@ import { AddCartFormComponent } from './forms/add-cart-form/add-cart-form.compon
 import { AddOrderFormComponent } from './forms/add-order-form/add-order-form.component';
 import { UpdateOrderFormComponent } from './forms/update-order-form/update-order-form.component';
 import { UpdateCartComponent } from './forms/update-cart/update-cart.component';
+import { NotAvailableBannerComponent } from './not-available-banner/not-available-banner.component';
 
 
 
@@ -84,7 +85,8 @@ import { UpdateCartComponent } from './forms/update-cart/update-cart.component';
     AddCartFormComponent,
     AddOrderFormComponent,
     UpdateOrderFormComponent,
-    UpdateCartComponent
+    UpdateCartComponent,
+    NotAvailableBannerComponent
   ],
   imports: [
     BrowserModule,
