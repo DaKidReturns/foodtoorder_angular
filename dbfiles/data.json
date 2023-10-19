@@ -31,14 +31,14 @@
           "name": "Veg pulav",
           "cost": 140,
           "description": "",
-          "isAvailable": true
+          "isAvailable": false
         },
         {
           "id": 2,
           "name": "Paneer Makani",
           "cost": 150,
           "description": "",
-          "isAvailable": false
+          "isAvailable": true
         },
         {
           "id": 3,
