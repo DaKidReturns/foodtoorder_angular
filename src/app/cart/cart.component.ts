@@ -23,6 +23,6 @@ export class CartComponent {
     
   }
   addAgainToCart(item:Dish){
-
+    this.cartService.addItemToCart(item,this.cart)
   }
 }

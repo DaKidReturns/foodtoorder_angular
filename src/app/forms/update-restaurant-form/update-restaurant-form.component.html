@@ -4,7 +4,7 @@
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="nameImageFormGroup">
         <form [formGroup]="nameImageFormGroup" (ngSubmit)="saveFirstStepData(nameImageFormGroup)">
-            <mat-label>Select the restaurant you want to edit</mat-label>            
+            <mat-label>Select the restaurant you want to edit</mat-label>
             <ng-template matStepLabel>Fill out your name</ng-template>
             <select formControlName="id" id="id" class="form-select" (change)="onChangeType($event)">
                 <option selected>Select a value</option>
@@ -95,13 +95,22 @@
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Description</mat-label>
-                        <input matInput type="text" formControlName="description" placeholder="Enter a description so your customers know the dish better">
+                        <input matInput type="text" formControlName="description"
+                            placeholder="Enter a description so your customers know the dish better">
                     </mat-form-field>
+                    <select formControlName="isAvailable" class="form-select" (change)="onChangeAvailability($event)">
+                        <option selected>Select a value</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                        <!-- <option *ngFor="let r of arrRestaurants" [ngValue]="r.id">{{r.name}}</option> -->
+                    </select>
                     <div class="col-3">
-                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear" (click)="removeOrClearDishes(i)" matTooltip="Remove">
+                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear"
+                            (click)="removeOrClearDishes(i)" matTooltip="Remove">
                             <mat-icon>highlight_off</mat-icon>
                         </button>
-                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add Dishes" (click)="addDishesFormGroup()" matTooltip="Add">
+                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add Dishes"
+                            (click)="addDishesFormGroup()" matTooltip="Add">
                             <mat-icon>add_circle_outline</mat-icon>
                         </button>
                     </div>

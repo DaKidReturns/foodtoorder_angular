@@ -41,6 +41,5 @@ export class RestaurantDetailsComponent {
       console.log(cart)
       this.cartService.addItemToCart(dish,cart).subscribe()
     })  
-    
   }
 }

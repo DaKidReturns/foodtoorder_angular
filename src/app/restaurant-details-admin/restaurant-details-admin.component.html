@@ -8,8 +8,12 @@
         {{a.houseNo}}, {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}
     </div>
     <h3>Items:</h3>
-
-        <div class="card" *ngFor="let d of restaurant.menu" style="width: 18rem;" >
-            <div class="card-header">{{d.name}}</div>
+    <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;">
+        <div class="card-header">{{d.name}}</div>
+        <div class="card-body">
+            <div>Price: {{d.cost}}</div>
+            <div>Availability: {{ d.isAvailable}}</div>
+        </div>
+        <button class="btn btn-danger" name="Toggle Availability" (click)="onChangeAvailability(d)" >Toggle Availability</button>
     </div>
 </div>

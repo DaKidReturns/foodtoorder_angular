@@ -92,6 +92,12 @@
                         <mat-label>Description</mat-label>
                         <input matInput type="text" formControlName="description" placeholder="Enter a description so your customers know the dish better">
                     </mat-form-field>
+                    <select formControlName="isAvailable" class="form-select">
+                        <option selected>Select a value</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                        <!-- <option *ngFor="let r of arrRestaurants" [ngValue]="r.id">{{r.name}}</option> -->
+                    </select>
                     <div class="col-3">
                         <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear" (click)="removeOrClearDishes(i)" matTooltip="Remove">
                             <mat-icon>highlight_off</mat-icon>

@@ -72,13 +72,17 @@ export class UpdateRestaurantFormComponent {
       })
       this.countSecondFormSubmit=this.addressCount-1
 
-      data.menu.forEach((value,i)=>{
+      data.items.forEach((value,i)=>{
         const dishesFormGroup = this.dishesFormGroup.get('dishesFormArray') as FormArray
         dishesFormGroup.push(this.updateDishesFormGroup(value))
       })
       this.countThirdFormSubmit = this.dishCount - 1
 
     })
+  }
+
+  onChangeAvailability(event:any){
+
   }
 
   get form_array_address():FormArray{
@@ -160,8 +164,8 @@ export class UpdateRestaurantFormComponent {
       let dishes = Object.values(formGroup)
       let temp = JSON.parse(JSON.stringify(dishes)) // This will remove any empty forms from the input
       console.log(temp)
-      this.restaurant.menu = temp[0]
-      this.restaurant.menu.forEach((item,i)=>{
+      this.restaurant.items = temp[0]
+      this.restaurant.items.forEach((item,i)=>{
         item.id = i+1
       })
       console.log(this.restaurant)
@@ -200,20 +204,22 @@ export class UpdateRestaurantFormComponent {
   private createDishesFormGroup(): FormGroup {
     this.dishCount++;
     return new FormGroup({
-      'id': new FormControl(''),
-      'name': new FormControl(''),
-      'cost': new FormControl(''),
-      'description': new FormControl('')
+      'id': new FormControl('',Validators.required),
+      'name': new FormControl('',Validators.required),
+      'cost': new FormControl('',Validators.required),
+      'description': new FormControl('',Validators.required),
+      'isAvailable':new FormControl(true,Validators.required)
     })
   }
 
   private updateDishesFormGroup(value:Dish): FormGroup {
     this.dishCount++;
     return new FormGroup({
-      'id': new FormControl(value.id),
-      'name': new FormControl(value.name),
-      'cost': new FormControl(value.cost),
-      'description': new FormControl(value.description)
+      'id': new FormControl(value.id,Validators.required),
+      'name': new FormControl(value.name,Validators.required),
+      'cost': new FormControl(value.cost,Validators.required),
+      'description': new FormControl(value.description,Validators.required),
+      'isAvailable':new FormControl(value.isAvailable,Validators.required)
     })
   }
 }

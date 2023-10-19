@@ -5,7 +5,7 @@ export class Restaurant{
     id:number
     name:string
     addresses:Address[]
-    menu:Dish[]
+    items:Dish[]
     image:string
     ownerId:number
 
@@ -13,7 +13,7 @@ export class Restaurant{
         this.id = i
         this.name = nam
         this.addresses =addr
-        this.menu=m
+        this.items=m
         this.image=img
         this.ownerId=oid
     }

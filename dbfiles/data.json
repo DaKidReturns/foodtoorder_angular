@@ -25,30 +25,34 @@
           "pincode": "2374312"
         }
       ],
-      "menu": [
+      "items": [
         {
           "id": 1,
           "name": "Veg pulav",
           "cost": 140,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Paneer Makani",
           "cost": 150,
-          "description": ""
+          "description": "",
+          "isAvailable": false
         },
         {
           "id": 3,
           "name": "Mango Lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": false
         },
         {
           "id": 4,
           "name": "Seera",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "image": "/assets/images/restaurants/CommunistColdDrinks.jpg",
@@ -89,48 +93,55 @@
           "pincode": "294873"
         }
       ],
-      "menu": [
+      "items": [
         {
           "id": 4,
           "name": "Chilli Chiken",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 12,
           "name": "Lemon Tea",
           "cost": 20,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 21,
           "name": "Sweet rice",
           "cost": 130,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Veg pulav",
           "cost": 140,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 5,
           "name": "Paneer Makani",
           "cost": 150,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 18,
           "name": "Mango Lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 22,
           "name": "Seera",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "image": "/assets/images/restaurants/DemocraticBar.jpg",
@@ -160,42 +171,48 @@
           "pincode": "648212"
         }
       ],
-      "menu": [
+      "items": [
         {
           "id": 1,
           "name": "Fried Rice",
           "cost": 180,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 4,
           "name": "Chilli Chiken",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 12,
           "name": "Lemon Tea",
           "cost": 20,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 21,
           "name": "Sweet rice",
           "cost": 130,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 7,
           "name": "Chiken Biriyani",
           "cost": 200,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 14,
           "name": "Mint Lime",
           "cost": 30,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "image": "/assets/images/restaurants/CapitalistCafe.jpg",
@@ -227,28 +244,65 @@
           "pincode": "123421"
         }
       ],
-      "menu": [
+      "items": [
         {
           "id": 1,
           "name": "hello",
           "cost": "123",
-          "description": "to pick up the conversation"
+          "description": "to pick up the conversation",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Banana soup",
           "cost": "231",
-          "description": "Bring out the monkey in you"
+          "description": "Bring out the monkey in you",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Coffe maker",
           "cost": "12",
-          "description": "Use this to make your own coffee. (no human included)"
+          "description": "Use this to make your own coffee. (no human included)",
+          "isAvailable": true
         }
       ],
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg",
       "ownerId": 0
+    },
+    {
+      "id": 5,
+      "name": "Don Quixote",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": "12",
+          "street": "5th street",
+          "area": "Shinjuku",
+          "state": "Shinjuku",
+          "city": "Shinjuku",
+          "country": "Japan",
+          "pincode": "123532"
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "name": "Sake",
+          "cost": "300",
+          "description": "",
+          "isAvailable": "true"
+        },
+        {
+          "id": 2,
+          "name": "Beef Miso soup",
+          "cost": "430",
+          "description": "",
+          "isAvailable": "false"
+        }
+      ],
+      "image": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg",
+      "ownerId": 3
     }
   ],
   "users": [
@@ -376,31 +430,36 @@
           "id": 1,
           "name": "Fried Rice",
           "cost": 180,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Chilli Chiken",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Lemon Tea",
           "cost": 20,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 4,
           "name": "Mango Lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 5,
           "name": "Sweet rice",
           "cost": 130,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "quantity": [
@@ -421,37 +480,43 @@
           "id": 7,
           "name": "Chiken Biriyani",
           "cost": 200,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 14,
           "name": "Mint Lime",
           "cost": 30,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 29,
           "name": "Gulab Jamun",
           "cost": 10,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 1,
           "name": "Chiken Biriyani",
           "cost": 200,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Mint Lime",
           "cost": 30,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Gulab Jamun",
           "cost": 10,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "quantity": [
@@ -473,49 +538,57 @@
           "id": 2,
           "name": "Veg pulav",
           "cost": 140,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 5,
           "name": "Paneer Makani",
           "cost": 150,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 18,
           "name": "Mango Lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 22,
           "name": "Seera",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 1,
           "name": "Veg pulav",
           "cost": 140,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Paneer Makani",
           "cost": 150,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Mango Lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 4,
           "name": "Seera",
           "cost": 50,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "amount": 750,
@@ -539,13 +612,15 @@
           "id": 1,
           "name": "eggs",
           "cost": 5,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "chicen",
           "cost": 180,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "amount": 240,
@@ -564,37 +639,43 @@
           "id": 1,
           "name": "Fried Rice",
           "cost": 180,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Chicken Chilli",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Mango lassi",
           "cost": 60,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 1,
           "name": "Fried Rice",
           "cost": 180,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 2,
           "name": "Chicken Chilli",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 3,
           "name": "Mango lassi",
           "cost": 40,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "amount": 1180,
@@ -614,13 +695,15 @@
           "id": 2,
           "name": "Veg pulav",
           "cost": 140,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 5,
           "name": "Paneer Makani",
           "cost": 150,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "quantity": [
@@ -637,7 +720,8 @@
           "id": 12,
           "name": "Lemon Tea",
           "cost": 20,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "quantity": [
@@ -653,13 +737,15 @@
           "id": 4,
           "name": "Chilli Chiken",
           "cost": 120,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         },
         {
           "id": 12,
           "name": "Lemon Tea",
           "cost": 20,
-          "description": ""
+          "description": "",
+          "isAvailable": true
         }
       ],
       "quantity": [

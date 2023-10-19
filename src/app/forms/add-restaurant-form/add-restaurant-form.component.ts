@@ -141,14 +141,13 @@ export class AddRestaurantFormComponent {
       let dishes = Object.values(formGroup)
       let temp = JSON.parse(JSON.stringify(dishes)) // This will remove any empty forms from the input
       console.log(temp)
-      this.restaurant.menu = temp[0]
-      this.restaurant.menu.forEach((item,i)=>{
+      this.restaurant.items = temp[0]
+      this.restaurant.items.forEach((item,i)=>{
         item.id = i+1
       })
       // console.log(this.restaurant)
       this.restaurantService.addRestaurant(this.restaurant).subscribe()
-    }
-    
+    } 
   }
 
   private createDishesFormGroup():FormGroup{
@@ -157,7 +156,8 @@ export class AddRestaurantFormComponent {
       'id':new FormControl(''),
       'name':new FormControl(''),
       'cost':new FormControl(''),
-      'description':new FormControl('')
+      'description':new FormControl(''),
+      'isAvailable':new FormControl('',Validators.required)
     })
   }
 }

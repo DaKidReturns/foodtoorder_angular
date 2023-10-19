@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -101,6 +102,7 @@ import { UpdateCartComponent } from './forms/update-cart/update-cart.component';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatSelectModule,
     HttpClientModule
