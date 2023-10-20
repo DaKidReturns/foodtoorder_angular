@@ -2,18 +2,36 @@
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" formControlName="name" placeholder="Your Name">
+        <div style="color:red;" *ngIf="submitted && contactUsFormControl['name'].errors">
+            <div class="form_error" *ngIf="!contactUsFormControl['name'].valid">Name not valid</div>
+            <div class="form_error" *ngIf="contactUsFormControl['name'].hasError('required')">Name is a required Field</div>
+        </div>
     </div>
     <div class="mb-3">
         <label for="phoneNumber" class="form-label">Phone Number</label>
         <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" placeholder="Your Number"/>
     </div>
+    <div style="color:red;" *ngIf="submitted && contactUsFormControl['phoneNumber'].errors">
+        <div class="form_error" *ngIf="!contactUsFormControl['phoneNumber'].valid">Phone Number not valid</div>
+        <div class="form_error" *ngIf="contactUsFormControl['phoneNumber'].hasError('required')">Phone Number is a required Field</div>
+    </div>
     <div class="mb-3">
         <label for="email" class="form-label">Emai:</label>
         <input type="text" class="form-control" id="email" formControlName="email" placeholder="Your Email"/>
+        <div style="color:red;" *ngIf="submitted && contactUsFormControl['email'].errors">
+            <div class="form_error" *ngIf="!contactUsFormControl['email'].valid">Email not valid</div>
+            <div class="form_error" *ngIf="contactUsFormControl['email'].hasError('required')">Email is a required Field</div>
+        </div>
+        <div style="color:red;" class="form_error" *ngIf="contactUsFormControl['email'].hasError('email')">Not a vaild email</div>
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <input type="text" class="form-control" id="description" formControlName="description" placeholder="Remarks"/>
+        <div style="color:red;" *ngIf="submitted && contactUsFormControl['description'].errors">
+            <div class="form_error" *ngIf="!contactUsFormControl['description'].valid">Description not valid</div>
+            <div class="form_error" *ngIf="contactUsFormControl['description'].hasError('required')">Description is a required Field</div>
+        </div>
     </div>
+    
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

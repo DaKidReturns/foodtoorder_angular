@@ -1,6 +1,8 @@
 <div class="row">
     <h2>{{restaurant.name}}</h2>
-    <img src="{{restaurant.image}}" alt="" srcset="" width="40px" />
+    <div>
+        <img src="{{restaurant.image}}" alt="" srcset="" width="500em" />
+    </div>
     <div>
         Address:
     </div>
@@ -14,6 +16,7 @@
             <div>Price: {{d.cost}}</div>
             <div>Availability: {{ d.isAvailable}}</div>
         </div>
-        <button class="btn btn-danger" name="Toggle Availability" (click)="onChangeAvailability(d)" >Toggle Availability</button>
+        <button class="btn btn-danger" name="Toggle Availability" (click)="onChangeAvailability(d)">Toggle
+            Availability</button>
     </div>
 </div>

@@ -1,1 +1,8 @@
-<p>restaurant-owner-view works!</p>
+<mat-tab-group>
+    <mat-tab label="Restaurants">
+        <app-restaurantowner></app-restaurantowner>
+    </mat-tab>
+    <mat-tab label="Edit Restaurant">
+        <app-update-restaurant-form [restaurantOwnerId]="ownerId"></app-update-restaurant-form>
+    </mat-tab>
+</mat-tab-group>

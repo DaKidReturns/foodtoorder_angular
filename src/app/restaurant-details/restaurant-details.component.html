@@ -1,6 +1,8 @@
 <div class="row">
     <h2>{{restaurant.name}}</h2>
-    <img src="{{restaurant.image}}" alt="" srcset="" width="1000rem" />
+    <div class="align-items-center">
+        <img src="{{restaurant.image}}" alt="" srcset="" width="500em" />
+    </div>
     <div>
         We are @
     </div>
@@ -8,11 +10,12 @@
         {{a.houseNo}}, {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}
     </div>
     <h3>Items:</h3>
-        <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;" >
-            <div class="card-header">{{d.name}}</div>
-            <div class="card-body">
-                <div>Price:   {{d.cost}}</div>
-            </div>
-            <button class="btn btn-primary"  [ngClass]="{disabled:!d.isAvailable}" name="Add To Cart" (click)="addItemToUserCart(d)">Add To Cart</button>
+    <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;">
+        <div class="card-header">{{d.name}}</div>
+        <div class="card-body">
+            <div>Price: {{d.cost}}</div>
         </div>
+        <button class="btn btn-primary" [ngClass]="{disabled:!d.isAvailable}" name="Add To Cart"
+            (click)="addItemToUserCart(d)">Add To Cart</button>
+    </div>
 </div>

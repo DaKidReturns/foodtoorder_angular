@@ -113,14 +113,14 @@
           "name": "Sweet rice",
           "cost": 130,
           "description": "",
-          "isAvailable": true
+          "isAvailable": false
         },
         {
           "id": 2,
           "name": "Veg pulav",
           "cost": 140,
           "description": "",
-          "isAvailable": true
+          "isAvailable": false
         },
         {
           "id": 5,
@@ -629,6 +629,33 @@
         12,
         1
       ]
+    },
+    {
+      "id": 17,
+      "userId": 4,
+      "items": [
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "amount": 280,
+      "oderDate": "",
+      "quantity": [
+        2,
+        2
+      ],
+      "restaurantId": -1
     }
   ],
   "carts": [
@@ -707,10 +734,10 @@
         }
       ],
       "quantity": [
-        2,
-        1
+        3,
+        2
       ],
-      "amount": 430,
+      "amount": 720,
       "restaurantId": 2
     },
     {
@@ -749,10 +776,10 @@
         }
       ],
       "quantity": [
-        1,
-        1
+        2,
+        2
       ],
-      "amount": 140
+      "amount": 280
     },
     {
       "id": 5,

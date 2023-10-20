@@ -6,14 +6,17 @@
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Details</th>
       </tr>
     </thead>
-    <tbody *ngFor="let d of orderItem.items">
+    <tbody *ngFor="let d of orderItem.items; let in=index">
         <tr>
             <td>{{d.name}}</td>
             <td>{{d.cost}}</td>
+            <td>{{orderItem.quantity[in]}}</td>
             <td>{{d.description}}</td>
+            
         </tr>
     </tbody>
 </table>

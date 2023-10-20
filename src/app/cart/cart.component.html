@@ -8,3 +8,6 @@
         <button type="button" style="margin:1%" class="btn btn-primary" (click)="addAgainToCart(i)">+</button>
     </div>
 </div>
+<div *ngIf="cart.items.length>0">
+    <button type="button" class="btn btn-primary" (click)="orderItemsInCart()"> CHECK OUT</button>
+</div>

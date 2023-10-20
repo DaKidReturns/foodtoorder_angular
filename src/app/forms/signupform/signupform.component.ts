@@ -1,5 +1,6 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { mustMatch, passowrdMatchValidator } from 'src/app/helpers/validators';
 
 import { Address } from 'src/app/models/address';
 import { Cart } from 'src/app/models/cart';
@@ -24,8 +25,8 @@ export class SignupformComponent{
       "firstName": ["",Validators.required],
       "lastName": ["",Validators.required],
       "email":["",Validators.email],
-      "password":["",Validators.required],
-      "confirmPassword":["",Validators.required],
+      "password":["",Validators.compose([Validators.required,])],
+      "confirmPassword":["",Validators.compose([Validators.required,])],
       "mobileNumber":["",Validators.required],
       "houseNumber":[""],
       "street":[""],
@@ -35,7 +36,11 @@ export class SignupformComponent{
       "country":[""],
       "pincode":["",Validators.required],
       "role":[""]
+    },{
+      validator: mustMatch('password','confirmPassword')  // this can check for errors in both ways 
     })
+    // the below function is not able to connect both ways 
+    // this.signUpForm.get('confirmPassword')?.addValidators(passowrdMatchValidator(this.signUpForm))
     userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
   }
 

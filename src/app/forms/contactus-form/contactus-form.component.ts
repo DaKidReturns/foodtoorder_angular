@@ -15,14 +15,19 @@ export class ContactusFormComponent {
     this.contactUsForm=fb.group({
       name:['',Validators.required],
       phoneNumber:['',Validators.required],
-      email:['',Validators.required],
+      email:['',Validators.compose([Validators.required,Validators.email])],
       description:['',Validators.required]
     })
+  }
+
+  get contactUsFormControl(){
+    return this.contactUsForm.controls
   }
 
   OnSubmit(contactFormValue:string){
     this.submitted = true
     if(this.contactUsForm.invalid){
+      // this.contactUsForm.get('email')?.
       return
     }
     this.enquiry.Name = this.contactUsForm.value.name

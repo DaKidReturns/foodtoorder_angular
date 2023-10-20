@@ -16,6 +16,7 @@ import { CartDetailsAdminComponent } from './cart-details-admin/cart-details-adm
 import { OrderDetailsAdminComponent } from './order-details-admin/order-details-admin.component';
 import { UserDetailsAdminComponent } from './user-details-admin/user-details-admin.component';
 import { RestaurantDetailsAdminComponent } from './restaurant-details-admin/restaurant-details-admin.component';
+import { RestaurantOwnerViewComponent } from './restaurant-owner-view/restaurant-owner-view.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'restaurants',component:RestaurantsComponent},
   {path:'restaurantdetails/:rid',component:RestaurantDetailsComponent},
-  {path:'owner',component:RestaurantownerComponent,canActivate:[restaurantOwnerGuard()]},
+  {path:'owner',component:RestaurantOwnerViewComponent,canActivate:[restaurantOwnerGuard()]},
   {path:'admin',component:AdminComponent,canActivate:[adminGuard()]},
   {path:'userdetails/:userId',component:UserDetailsAdminComponent,canActivate:[adminGuard()]},
   {path:'restaurantdetailsadmin/:rid',component:RestaurantDetailsAdminComponent,canActivate:[()=>(adminGuard()||restaurantOwnerGuard())]},

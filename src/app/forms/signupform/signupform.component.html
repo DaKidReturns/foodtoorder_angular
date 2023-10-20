@@ -54,6 +54,8 @@
             <div class="form_error" *ngIf="fc['confirmPassword'].hasError('required')">Password is a required
                 Field</div>
         </div>
+        <div style="color:red;" class="form_error" *ngIf="fc['confirmPassword'].hasError('passwordMismatch')">Passwords Do not match
+        </div>
     </div>
     <div class="mb-3">
         <label for="mobileNumber" class="form-label">Mobile Number</label>

@@ -88,6 +88,23 @@ export class CartService {
     // .pipe(catchError(this.httpError))
   }
 
+
+   removeItemFromCart(item:Dish,cart:Cart):Observable<Cart>{
+    let index = cart.items.findIndex((cartItem)=>cartItem.name==item.name)
+    if(index == -1) 
+    return this.updateCart(cart)
+
+    if(cart.quantity[index]>1){
+      cart.quantity[index] -= 1
+    }
+    else if(cart.quantity[index]==1){
+      cart.items.splice(index,1)
+      cart.quantity.splice(index,1)
+    }
+    return this.updateCart(cart)
+  }
+
+
   updateCart(cart:Cart):Observable<Cart>{
     this.updateCartAmount(cart)
     return this.httpClient.put<Cart>(this.base_url+'/carts/'+cart.id,JSON.stringify(cart),this.httpHeader)
