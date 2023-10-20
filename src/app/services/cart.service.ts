@@ -8,18 +8,18 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  arrCart = [
-    new Cart(1,
-      [
-        new Dish(1, "Fried Rice", 180, ""),
-        new Dish(4, "Chicken Chilli", 120, "")
-      ], 300),
-    new Cart(2,
-      [
-        new Dish(4, "Chilli Chiken", 120, ""),
-        new Dish(12, "Lemon Tea", 20, ""),
-      ], 140)
-  ]
+  // arrCart = [
+  //   new Cart(1,
+  //     [
+  //       new Dish(1, "Fried Rice", 180, ""),
+  //       new Dish(4, "Chicken Chilli", 120, "")
+  //     ], 300),
+  //   new Cart(2,
+  //     [
+  //       new Dish(4, "Chilli Chiken", 120, ""),
+  //       new Dish(12, "Lemon Tea", 20, ""),
+  //     ], 140)
+  // ]
 
   base_url = "http://localhost:3000"
   httpHeader = {

@@ -12,7 +12,7 @@
       <td>{{c.id}}</td>
       <td>{{c.amount}}</td>
       <td><button class="btn btn-primary" (click)="viewCart(c.id)">View Details</button></td>
-      <td><button class="btn btn-danger" (click)="deleteCart(c.id)">Delete Cart</button></td>
+      <td><button class="btn btn-danger" appConfirmAction (confirm)="deleteCart(c.id)">Delete Cart</button></td>
     </tr>
   </tbody>
 </table>

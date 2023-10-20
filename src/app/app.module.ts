@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,8 @@ import { AddOrderFormComponent } from './forms/add-order-form/add-order-form.com
 import { UpdateOrderFormComponent } from './forms/update-order-form/update-order-form.component';
 import { UpdateCartComponent } from './forms/update-cart/update-cart.component';
 import { NotAvailableBannerComponent } from './not-available-banner/not-available-banner.component';
+import { ConfirmActionDirective } from './confirm-action.directive';
+import { ConfirmActionDialogComponent } from './confirm-action-dialog/confirm-action-dialog.component';
 
 
 
@@ -86,7 +89,9 @@ import { NotAvailableBannerComponent } from './not-available-banner/not-availabl
     AddOrderFormComponent,
     UpdateOrderFormComponent,
     UpdateCartComponent,
-    NotAvailableBannerComponent
+    NotAvailableBannerComponent,
+    ConfirmActionDirective,
+    ConfirmActionDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +112,8 @@ import { NotAvailableBannerComponent } from './not-available-banner/not-availabl
     MatCheckboxModule,
     MatExpansionModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
 
   ],
   providers: [],
