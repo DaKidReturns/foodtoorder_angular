@@ -1,0 +1,485 @@
+{
+  "restaurants": [
+    {
+      "id": 4,
+      "name": "Heavens Door",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": "12",
+          "street": "big street",
+          "area": "da hood",
+          "state": "Peace of mind",
+          "city": "Peace of mind",
+          "country": "go",
+          "pincode": "213342"
+        },
+        {
+          "id": 2,
+          "houseNo": "49",
+          "street": "thecht",
+          "area": "getsagtst",
+          "state": "knenks",
+          "city": "knenks",
+          "country": "jioosths",
+          "pincode": "123421"
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "name": "hello",
+          "cost": "123",
+          "description": "to pick up the conversation",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Banana soup",
+          "cost": "231",
+          "description": "Bring out the monkey in you",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Coffe maker",
+          "cost": "12",
+          "description": "Use this to make your own coffee. (no human included)",
+          "isAvailable": true
+        }
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg",
+      "ownerId": 0
+    },
+    {
+      "id": 5,
+      "name": "Don Quixote",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": "12",
+          "street": "5th street",
+          "area": "Shinjuku",
+          "state": "Shinjuku",
+          "city": "Shinjuku",
+          "country": "Japan",
+          "pincode": "123532"
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "name": "Sake",
+          "cost": "300",
+          "description": "",
+          "isAvailable": "true"
+        },
+        {
+          "id": 2,
+          "name": "Beef Miso soup",
+          "cost": "430",
+          "description": "",
+          "isAvailable": "false"
+        }
+      ],
+      "image": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg",
+      "ownerId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Brian",
+      "lastName": "Cranston",
+      "role": "user",
+      "dob": "12/04/1976",
+      "email": "breakinggood@gmail.com",
+      "password": "JesseWhereIsTheProduct",
+      "address": {
+        "id": 1,
+        "houseNo": 22,
+        "street": "Rich Street",
+        "area": "Greener Area",
+        "state": "Oil State",
+        "city": "Star Stripped City",
+        "country": "Uncle's country",
+        "pincode": "777888"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Gandalf",
+      "lastName": "White",
+      "role": "admin",
+      "dob": "01/03/1800",
+      "email": "mage@elfmail.com",
+      "password": "Youshallnotpass",
+      "address": {
+        "id": 1,
+        "houseNo": 22,
+        "street": "For the street",
+        "area": "for the Area",
+        "state": "for the State",
+        "city": "for the City",
+        "country": "for the country",
+        "pincode": "437829"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Jonathan",
+      "lastName": "Jostar",
+      "role": "restaurantowner",
+      "dob": "12/04/1888",
+      "email": "abc@gmail.com",
+      "password": "abc",
+      "address": {
+        "id": 2,
+        "houseNo": 32,
+        "street": "White Street",
+        "area": "Golden area",
+        "state": "Over Engineered State",
+        "city": "WhiteFlag",
+        "country": "Rising Sun",
+        "pincode": "648212"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "Store",
+      "lastName": "Owner",
+      "role": "restaurantowner",
+      "dob": "12/05/2003",
+      "email": "storeowner@gmail.com",
+      "password": "owner",
+      "address": {
+        "id": 2,
+        "houseNo": 32,
+        "street": "White Street",
+        "area": "Golden area",
+        "state": "Over Engineered State",
+        "city": "WhiteFlag",
+        "country": "Rising Sun",
+        "pincode": "648212"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "Sanoj",
+      "lastName": "Saji",
+      "role": "user",
+      "dob": "",
+      "email": "sanoj@gmail.com",
+      "password": "1234",
+      "address": {
+        "id": 0,
+        "houseNo": 12,
+        "street": "street",
+        "area": "area",
+        "state": "solid state",
+        "city": "country",
+        "country": "country",
+        "pincode": "348204"
+      }
+    },
+    {
+      "id": 6,
+      "firstName": "Herta",
+      "lastName": "Space",
+      "role": "user",
+      "dob": "",
+      "email": "Herta@kurukuru.com",
+      "password": "kururin",
+      "address": {
+        "id": 0,
+        "houseNo": 12,
+        "street": "Star railcurrve",
+        "area": "emanator",
+        "state": "dfajl",
+        "city": "Jarillo 6",
+        "country": "Jarillo 6",
+        "pincode": "318792"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": 12,
+      "userId": 1,
+      "items": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 4,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 5,
+          "name": "Sweet rice",
+          "cost": 130,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "quantity": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "amount": 490,
+      "oderDate": "12/03/2021"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "items": [
+        {
+          "id": 7,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 14,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 29,
+          "name": "Gulab Jamun",
+          "cost": 10,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 1,
+          "name": "Chiken Biriyani",
+          "cost": 200,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Mint Lime",
+          "cost": 30,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Gulab Jamun",
+          "cost": 10,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "quantity": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "amount": 480,
+      "oderDate": "31/03/2022"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "items": [
+        {
+          "id": 2,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 18,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 22,
+          "name": "Seera",
+          "cost": 40,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 1,
+          "name": "Veg pulav",
+          "cost": 140,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Mango Lassi",
+          "cost": 40,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 4,
+          "name": "Seera",
+          "cost": 50,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "amount": 750,
+      "oderDate": "21/04/2023",
+      "quantity": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "userId": 2,
+      "items": [
+        {
+          "id": 1,
+          "name": "eggs",
+          "cost": 5,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "chicen",
+          "cost": 180,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "amount": 240,
+      "oderDate": "",
+      "quantity": [
+        12,
+        1
+      ]
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Chicken Chilli",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Mango lassi",
+          "cost": 60,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 1,
+          "name": "Fried Rice",
+          "cost": 180,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 2,
+          "name": "Chicken Chilli",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true
+        },
+        {
+          "id": 3,
+          "name": "Mango lassi",
+          "cost": 40,
+          "description": "",
+          "isAvailable": true
+        }
+      ],
+      "amount": 1180,
+      "quantity": [
+        1,
+        3,
+        1,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "items": [],
+      "amount": 0,
+      "quantity": []
+    },
+    {
+      "id": 6,
+      "items": [],
+      "amount": 0,
+      "quantity": []
+    }
+  ]
+}
