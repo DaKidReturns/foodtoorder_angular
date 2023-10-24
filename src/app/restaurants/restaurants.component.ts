@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Restaurant } from '../models/restaurant';
 import { RestaurantService } from '../services/restaurant.service';
 import { Router } from '@angular/router';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @Component({
