@@ -71,7 +71,7 @@ export class UpdateCartComponent {
       let temp = JSON.parse(JSON.stringify(itemArr))[0]
       console.log(temp)
       temp.forEach((item: any, index: number) => {
-        this.cartUpdated.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, ""))
+        this.cartUpdated.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, "","/assets/images/dishes/burito.jpg"))
         this.cartUpdated.quantity.push(parseInt(item.quantity)??0)
       })
       this.cartUpdated.amount = 0;

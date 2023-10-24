@@ -5,7 +5,6 @@ import { Address } from 'src/app/models/address';
 import { Restaurant } from 'src/app/models/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
-
 @Component({
   selector: 'app-add-restaurant-form',
   templateUrl: './add-restaurant-form.component.html',

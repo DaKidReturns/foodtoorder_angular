@@ -1,13 +1,11 @@
 <div class="row">
-
-
-    <div *ngFor="let r of arrRestaurants" class="card" style="width: 18rem;" >
+    <div *ngFor="let r of restaurantsToShow" class="card" style="width: 18rem;" >
         <div class="card-header">{{r.name}}</div>
         <img src="{{r.image}}" class="card-img-top" alt="..." width="14rem" height="200rem">
         <div class="card-body"></div>
         <div *ngFor="let a of r.addresses">Avaliable at: {{a.street}}</div>
         <button class="btn btn-primary" name="Show More" (click)="viewDetails(r.id)">Show More</button>
     </div>
-    <mat-paginator [length]="5" [pageSize]="1" [pageSizeOptions]="[5]" aria-label="Select page">
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="handlePageEvent($event)" [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
     </mat-paginator>
 </div>

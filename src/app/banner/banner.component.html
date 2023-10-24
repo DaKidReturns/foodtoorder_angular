@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">FoodToOrder</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container-fluid d-flex justify-content-between">
+        <div>
+            <a class="navbar-brand" href="#">FoodToOrder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -25,32 +28,63 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="'/contactus'">Contact us</a>
                 </li>
-
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInModal" *ngIf="!isLoggedIn()"
-                        >
+                    <!-- <form class="d-flex" role="search"> -->
+                    <div class="dropdown">
+
+                        <input class="form-control me-2 mt-3" type="search" role="button" data-bs-toggle="dropdown"
+                            placeholder="Search" [ngModel]="searchString" (ngModelChange)="onChange($event)" aria-label="Search">
+                        <!--(ngModelChange)="onChange($event)"-->
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let d of dishList$ | async">
+                                <a class="dropdown-item" href="#">{{d.name}}</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div> -->
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInModal"
+                        *ngIf="!isLoggedIn()">
                         Sign In
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal" *ngIf="!isLoggedIn()">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal"
+                        *ngIf="!isLoggedIn()">
                         Sign Up
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal" *ngIf="isLoggedIn()">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal"
+                        *ngIf="isLoggedIn()">
                         Cart
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-danger"  (click)="logOut()" *ngIf="isLoggedIn()">
+                    <button type="button" class="btn btn-danger" (click)="logOut()" *ngIf="isLoggedIn()">
                         LogOut
                     </button>
                 </li>
-
             </ul>
         </div>
     </div>
+
 </nav>
 
 <div class="modal fade" id="signInModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signInModalLabel"

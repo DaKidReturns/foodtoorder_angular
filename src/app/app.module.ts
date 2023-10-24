@@ -55,7 +55,6 @@ import { ConfirmActionDirective } from './confirm-action.directive';
 import { ConfirmActionDialogComponent } from './confirm-action-dialog/confirm-action-dialog.component';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,

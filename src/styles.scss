@@ -39,8 +39,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .btn { margin: 1em; }
 
-.dish_not_available{
-  filter: grayscale(10%);
+.disabled-image{
+  filter: grayscale(100%);
   color:gray;
-  
 }

@@ -112,4 +112,20 @@ export class RestaurantService {
       .pipe(catchError(this.httpError))
       // return this.arrRestaurants.push(restaurant)
     }
+    
+    updateDishes(){
+      var dishesList:Dish[] = []
+      return this.httpClient.get<Restaurant[]>(this.baseUrl+'/restaurants',this.httpHeader).subscribe((data)=>{
+        data.forEach((restaurant)=>{
+          restaurant.items.forEach((dish)=>{
+            dishesList.push(dish)
+          })
+        })
+        return this.httpClient.post<Dish[]>(this.baseUrl+'/dishes',JSON.stringify(dishesList),this.httpHeader).subscribe()
+      })
+    }
+
+    getDishes():Observable<Dish[]>{
+      return this.httpClient.get<Dish[]>(this.baseUrl+'/dishes',this.httpHeader)
+    }
 }

@@ -88,7 +88,7 @@ export class UpdateOrderFormComponent {
       this.orderUpdated.items=[]
       this.orderUpdated.quantity=[]
       temp.forEach((item: any, index: number) => {
-        this.orderUpdated.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, ""))
+        this.orderUpdated.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, "","/assets/images/dishes/burito.jpg"))
         this.orderUpdated.quantity.push(parseInt(item.quantity)??0)
       })
       this.orderUpdated.amount = 0;

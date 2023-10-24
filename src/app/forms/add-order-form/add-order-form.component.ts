@@ -71,7 +71,7 @@ export class AddOrderFormComponent {
       let temp = JSON.parse(JSON.stringify(itemArr))[0]
       console.log(temp)
       temp.forEach((item: any, index: number) => {
-        this.newOrder.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, ""))
+        this.newOrder.items.push(new Dish(index+1, item.name, parseFloat(item.cost)??0, "","/assets/images/dishes/burito.jpg"))
         this.newOrder.quantity.push(parseInt(item.quantity)??0)
       })
       this.newOrder.amount = 0;
