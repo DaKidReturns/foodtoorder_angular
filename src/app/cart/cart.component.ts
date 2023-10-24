@@ -43,9 +43,8 @@ export class CartComponent {
         var order = new Order(newId,this.loggedInUserId,this.cart.items,this.cart.amount,"",this.cart.quantity,this.cart.restaurantId)
         this.orderService.addOrder(order).subscribe((data)=>{
           this.cart = new Cart(this.cart.id)
-          this.cartService.updateCart(this.cart)
+          this.cartService.updateCart(this.cart).subscribe()
         })
-      
       }
     )
   }
