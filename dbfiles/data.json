@@ -323,6 +323,44 @@
       ],
       "image": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg",
       "ownerId": 3
+    },
+    {
+      "id": 6,
+      "name": "Le Pain",
+      "addresses": [
+        {
+          "id": 1,
+          "houseNo": "12",
+          "street": "Shinjuku",
+          "area": "Shinjuku",
+          "state": "Shinjuku",
+          "city": "Shinjuku",
+          "country": "Shinjuku",
+          "pincode": "1234"
+        },
+        {
+          "id": 2,
+          "houseNo": "21",
+          "street": "Sotenbori",
+          "area": "Sotenbori",
+          "state": "Sotenbori",
+          "city": "Sotenbori",
+          "country": "Sotenbori",
+          "pincode": "213453"
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "name": "Melon bread",
+          "image": "https://images.pexels.com/photos/18657574/pexels-photo-18657574/free-photo-of-close-up-of-bread.jpeg",
+          "cost": "124",
+          "description": "yeah it is bread but with sweetness",
+          "isAvailable": "true"
+        }
+      ],
+      "image": "https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg",
+      "ownerId": 3
     }
   ],
   "users": [

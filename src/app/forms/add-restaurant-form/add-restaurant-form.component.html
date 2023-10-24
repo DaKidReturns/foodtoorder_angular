@@ -41,12 +41,12 @@
                         <input matInput formControlName="area" placeholder="Area" required>
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>state</mat-label>
-                        <input matInput formControlName="state" placeholder="State" required>
-                    </mat-form-field>
-                    <mat-form-field>
                         <mat-label>City</mat-label>
                         <input matInput formControlName="city" placeholder="City" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>State</mat-label>
+                        <input matInput formControlName="state" placeholder="State" required>
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Country</mat-label>
@@ -89,8 +89,13 @@
                         <input matInput type="text" formControlName="cost" placeholder="How much it costs" required>
                     </mat-form-field>
                     <mat-form-field>
+                        <mat-label>Picture</mat-label>
+                        <input matInput type="text" formControlName="image" placeholder="What does it look like" required>
+                    </mat-form-field>
+                    <mat-form-field>
                         <mat-label>Description</mat-label>
-                        <input matInput type="text" formControlName="description" placeholder="Enter a description so your customers know the dish better">
+                        <input matInput type="text" formControlName="description"
+                            placeholder="Enter a description so your customers know the dish better">
                     </mat-form-field>
                     <select formControlName="isAvailable" class="form-select">
                         <option selected>Select a value</option>
@@ -99,10 +104,12 @@
                         <!-- <option *ngFor="let r of arrRestaurants" [ngValue]="r.id">{{r.name}}</option> -->
                     </select>
                     <div class="col-3">
-                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear" (click)="removeOrClearDishes(i)" matTooltip="Remove">
+                        <button class="float-left" mat-fab-button color="primary" aria-label="Remove / Clear"
+                            (click)="removeOrClearDishes(i)" matTooltip="Remove">
                             <mat-icon>highlight_off</mat-icon>
                         </button>
-                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add Dishes" (click)="addDishesFormGroup()" matTooltip="Add">
+                        <button class="float-left mx-2" mat-fab-button color="primary" aria-label="Add Dishes"
+                            (click)="addDishesFormGroup()" matTooltip="Add">
                             <mat-icon>add_circle_outline</mat-icon>
                         </button>
                     </div>

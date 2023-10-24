@@ -3,6 +3,8 @@ import { Restaurant } from '../models/restaurant';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RestaurantService } from '../services/restaurant.service';
 import { Dish } from '../models/dish';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-restaurant-details-admin',
@@ -11,9 +13,13 @@ import { Dish } from '../models/dish';
 })
 export class RestaurantDetailsAdminComponent {
   restaurant:Restaurant = new Restaurant(0,"",[],[],"");
-  constructor(private activateRoute:ActivatedRoute,private  restaurantService:RestaurantService){
+  restaurantOwner : User = new User();
+  constructor(private activateRoute:ActivatedRoute,private  restaurantService:RestaurantService, private userService:UserService){
     this.activateRoute.params.subscribe((params:Params)=>{
-      restaurantService.getRestaurantById(params['rid']).subscribe((data)=>this.restaurant=data)
+      restaurantService.getRestaurantById(params['rid']).subscribe((data)=>{
+        this.restaurant=data;
+        userService.getUserById(this.restaurant.ownerId).subscribe((data)=>this.restaurantOwner=data)
+      })
     })
   }
   onChangeAvailability(dish:Dish){

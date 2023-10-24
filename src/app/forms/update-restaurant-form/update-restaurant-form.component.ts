@@ -219,6 +219,7 @@ export class UpdateRestaurantFormComponent implements OnInit {
     return new FormGroup({
       'id': new FormControl('', Validators.required),
       'name': new FormControl('', Validators.required),
+      'image':new FormControl('',Validators.required),
       'cost': new FormControl('', Validators.required),
       'description': new FormControl('', Validators.required),
       'isAvailable': new FormControl(true, Validators.required)
@@ -230,6 +231,7 @@ export class UpdateRestaurantFormComponent implements OnInit {
     return new FormGroup({
       'id': new FormControl(value.id, Validators.required),
       'name': new FormControl(value.name, Validators.required),
+      'image':new FormControl(value.image,Validators.required),
       'cost': new FormControl(value.cost, Validators.required),
       'description': new FormControl(value.description, Validators.required),
       'isAvailable': new FormControl(value.isAvailable, Validators.required)

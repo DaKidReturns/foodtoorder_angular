@@ -12,7 +12,7 @@
     <h3>Items:</h3>
     <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;">
         <div class="card-header">{{d.name}}</div>
-        <img src="{{d.image}}" class="card-img-top" alt="Picture of {{d.name}}"  [ngClass] = "{'disabled-image': d.isAvailable==false }" >
+        <img src="{{d.image}}" class="card-img-top" style="width:16em; height:16em;" alt="Picture of {{d.name}}"  [ngClass] = "{'disabled-image': d.isAvailable==false }" >
         <div class="card-body">
             
             <div>Price: {{d.cost}}</div>

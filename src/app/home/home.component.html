@@ -3,7 +3,7 @@
         <button type="button" data-bs-target="#restaurantCarousel" *ngFor="let i of _arrRestaurants; let in=index"
             [attr.data-bs-slide-to]=in [class.active]="in==0" [attr.aria-current]="in==0"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner mx-3 my-3">
         <div class="carousel-item" [class.active]="in==0" *ngFor="let i of _arrRestaurants; let in=index">
             <img src={{i.image}} height="900rem" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block" style="background-color:rgba(0,0,0,0.3);">

@@ -152,10 +152,11 @@ export class AddRestaurantFormComponent {
   private createDishesFormGroup():FormGroup{
     this.dishCount++;
     return new FormGroup({
-      'id':new FormControl(''),
-      'name':new FormControl(''),
-      'cost':new FormControl(''),
+      'id':new FormControl('',Validators.required),
+      'name':new FormControl('',Validators.required),
+      'cost':new FormControl('',Validators.required),
       'description':new FormControl(''),
+      'image':new FormControl('',Validators.required),
       'isAvailable':new FormControl('',Validators.required)
     })
   }

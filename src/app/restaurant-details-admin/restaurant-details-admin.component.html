@@ -1,22 +1,33 @@
-<div class="row">
+<div class="row" *ngIf="restaurant.id!=0">
     <h2>{{restaurant.name}}</h2>
     <div>
         <img src="{{restaurant.image}}" alt="" srcset="" width="500em" />
     </div>
-    <div>
-        Address:
+    <div class="my-3">
+        <h3>Owened By</h3>
+        <div>UID: {{restaurantOwner.id}}</div>
+        <div>{{restaurantOwner.firstName}} {{restaurantOwner.lastName}} </div>
     </div>
-    <div *ngFor="let a of restaurant.addresses">
-        {{a.houseNo}}, {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}
-    </div>
-    <h3>Items:</h3>
-    <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;">
-        <div class="card-header">{{d.name}}</div>
-        <div class="card-body">
-            <div>Price: {{d.cost}}</div>
-            <div>Availability: {{ d.isAvailable}}</div>
+    <div class="my-3">
+        <h3>
+            Address:
+        </h3>
+        <div *ngFor="let a of restaurant.addresses">
+            {{a.houseNo}}, {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}
         </div>
-        <button class="btn btn-danger" name="Toggle Availability" (click)="onChangeAvailability(d)">Toggle
-            Availability</button>
+    </div>
+    <div class="row my-3" >
+        <h3>Items:</h3>
+        <div class="card" *ngFor="let d of restaurant.items" style="width: 18rem;">
+            <div class="card-header">{{d.name}}</div>
+            <img src="{{d.image}}" class="card-img-top" style="width:16em; height:16em;" alt="Picture of {{d.name}}"
+                [ngClass]="{'disabled-image': d.isAvailable==false }">
+            <div class="card-body">
+                <div>Price: {{d.cost}}</div>
+                <div>Availability: {{ d.isAvailable}}</div>
+            </div>
+            <button class="btn btn-danger" name="Toggle Availability" (click)="onChangeAvailability(d)">Toggle
+                Availability</button>
+        </div>
     </div>
 </div>
