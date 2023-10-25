@@ -41,6 +41,7 @@ export class SignupformComponent{
     })
     // the below function is not able to connect both ways 
     // this.signUpForm.get('confirmPassword')?.addValidators(passowrdMatchValidator(this.signUpForm))
+    
     userService.getUsers().subscribe(data=>{this.arrUsers = data}) 
   }
 
@@ -51,11 +52,11 @@ export class SignupformComponent{
   OnSubmit(value:string){
     this.submitted = true;
     if(this.signUpForm.invalid){
-      console.log("invalid form")
-      console.log(this.signUpForm.controls['lastName'].errors)
+      // console.log("invalid form")
+      // console.log(this.signUpForm.controls['lastName'].errors)
       return
     }
-    console.log(value)
+    // console.log(value)
     var maxId = 0
     var tempId = 0
     this.arrUsers.forEach((user)=>{

@@ -5,14 +5,18 @@
     <thead>
       <tr>
         <th scope="col">Name</th>
+        <th scope="col">Price Per item</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Price</th>
-        <th scope="col">Details</th>
+        <th scope="col">Remarks</th>
       </tr>
     </thead>
-    <tbody *ngFor="let d of cart.items">
+    <tbody *ngFor="let d of cart.items;let in = index">
         <tr>
             <td>{{d.name}}</td>
             <td>{{d.cost}}</td>
+            <td>{{cart.quantity[in]}}</td>
+            <td>{{cart.quantity[in]*d.cost}}</td>
             <td>{{d.description}}</td>
         </tr>
     </tbody>

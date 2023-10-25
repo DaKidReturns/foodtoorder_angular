@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Restaurant } from '../models/restaurant';
 import { RestaurantService } from '../services/restaurant.service';
 import { Router } from '@angular/router';
@@ -10,10 +10,11 @@ import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/p
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.scss']
 })
-export class RestaurantsComponent implements OnInit{
+
+export class RestaurantsComponent implements AfterViewInit{
   role:string=""
   arrRestaurants:Restaurant[]=[]
-
+  availableArray:boolean[]=[]
   // This array is modified whenever the paginator is changed
   restaurantsToShow:Restaurant[]=[]
 
@@ -23,7 +24,7 @@ export class RestaurantsComponent implements OnInit{
   pageSizeOptions = [1, 2, 5];
   pageEvent: PageEvent = new PageEvent();
 
-  constructor(private restaurantService:RestaurantService, private router:Router){
+  constructor(private restaurantService:RestaurantService, private router:Router, private cd: ChangeDetectorRef){
     restaurantService.getRestaurants().subscribe((data)=>{
       this.arrRestaurants=data;
       
@@ -33,10 +34,13 @@ export class RestaurantsComponent implements OnInit{
       this.length = this.arrRestaurants.length
       this.restaurantsToShow = this.arrRestaurants.slice(this.pageIndex*this.pageSize, 
         (this.pageIndex+1)*this.pageSize)
-
+        this.restaurantsToShow.forEach(()=> this.availableArray.push(true))
     });
     this.role = localStorage.getItem('role') ??""
 
+  }
+  ngAfterViewInit(): void {
+      this.cd.detectChanges();
   }
 
   handlePageEvent(e: PageEvent) {
@@ -45,11 +49,19 @@ export class RestaurantsComponent implements OnInit{
     this.pageIndex = e.pageIndex;
     this.restaurantsToShow = this.arrRestaurants.slice(this.pageIndex*this.pageSize, 
       (this.pageIndex+1)*this.pageSize)
+    
+      //this.availableArray.splice(0,Infinity)
+    //this.restaurantsToShow.forEach(()=> this.availableArray.push(true))
+    // location.reload()
+    this.cd.detectChanges();
   }
-  
-  ngOnInit(){
 
+  modifyAvailableArray(event:boolean, index:number){
+    // console.log("gello")
+    // console.log(event,index)
+    this.availableArray[index] = event
   }
+
   viewDetails(id:number){
     
     this.router.navigate(['restaurantdetails/'+id])

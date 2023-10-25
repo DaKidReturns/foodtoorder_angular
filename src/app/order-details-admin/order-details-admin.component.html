@@ -1,24 +1,30 @@
-<h3>Order</h3>
-<div>Order ID : {{orderItem.id}}</div>
-<div> Order Items: </div>
+<div class="d-flex flex-column ">
+
+  <h3 class="my-2">Order</h3>
+  <div class="my-2">Order ID : {{orderItem.id}}</div>
+  <div class="my-2">Ordered at: {{restaurantOrdered.name}}</div>
+  <div class="my-2">Ordered by: {{userOrdered.firstName}} {{userOrdered.lastName}}</div>
+  <div class="my-2 fs-4"> Order Items: </div>
+</div>
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Details</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let d of orderItem.items; let in=index">
-        <tr>
-            <td>{{d.name}}</td>
-            <td>{{d.cost}}</td>
-            <td>{{orderItem.quantity[in]}}</td>
-            <td>{{d.description}}</td>
-            
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price per item</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let d of orderItem.items; let in=index">
+    <tr>
+      <td>{{d.name}}</td>
+      <td>{{d.cost}}</td>
+      <td>{{orderItem.quantity[in]}}</td>
+      <td>{{d.cost*orderItem.quantity[in]}}</td>
+      <td>{{d.description}}</td>
+
+    </tr>
+  </tbody>
 </table>
 <div>Total Price: {{orderItem.amount}}</div>
-

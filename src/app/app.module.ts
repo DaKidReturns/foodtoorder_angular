@@ -53,6 +53,7 @@ import { UpdateCartComponent } from './forms/update-cart/update-cart.component';
 import { NotAvailableBannerComponent } from './not-available-banner/not-available-banner.component';
 import { ConfirmActionDirective } from './confirm-action.directive';
 import { ConfirmActionDialogComponent } from './confirm-action-dialog/confirm-action-dialog.component';
+import { SignInFormComponent } from './forms/sign-in-form/sign-in-form.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { ConfirmActionDialogComponent } from './confirm-action-dialog/confirm-ac
         UpdateCartComponent,
         NotAvailableBannerComponent,
         ConfirmActionDirective,
-        ConfirmActionDialogComponent
+        ConfirmActionDialogComponent,
+        SignInFormComponent
     ],
     imports: [
         BrowserModule,
