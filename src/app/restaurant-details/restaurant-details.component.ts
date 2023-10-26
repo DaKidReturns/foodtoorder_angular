@@ -35,7 +35,7 @@ export class RestaurantDetailsComponent {
         cart.quantity=[]
         cart.restaurantId=this.restaurant.id
       }
-      console.log(cart)
+      // console.log(cart)
       this.cartService.addItemToCart(dish,cart).subscribe()
     })  
   }
