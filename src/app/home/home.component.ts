@@ -18,7 +18,6 @@ export class HomeComponent {
             this._arrRestaurants = data
 
             this._arrRestaurants.sort(() => Math.random() - 0.5)
-            console.log(this._arrRestaurants)
             this._arrRestaurants.splice(this.restaurantCount, Infinity)
         })
     }

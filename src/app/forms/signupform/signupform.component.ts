@@ -104,9 +104,9 @@ export class SignupformComponent{
 
     this.userService.addUser(this.user).subscribe(()=>{
      // location.reload()
-
+     this.cartService.addCart(new Cart(this.user.id)).subscribe(() => { })
     });
-      this.cartService.addCart(new Cart(this.user.id)).subscribe(() => { })
+    
 
   }
 }

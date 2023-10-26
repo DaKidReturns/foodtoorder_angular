@@ -103,7 +103,8 @@
                         <input matInput type="text" formControlName="description"
                             placeholder="Enter a description so your customers know the dish better">
                     </mat-form-field>
-                    <select formControlName="isAvailable" class="form-select" (change)="onChangeAvailability($event)">
+                    <select formControlName="isAvailable" class="form-select">
+                         <!-- (change)="onChangeAvailability($event)"> -->
                         <option selected>Select a value</option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>

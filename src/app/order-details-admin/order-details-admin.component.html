@@ -1,10 +1,13 @@
-<div class="d-flex flex-column ">
+<div class="d-flex flex-column " *ngIf="orderItem.id != 0">
 
   <h3 class="my-2">Order</h3>
   <div class="my-2">Order ID : {{orderItem.id}}</div>
   <div class="my-2">Ordered at: {{restaurantOrdered.name}}</div>
+  <div class="my-2"> Ordered on: {{orderItem.orderDate | date : 'full' }}</div> 
+  <!-- <div class="my-2"> Ordered on: {{orderItem.orderDate | date : 'mediumTime' }}</div>  -->
   <div class="my-2">Ordered by: {{userOrdered.firstName}} {{userOrdered.lastName}}</div>
   <div class="my-2 fs-4"> Order Items: </div>
+
 </div>
 <table class="table">
   <thead>

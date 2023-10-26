@@ -48,7 +48,7 @@ export class OrderService {
       msg=error.error.message
     }
     else{
-      msg = 'Error code:${error.status}\nMessgae:${error.message}'
+      msg = "Error code:"+ error.status+"\nMessgae:"+error.message
     }
     console.error(msg)
     return throwError(msg)

@@ -3,7 +3,7 @@ import { Restaurant } from '../models/restaurant';
 import { Address } from '../models/address';
 import { Dish } from '../models/dish';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -82,50 +82,59 @@ export class RestaurantService {
   }
 
   deleteRestaurantById(id:number):Observable<Restaurant>{
-    
     return this.httpClient.delete<Restaurant>(this.baseUrl+'/restaurants/'+id).pipe(catchError(this.httpError))
-    // var index = this.arrRestaurants.findIndex((rest)=> rest.id==id) 
-    // if(index == -1 ) return;
-    // console.log("Deleting restaurant"+index)
-    // this.arrRestaurants.splice(index,1)
   }
 
 //     getRestaurantByOwnerId(ownerId: number){  //TODO: CHANGE THIS FUNCTION TO ACCEPT DATA FROM SERVER
-// //      return this.httpClient.get<Restaurant>(this.baseUrl+"/restaurants")
-//         console.log(ownerId)
-//         var arrReturnRestaurants: Restaurant[] = []
-//         for (let i = 0; i < this.arrRestaurants.length; i++) {
-//             if (this.arrRestaurants[i].ownerId == ownerId) {
-//                 arrReturnRestaurants.push(this.arrRestaurants[i])
-//             }
-//         }
-//         return arrReturnRestaurants;
 //     }
 
     addRestaurant(restaurant:Restaurant):Observable<Restaurant>{
       return this.httpClient.post<Restaurant>(this.baseUrl+'/restaurants', JSON.stringify(restaurant),this.httpHeader)
       .pipe(catchError(this.httpError))
-      // return this.arrRestaurants.push(restaurant)
     }
     updateRestaurant(restaurant:Restaurant):Observable<Restaurant>{
       return this.httpClient.put<Restaurant>(this.baseUrl+'/restaurants/'+restaurant.id, JSON.stringify(restaurant),this.httpHeader)
       .pipe(catchError(this.httpError))
-      // return this.arrRestaurants.push(restaurant)
     }
     
-    updateDishes(){
-      var dishesList:Dish[] = []
-      return this.httpClient.get<Restaurant[]>(this.baseUrl+'/restaurants',this.httpHeader).subscribe((data)=>{
+    /*
+    Write a funtion which queries all the restaurants on a given date and displays the number of unavailable dishes. 
+    Display this on the view restaurants component.
+    */
+
+   /*
+   Returns an array of tuples with restaurant id and the number of dishes not available. for that particular restaurant.
+   */
+    getUnavailableDishes():Observable<[number,number][]>{
+      let restaurantDishesUnavailable:[number,number][] = []
+      return this.getRestaurants().pipe(map((data)=>{
         data.forEach((restaurant)=>{
-          restaurant.items.forEach((dish)=>{
-            dishesList.push(dish)
-          })
+          restaurantDishesUnavailable.push([restaurant.id,restaurant.items.filter((dish)=>dish.isAvailable == false).length])
         })
-        return this.httpClient.post<Dish[]>(this.baseUrl+'/dishes',JSON.stringify(dishesList),this.httpHeader).subscribe()
-      })
+        return restaurantDishesUnavailable
+      }))
     }
 
+    getAllUnavailableDishes():Observable<number>{
+      let totalDishesUnavailable:number = 0
+      return this.getRestaurants().pipe(map((data)=>{
+        data.forEach((restaurant)=>{
+          totalDishesUnavailable += (restaurant.items.filter((dish)=>dish.isAvailable == false).length)
+        })
+        return totalDishesUnavailable
+      }))
+    }
+
+
     getDishes():Observable<Dish[]>{
-      return this.httpClient.get<Dish[]>(this.baseUrl+'/dishes',this.httpHeader)
+      let dishesList:Dish[] = []
+      return this.getRestaurants().pipe(map(data=>{
+        data.forEach(restaurant => {
+          restaurant.items.forEach(dish => {
+            dishesList.push(dish)
+          });
+        });
+        return dishesList
+      }))
     }
 }

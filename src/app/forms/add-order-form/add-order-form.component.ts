@@ -78,7 +78,7 @@ export class AddOrderFormComponent {
       this.newOrder.items.forEach((item,index)=>{
         this.newOrder.amount += item.cost * this.newOrder.quantity[index]
       })
-      this.newOrder.oderDate=""
+      this.newOrder.orderDate=""
       console.log(this.newOrder);
       this.orderService.addOrder(this.newOrder).subscribe()
     }

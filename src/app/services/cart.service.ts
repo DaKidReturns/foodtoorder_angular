@@ -43,14 +43,12 @@ export class CartService {
   constructor(private httpClient:HttpClient) { }
 
   addCart(cart:Cart):Observable<Cart>{
-      return this.httpClient.post<Cart>(this.base_url + '/carts/' + cart.id, JSON.stringify(cart), this.httpHeader)
+      return this.httpClient.post<Cart>(this.base_url + '/carts', JSON.stringify(cart), this.httpHeader)
     .pipe(catchError(this.httpError))
-    //this.arrCart.push(cart)
   }
   getCartById(cartId: number):Observable<Cart> {
     return this.httpClient.get<Cart>(this.base_url+'/carts/'+cartId)
     .pipe(catchError(this.httpError))
-    //return this.arrCart.find((cart)=>cart.userId=cartId) ?? new Cart(0,[],0);
   }
 
   getAllCart():Observable<Cart[]>{
@@ -62,9 +60,6 @@ export class CartService {
   deleteCartById(i:number):Observable<Cart> {
     return this.httpClient.delete<Cart>(this.base_url+'/carts/'+i)
     .pipe(catchError(this.httpError))
-    // var index = this.arrCart.findIndex((cart)=>cart.userId==i)
-    // if(index == -1) return;
-    // this.arrCart.splice(index,1)
   }
 
   updateCartAmount(cart:Cart){

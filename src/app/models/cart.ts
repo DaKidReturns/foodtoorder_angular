@@ -7,7 +7,7 @@ export class Cart{
     quantity:number[]
     restaurantId:number
 
-    constructor(uid:number=-1,items:Dish[]=[],amount:number=0,quantity=[],restId:number=-1 ){
+    constructor(uid:number=-1,items:Dish[]=[],amount:number=0,quantity:number[]=[],restId:number=-1 ){
         this.id=uid
         this.items=items
         this.amount = amount

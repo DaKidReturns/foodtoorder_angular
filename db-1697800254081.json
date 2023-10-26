@@ -251,7 +251,7 @@
         1
       ],
       "amount": 490,
-      "oderDate": "12/03/2021"
+      "orderDate": "12/03/2021"
     },
     {
       "id": 15,
@@ -309,7 +309,7 @@
         1
       ],
       "amount": 480,
-      "oderDate": "31/03/2022"
+      "orderDate": "31/03/2022"
     },
     {
       "id": 2,
@@ -373,7 +373,7 @@
         }
       ],
       "amount": 750,
-      "oderDate": "21/04/2023",
+      "orderDate": "21/04/2023",
       "quantity": [
         1,
         1,
@@ -405,7 +405,7 @@
         }
       ],
       "amount": 240,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         12,
         1

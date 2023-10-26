@@ -51,7 +51,6 @@ export class UpdateRestaurantFormComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    console.log(this.restaurantOwnerId)
     this.restaurantService.getRestaurants().subscribe((data) => {
       if (this.restaurantOwnerId == -1) {
         this.arrRestaurants = data
@@ -70,10 +69,8 @@ export class UpdateRestaurantFormComponent implements OnInit {
   onChangeType(event: any) {
     this.clearPreviousEntry()
     var idObtained = event.target.value
-    console.log(idObtained.split(":")[1].trim())
     this.idUpdated = parseInt(idObtained.split(":")[1].trim())
     this.restaurantService.getRestaurantById(this.idUpdated).subscribe((data) => {
-      //console.log(data)
       this.nameImageFormGroup.get('id')?.setValue(data.id)
       this.nameImageFormGroup.get('restaurantName')?.setValue(data.name)
       this.nameImageFormGroup.get('restaurantImage')?.setValue(data.image)

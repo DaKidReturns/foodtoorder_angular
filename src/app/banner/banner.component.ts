@@ -42,13 +42,12 @@ export class BannerComponent {
     console.log(event)
     let dl: Dish[] = []
     this.restaurantService.getDishes().subscribe((data) => {
+      console.log(data)
       dl = data.filter((dish) => dish.name.toLowerCase().startsWith(event.toLowerCase()))
       
       this.dishList$ = interval(1).pipe(map(i => dl), take(dl.length))
     }
-
     )
-    // this.dishList = 
   }
 
   isLoggedIn() {
@@ -68,7 +67,7 @@ export class BannerComponent {
       return;
     }
     if (foundUser.password == password.value) {
-      console.log(foundUser.role);
+      // console.log(foundUser.role);
       localStorage.setItem("role", foundUser.role)
       localStorage.setItem("userId", foundUser.id.toString());
       alert("Login Successful")

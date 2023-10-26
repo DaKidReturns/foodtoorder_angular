@@ -16,7 +16,7 @@ export class CartComponent {
   loggedInUserId:number = -1
   cart:Cart = new Cart()
   
-  constructor(private cartService:CartService, private restaurantService:RestaurantService, public orderService:OrderService){
+  constructor(private cartService:CartService, private orderService:OrderService ){
     this.loggedInUserId = parseInt(localStorage.getItem('userId')??'-1') ?? -1
       cartService.getCartById(this.loggedInUserId).subscribe((data) => { this.cart = data })
   }

@@ -15,8 +15,11 @@ export class RestaurantsComponent implements AfterViewInit{
   role:string=""
   arrRestaurants:Restaurant[]=[]
   availableArray:boolean[]=[]
+  itemsUnavailable:[number,number][] = []
+  totalNumberOfUnavailableDishes: number = 0
   // This array is modified whenever the paginator is changed
   restaurantsToShow:Restaurant[]=[]
+  
 
   length = 0;
   pageSize = 0;
@@ -24,10 +27,19 @@ export class RestaurantsComponent implements AfterViewInit{
   pageSizeOptions = [1, 2, 5];
   pageEvent: PageEvent = new PageEvent();
 
+
   constructor(private restaurantService:RestaurantService, private router:Router, private cd: ChangeDetectorRef){
+
     restaurantService.getRestaurants().subscribe((data)=>{
       this.arrRestaurants=data;
-      
+
+      restaurantService.getUnavailableDishes().subscribe(data=>{
+        this.itemsUnavailable=data
+      })
+
+      restaurantService.getAllUnavailableDishes().subscribe(data=>{
+        this.totalNumberOfUnavailableDishes = data
+      })
       // declare variables for the paginator
       this.pageIndex = 0;
       this.pageSize = 2
@@ -50,15 +62,13 @@ export class RestaurantsComponent implements AfterViewInit{
     this.restaurantsToShow = this.arrRestaurants.slice(this.pageIndex*this.pageSize, 
       (this.pageIndex+1)*this.pageSize)
     
-      //this.availableArray.splice(0,Infinity)
+    //this.availableArray.splice(0,Infinity)
     //this.restaurantsToShow.forEach(()=> this.availableArray.push(true))
     // location.reload()
     this.cd.detectChanges();
   }
 
   modifyAvailableArray(event:boolean, index:number){
-    // console.log("gello")
-    // console.log(event,index)
     this.availableArray[index] = event
   }
 
@@ -68,5 +78,8 @@ export class RestaurantsComponent implements AfterViewInit{
   }
   getRestaurants(){
     return this.arrRestaurants;
+  }
+  showUnAvailableItems(id:number){
+    return this.itemsUnavailable.find((x)=>x[0] == id)??[-1,-1]
   }
 }

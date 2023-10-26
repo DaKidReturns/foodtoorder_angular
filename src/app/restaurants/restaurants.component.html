@@ -1,13 +1,18 @@
 <div class="row">
+    <!-- <div class="fs-3">
+        Total number of unavailable dishes across all the restaurants : {{totalNumberOfUnavailableDishes}}
+    </div> -->
     <div *ngFor="let r of restaurantsToShow; let in= index" class="card" style="width: 18rem;" >
         <div class="card-header">{{r.name}}</div>
         <img src="{{r.image}}" class="card-img-top" alt="..." width="14rem" height="200rem">
         <app-not-available-banner [restaurantItems]="r.items" (itemAvailable)="modifyAvailableArray($event,in)" [hidden]="availableArray[in]" ></app-not-available-banner>
         <div class="card-body"></div>
-        
+        <div>Items unavailable:  {{showUnAvailableItems(r.id) [1]}} </div>
         <div *ngFor="let a of r.addresses">Avaliable at: {{a.street}}</div>
         <button class="btn btn-primary" name="Show More" (click)="viewDetails(r.id)">Show More</button>
     </div>
+    
     <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="handlePageEvent($event)" [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
     </mat-paginator>
+    
 </div>

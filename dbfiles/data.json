@@ -29,34 +29,34 @@
         {
           "id": 1,
           "name": "Veg pulav",
+          "image": "/assets/images/dishes/burito.jpg",
           "cost": 140,
           "description": "",
-          "isAvailable": false,
-          "image": "/assets/images/dishes/burito.jpg"
+          "isAvailable": "true"
         },
         {
           "id": 2,
           "name": "Paneer Makani",
+          "image": "/assets/images/dishes/burito.jpg",
           "cost": 150,
           "description": "",
-          "isAvailable": true,
-          "image": "/assets/images/dishes/burito.jpg"
+          "isAvailable": "true"
         },
         {
           "id": 3,
           "name": "Mango Lassi",
+          "image": "/assets/images/dishes/burito.jpg",
           "cost": 40,
           "description": "",
-          "isAvailable": false,
-          "image": "/assets/images/dishes/burito.jpg"
+          "isAvailable": "true"
         },
         {
           "id": 4,
           "name": "Seera",
+          "image": "/assets/images/dishes/burito.jpg",
           "cost": 40,
           "description": "",
-          "isAvailable": true,
-          "image": "/assets/images/dishes/burito.jpg"
+          "isAvailable": false
         }
       ],
       "image": "/assets/images/restaurants/CommunistColdDrinks.jpg",
@@ -204,7 +204,7 @@
           "name": "Lemon Tea",
           "cost": 20,
           "description": "",
-          "isAvailable": true,
+          "isAvailable": false,
           "image": "/assets/images/dishes/burito.jpg"
         },
         {
@@ -332,7 +332,7 @@
       "addresses": [
         {
           "id": 1,
-          "houseNo": "12",
+          "houseNo": "20",
           "street": "Shinjuku",
           "area": "Shinjuku",
           "state": "Shinjuku",
@@ -371,16 +371,16 @@
       "firstName": "Brian",
       "lastName": "Cranston",
       "role": "user",
-      "dob": "12/04/1976",
-      "email": "breakinggood@gmail.com",
-      "password": "JesseWhereIsTheProduct",
+      "dob": "",
+      "email": "user1@gmail.com",
+      "password": "abc",
       "address": {
-        "id": 1,
-        "houseNo": 22,
+        "id": 0,
+        "houseNo": 23,
         "street": "Rich Street",
         "area": "Greener Area",
         "state": "Oil State",
-        "city": "Star Stripped City",
+        "city": "Uncle's country",
         "country": "Uncle's country",
         "pincode": "777888"
       }
@@ -535,7 +535,7 @@
         1
       ],
       "amount": 490,
-      "oderDate": "12/03/2021"
+      "orderDate": "12/03/2021"
     },
     {
       "id": 15,
@@ -599,7 +599,7 @@
         1
       ],
       "amount": 480,
-      "oderDate": "31/03/2022"
+      "orderDate": "31/03/2022"
     },
     {
       "id": 2,
@@ -671,7 +671,7 @@
         }
       ],
       "amount": 750,
-      "oderDate": "21/04/2023",
+      "orderDate": "21/04/2023",
       "quantity": [
         1,
         1,
@@ -705,7 +705,7 @@
         }
       ],
       "amount": 240,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         12,
         1
@@ -733,7 +733,7 @@
         }
       ],
       "amount": 490,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         3,
         1
@@ -770,7 +770,7 @@
         }
       ],
       "amount": 320,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         1,
         1,
@@ -800,7 +800,7 @@
         }
       ],
       "amount": 680,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         4,
         2
@@ -821,16 +821,15 @@
         }
       ],
       "amount": 120,
-      "oderDate": "",
+      "orderDate": "",
       "quantity": [
         1
       ],
       "restaurantId": 3
-    }
-  ],
-  "carts": [
+    },
     {
-      "id": 1,
+      "id": 21,
+      "userId": 1,
       "items": [
         {
           "id": 1,
@@ -882,6 +881,7 @@
         }
       ],
       "amount": 1180,
+      "orderDate": "2023-10-26T07:17:48.000Z",
       "quantity": [
         1,
         3,
@@ -889,7 +889,37 @@
         1,
         3,
         1
-      ]
+      ],
+      "restaurantId": -1
+    },
+    {
+      "id": 22,
+      "userId": 2,
+      "items": [
+        {
+          "id": 2,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        }
+      ],
+      "amount": 300,
+      "orderDate": "2023-10-26T07:24:50.395Z",
+      "quantity": [
+        2
+      ],
+      "restaurantId": 2
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "items": [],
+      "amount": 0,
+      "quantity": [],
+      "restaurantId": -1
     },
     {
       "id": 2,
@@ -900,10 +930,30 @@
     },
     {
       "id": 3,
-      "items": [],
-      "amount": 0,
-      "quantity": [],
-      "restaurantId": -1
+      "items": [
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        }
+      ],
+      "amount": 160,
+      "quantity": [
+        2,
+        1
+      ],
+      "restaurantId": 3
     },
     {
       "id": 4,
@@ -1090,14 +1140,16 @@
       "name": "Sake",
       "cost": "300",
       "description": "",
-      "isAvailable": "true"
+      "isAvailable": "true",
+      "image": "/assets/images/dishes/burito.jpg"
     },
     {
       "id": 2,
       "name": "Beef Miso soup",
       "cost": "430",
       "description": "",
-      "isAvailable": "false"
+      "isAvailable": "false",
+      "image": "/assets/images/dishes/burito.jpg"
     }
   ]
 }

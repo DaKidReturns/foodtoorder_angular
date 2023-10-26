@@ -13,10 +13,7 @@ export class ConfirmActionDirective {
   constructor(public dialog: MatDialog) { }
 
   @HostListener('click') onClick(){
-    const dialogRef = this.dialog.open(ConfirmActionDialogComponent, {
-      height: '20em',
-      width: '40em'
-    });
+    const dialogRef = this.dialog.open(ConfirmActionDialogComponent, );
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.confirm.emit()
