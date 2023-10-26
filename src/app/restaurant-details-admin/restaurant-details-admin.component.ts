@@ -12,8 +12,10 @@ import { User } from '../models/user';
   styleUrls: ['./restaurant-details-admin.component.scss']
 })
 export class RestaurantDetailsAdminComponent {
+  
   restaurant:Restaurant = new Restaurant(0,"",[],[],"");
   restaurantOwner : User = new User();
+
   constructor(private activateRoute:ActivatedRoute,private  restaurantService:RestaurantService, private userService:UserService){
     this.activateRoute.params.subscribe((params:Params)=>{
       restaurantService.getRestaurantById(params['rid']).subscribe((data)=>{
@@ -22,6 +24,13 @@ export class RestaurantDetailsAdminComponent {
       })
     })
   }
+  
+  /**
+   * This function toggles the availablity of the dish
+   * 
+   * Visible to both admin and restaurant user.
+   * @param dish The dish whose availability needs to be changed.
+   */
   onChangeAvailability(dish:Dish){
     dish.isAvailable = !dish.isAvailable
     var index = this.restaurant.items.findIndex((d)=>dish==d)
@@ -29,6 +38,6 @@ export class RestaurantDetailsAdminComponent {
     this.restaurantService.updateRestaurant(this.restaurant).subscribe(
       (data)=>{location.reload()}
     )
-
   }
+
 }
