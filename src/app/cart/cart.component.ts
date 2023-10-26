@@ -15,12 +15,20 @@ import { Order } from '../models/order';
 export class CartComponent {
   loggedInUserId:number = -1
   cart:Cart = new Cart()
-  
+  //cartItems:Dish[]
+
   constructor(private cartService:CartService, private orderService:OrderService ){
     this.loggedInUserId = parseInt(localStorage.getItem('userId')??'-1') ?? -1
       cartService.getCartById(this.loggedInUserId).subscribe((data) => { this.cart = data })
   }
-  
+  get itemQuantity() : number[]{
+      return this.cart.quantity
+  }
+
+  get cartItems() : Dish[]{
+    return this.cart.items
+  }
+
   removeItemFromCart(item:Dish){
     this.cartService.removeItemFromCart(item,this.cart).subscribe()
   }
@@ -30,7 +38,6 @@ export class CartComponent {
   }
 
   orderItemsInCart(){
-    //var order = new Order()
     this.orderService.getAllOrders().subscribe(
       (data)=>{
         var newId=0

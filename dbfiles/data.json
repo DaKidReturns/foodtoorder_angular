@@ -479,6 +479,25 @@
         "country": "Jarillo 6",
         "pincode": "318792"
       }
+    },
+    {
+      "id": 7,
+      "firstName": "ahf",
+      "lastName": "alfknms",
+      "role": "user",
+      "dob": "",
+      "email": "hello@mail.com",
+      "password": "abc",
+      "address": {
+        "id": 0,
+        "houseNo": 123,
+        "street": "dfa",
+        "area": "adf",
+        "state": "gsf",
+        "city": "zvc",
+        "country": "zvc",
+        "pincode": "123522"
+      }
     }
   ],
   "orders": [
@@ -972,6 +991,42 @@
       "items": [],
       "amount": 0,
       "quantity": []
+    },
+    {
+      "id": 7,
+      "items": [
+        {
+          "id": 12,
+          "name": "Lemon Tea",
+          "cost": 20,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Chilli Chiken",
+          "cost": 120,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Paneer Makani",
+          "cost": 150,
+          "description": "",
+          "isAvailable": true,
+          "image": "/assets/images/dishes/burito.jpg"
+        }
+      ],
+      "amount": 330,
+      "quantity": [
+        3,
+        1,
+        1
+      ],
+      "restaurantId": 3
     }
   ],
   "dishes": [

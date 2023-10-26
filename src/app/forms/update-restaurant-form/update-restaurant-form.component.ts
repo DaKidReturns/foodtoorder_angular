@@ -118,7 +118,10 @@ export class UpdateRestaurantFormComponent implements OnInit {
     }
   }
 
-
+/*
+ * Description: When the user clicks reset on the form this function is called to clear
+ *              all the previous forms 
+ */
   clearPreviousEntry() {
 
     if (this.form_array_address.length >= 1) {
@@ -130,6 +133,10 @@ export class UpdateRestaurantFormComponent implements OnInit {
     }
   }
 
+/**
+ * 
+ * 
+ */
   public addAddressFormGroup() {
     const form_array_addresses = this.addressForm.get('form_array_address') as FormArray
     form_array_addresses.push(this.createAddressFormGroup())
