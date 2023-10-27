@@ -942,10 +942,21 @@
     },
     {
       "id": 2,
-      "items": [],
-      "amount": 0,
-      "quantity": [],
-      "restaurantId": -1
+      "items": [
+        {
+          "id": 3,
+          "name": "Mango Lassi",
+          "image": "/assets/images/dishes/burito.jpg",
+          "cost": 40,
+          "description": "",
+          "isAvailable": "true"
+        }
+      ],
+      "amount": 40,
+      "quantity": [
+        1
+      ],
+      "restaurantId": 2
     },
     {
       "id": 3,
