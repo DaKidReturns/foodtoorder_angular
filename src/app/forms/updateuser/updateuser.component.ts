@@ -17,12 +17,14 @@ export class UpdateuserComponent {
   submitted:boolean = false
   currentUserRole:string = 'user'
   idUpdated:number = 0;
-  
+  addressId:number = 0;
+
   constructor(private userService:UserService, fb:FormBuilder) {
     this.updateForm = fb.group({
       "id":[""],
       "firstName": ["",Validators.required],
       "lastName": ["",Validators.required],
+      "dob" : ["1999-12-02",Validators.required],
       "email":["",Validators.email],
       "password":["",Validators.required],
       "confirmPassword":["",Validators.required],
@@ -54,9 +56,12 @@ export class UpdateuserComponent {
     //var user:User
     this.userService.getUserById(this.idUpdated).subscribe((data)=>{
       var user = data
+      this.addressId = user.address.id
       this.updateForm.get('id')?.setValue(user.id)
       this.updateForm.get('firstName')?.setValue(user.firstName)
       this.updateForm.get('lastName')?.setValue(user.lastName)
+      // console.log()
+      this.updateForm.get('dob')?.setValue(new Date(user.dob).toISOString().substring(0,10))
       this.updateForm.get('email')?.setValue(user.email)
       this.updateForm.get('password')?.setValue(user.password)
       this.updateForm.get('confirmPassword')?.setValue(user.password)
@@ -83,6 +88,7 @@ export class UpdateuserComponent {
 
     let firstName = this.updateForm.value.firstName
     let lastName = this.updateForm.value.lastName
+    let dob = this.updateForm.value.dob
     let email = this.updateForm.value.email
     let password = this.updateForm.value.password
     let mobileNumber = this.updateForm.value.mobileNumber
@@ -106,10 +112,10 @@ export class UpdateuserComponent {
       }
     this.user = new User(
       this.idUpdated,firstName,
-      lastName,role,"",
+      lastName,role,dob,
       email,password, 
       new Address(
-        0,parseInt(houseNumber),
+        this.addressId,parseInt(houseNumber),
         street,area,country,
         state,country,pincode
       )

@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -116,7 +117,8 @@ import { SignInFormComponent } from './forms/sign-in-form/sign-in-form.component
         MatSelectModule,
         HttpClientModule,
         MatDialogModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatDatepickerModule
     ],
     providers: [],
     bootstrap: [AppComponent]

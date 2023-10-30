@@ -13,7 +13,9 @@ export class UserComponent {
   users:User[]=[]
   
   constructor(private userService:UserService,private cartService:CartService,private router:Router){
-    userService.getUsers().subscribe(data=>{this.users = data}) 
+    userService.getUsers().subscribe(data=>{this.users = data
+    console.log(data)
+    }) 
   }
 
   /**

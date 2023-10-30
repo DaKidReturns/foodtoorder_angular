@@ -26,6 +26,15 @@
         </div>
     </div>
     <div class="mb-3">
+        <label for="dob" class="form-label">Date of birth</label>
+        <input type="date" class="form-control" id="dob" formControlName="dob" placeholder="Select Date Of Birth">
+        <div style="color:red;" *ngIf="submitted && fc['dob']">
+            <div class="form_error" *ngIf="!fc['dob'].valid">Date of Birth</div>
+            <div class="form_error" *ngIf="fc['dob'].hasError('required')">Last Name is a required Field
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
         <div style="color:red;" *ngIf="submitted && fc['email'].errors">

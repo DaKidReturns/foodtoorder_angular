@@ -17,7 +17,7 @@ export class User{
         this.firstName=firstName
         this.lastName=lastName
         this.role=role
-        this.dob=dob
+        this.dob= "" ? "2000-01-01" : dob
         this.email=email
         this.password=password
         this.address=address

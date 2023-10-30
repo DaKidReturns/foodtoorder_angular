@@ -24,6 +24,7 @@ export class SignupformComponent{
     this.signUpForm = fb.group({
       "firstName": ["",Validators.required],
       "lastName": ["",Validators.required],
+      "dob" : ["",Validators.required],
       "email":["",Validators.email],
       "password":["",Validators.compose([Validators.required,])],
       "confirmPassword":["",Validators.compose([Validators.required,])],
@@ -70,6 +71,7 @@ export class SignupformComponent{
     let firstName = this.signUpForm.value.firstName
     let lastName = this.signUpForm.value.lastName
     let email = this.signUpForm.value.email
+    let dob = this.signUpForm.value.dob
     let password = this.signUpForm.value.password
     let mobileNumber = this.signUpForm.value.mobileNumber
     let houseNumber:string = this.signUpForm.value.houseNumber
@@ -93,7 +95,7 @@ export class SignupformComponent{
       }
     this.user = new User(
       tempId,firstName,
-      lastName,role,"",
+      lastName,role,dob,
       email,password, 
       new Address(
         0,parseInt(houseNumber),
