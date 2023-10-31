@@ -75,9 +75,9 @@ export class AddRestaurantFormComponent {
 
       let temp = JSON.parse(JSON.stringify(this.addresses))
       this.restaurant.addresses = temp[0]
-      this.restaurant.addresses.forEach((a,i)=>{
-        a.id = i+1
-      })
+      // this.restaurant.addresses.forEach((a,i)=>{
+      //   a.id = i+1
+      // })
       console.log(this.restaurant.addresses);
     }
   }
@@ -104,7 +104,7 @@ export class AddRestaurantFormComponent {
   private createAddressFormGroup():FormGroup{
     this.count++
     return new FormGroup({
-        'id':new FormControl(''),
+        'id':new FormControl(-1),
         'houseNo':new FormControl('',Validators.required),
         'street':new FormControl('',Validators.required),
         'area':new FormControl('',Validators.required),
@@ -142,7 +142,7 @@ export class AddRestaurantFormComponent {
       console.log(temp)
       this.restaurant.items = temp[0]
       this.restaurant.items.forEach((item,i)=>{
-        item.id = i+1
+        item.isAvailable = item.isAvailable.toString() == "true" ? true : false;
       })
       // console.log(this.restaurant)
       this.restaurantService.addRestaurant(this.restaurant).subscribe()
@@ -152,12 +152,12 @@ export class AddRestaurantFormComponent {
   private createDishesFormGroup():FormGroup{
     this.dishCount++;
     return new FormGroup({
-      'id':new FormControl('',Validators.required),
+      'id':new FormControl(-1,Validators.required),
       'name':new FormControl('',Validators.required),
       'cost':new FormControl('',Validators.required),
       'description':new FormControl(''),
       'image':new FormControl('',Validators.required),
-      'isAvailable':new FormControl('',Validators.required)
+      'isAvailable':new FormControl(true,Validators.required)
     })
   }
 }

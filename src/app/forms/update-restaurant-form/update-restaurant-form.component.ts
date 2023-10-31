@@ -71,6 +71,8 @@ export class UpdateRestaurantFormComponent implements OnInit {
     var idObtained = event.target.value
     this.idUpdated = parseInt(idObtained.split(":")[1].trim())
     this.restaurantService.getRestaurantById(this.idUpdated).subscribe((data) => {
+      console.log(data)
+      //this.restaurant = data
       this.nameImageFormGroup.get('id')?.setValue(data.id)
       this.nameImageFormGroup.get('restaurantName')?.setValue(data.name)
       this.nameImageFormGroup.get('restaurantImage')?.setValue(data.image)
@@ -158,20 +160,16 @@ export class UpdateRestaurantFormComponent implements OnInit {
     this.restaurant.name = formData.value['restaurantName']
     this.restaurant.image = formData.value['restaurantImage']
     this.restaurant.ownerId = parseInt(formData.value['ownerId']) ?? 0
-    console.log(this.restaurant)
   }
 
   saveSecondStepData(formData: FormGroup) {
     this.countSecondFormSubmit++;
     if (this.countSecondFormSubmit == this.addressCount) {
-      console.log(this.addressCount)
+
       let addressArr = Object.values(formData)
+
       let temp = JSON.parse(JSON.stringify(addressArr))
       this.restaurant.addresses = temp[0]
-      this.restaurant.addresses.forEach((a, i) => {
-        a.id = i + 1
-      })
-      console.log(this.restaurant.addresses);
     }
   }
 
@@ -179,13 +177,16 @@ export class UpdateRestaurantFormComponent implements OnInit {
     this.countThirdFormSubmit++;
     if (this.countThirdFormSubmit == this.dishCount) {
       let dishes = Object.values(formGroup)
+      console.log(dishes)
       let temp = JSON.parse(JSON.stringify(dishes)) // This will remove any empty forms from the input
-      console.log(temp)
+
       this.restaurant.items = temp[0]
-      this.restaurant.items.forEach((item, i) => {
-        item.id = i + 1
-      })
-      console.log(this.restaurant)
+      // this.restaurant.items.forEach((item, i) => {
+      //   item.id = i + 1
+      //   item. isAvailable = (item.isAvailable == "true") ? true : false
+      //   console.log(item.isAvailable)
+      // })
+      // console.log(this.restaurant.items)
       this.restaurantService.updateRestaurant(this.restaurant).subscribe()
     }
 
@@ -193,7 +194,7 @@ export class UpdateRestaurantFormComponent implements OnInit {
   private createAddressFormGroup(): FormGroup {
     this.addressCount++
     return new FormGroup({
-      'id': new FormControl(''),
+      'id': new FormControl(-1),
       'houseNo': new FormControl('', Validators.required),
       'street': new FormControl('', Validators.required),
       'area': new FormControl('', Validators.required),
@@ -212,7 +213,7 @@ export class UpdateRestaurantFormComponent implements OnInit {
       'street': new FormControl(value.street, Validators.required),
       'area': new FormControl(value.area, Validators.required),
       'state': new FormControl(value.state, Validators.required),
-      'city': new FormControl(value.state, Validators.required),
+      'city': new FormControl(value.city, Validators.required),
       'country': new FormControl(value.country, Validators.required),
       'pincode': new FormControl(value.pincode, Validators.required),
     });
@@ -221,7 +222,7 @@ export class UpdateRestaurantFormComponent implements OnInit {
   private createDishesFormGroup(): FormGroup {
     this.dishCount++;
     return new FormGroup({
-      'id': new FormControl('', Validators.required),
+      'id': new FormControl(-1, Validators.required),
       'name': new FormControl('', Validators.required),
       'image':new FormControl('',Validators.required),
       'cost': new FormControl('', Validators.required),

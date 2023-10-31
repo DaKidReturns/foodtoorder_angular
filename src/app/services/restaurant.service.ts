@@ -88,53 +88,52 @@ export class RestaurantService {
 //     getRestaurantByOwnerId(ownerId: number){  //TODO: CHANGE THIS FUNCTION TO ACCEPT DATA FROM SERVER
 //     }
 
-    addRestaurant(restaurant:Restaurant):Observable<Restaurant>{
-      return this.httpClient.post<Restaurant>(this.baseUrl+'/restaurants', JSON.stringify(restaurant),this.httpHeader)
-      .pipe(catchError(this.httpError))
-    }
-    updateRestaurant(restaurant:Restaurant):Observable<Restaurant>{
-      return this.httpClient.put<Restaurant>(this.baseUrl+'/restaurants/'+restaurant.id, JSON.stringify(restaurant),this.httpHeader)
-      .pipe(catchError(this.httpError))
-    }
+  addRestaurant(restaurant:Restaurant):Observable<Restaurant>{
+    return this.httpClient.post<Restaurant>(this.baseUrl+'/restaurants', JSON.stringify(restaurant),this.httpHeader)
+    .pipe(catchError(this.httpError))
+  }
+  updateRestaurant(restaurant:Restaurant):Observable<Restaurant>{
+    return this.httpClient.put<Restaurant>(this.baseUrl+'/restaurants/'+restaurant.id, JSON.stringify(restaurant),this.httpHeader)
+    .pipe(catchError(this.httpError))
+  }
     
-    /*
-    Write a funtion which queries all the restaurants on a given date and displays the number of unavailable dishes. 
-    Display this on the view restaurants component.
-    */
+  /*
+  Write a funtion which queries all the restaurants on a given date and displays the number of unavailable dishes. 
+  Display this on the view restaurants component.
+  */
 
    /*
    Returns an array of tuples with restaurant id and the number of dishes not available. for that particular restaurant.
    */
-    getUnavailableDishes():Observable<[number,number][]>{
-      let restaurantDishesUnavailable:[number,number][] = []
-      return this.getRestaurants().pipe(map((data)=>{
-        data.forEach((restaurant)=>{
-          restaurantDishesUnavailable.push([restaurant.id,restaurant.items.filter((dish)=>dish.isAvailable == false).length])
-        })
-        return restaurantDishesUnavailable
-      }))
-    }
+  getUnavailableDishes():Observable<[number,number][]>{
+    let restaurantDishesUnavailable:[number,number][] = []
+    return this.getRestaurants().pipe(map((data)=>{
+      data.forEach((restaurant)=>{
+        restaurantDishesUnavailable.push([restaurant.id,restaurant.items.filter((dish)=>dish.isAvailable == false).length])
+      })
+      return restaurantDishesUnavailable
+    }))
+  }
 
-    getAllUnavailableDishes():Observable<number>{
-      let totalDishesUnavailable:number = 0
-      return this.getRestaurants().pipe(map((data)=>{
-        data.forEach((restaurant)=>{
-          totalDishesUnavailable += (restaurant.items.filter((dish)=>dish.isAvailable == false).length)
-        })
-        return totalDishesUnavailable
-      }))
-    }
+  getAllUnavailableDishes():Observable<number>{
+    let totalDishesUnavailable:number = 0
+    return this.getRestaurants().pipe(map((data)=>{
+      data.forEach((restaurant)=>{
+        totalDishesUnavailable += (restaurant.items.filter((dish)=>dish.isAvailable == false).length)
+      })
+      return totalDishesUnavailable
+    }))
+  }
 
-
-    getDishes():Observable<Dish[]>{
-      let dishesList:Dish[] = []
-      return this.getRestaurants().pipe(map(data=>{
-        data.forEach(restaurant => {
-          restaurant.items.forEach(dish => {
-            dishesList.push(dish)
-          });
+  getDishes():Observable<Dish[]>{
+    let dishesList:Dish[] = []
+    return this.getRestaurants().pipe(map(data=>{
+      data.forEach(restaurant => {
+        restaurant.items.forEach(dish => {
+          dishesList.push(dish)
         });
-        return dishesList
-      }))
-    }
+      });
+      return dishesList
+    }))
+  }
 }
