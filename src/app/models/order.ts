@@ -14,7 +14,7 @@ export class Order{
         this.userId=uid
         this.items=items
         this.amount = amount
-        this.orderDate= d == null? "" : new Date().toISOString()
+        this.orderDate= d == null? new Date().toISOString() : new Date().toISOString()
         this.quantity = quantity
         this.restaurantId = restId
     }
