@@ -22,11 +22,12 @@ export class UserService {
   //   new User(5, "Store", "Owener2", "restaurantowner", "03/12/2001", "store2owner@gmail.com", "owner",
   //     new Address(2, 32, "White Street", "Golden area", "WhiteFlag", "Over Engineered State", "Rising Sun", "648212"))
   // ]
-
+  token = localStorage.getItem("token") ?? ""
   base_url = "http://localhost:3000"
   httpHeader = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')??""
     })
   }
 
@@ -47,7 +48,8 @@ export class UserService {
   }
 
   getUsers():Observable<User[]>{
-    return this.httpClient.get<User[]>(this.base_url+'/users')
+    console.log(this.httpHeader)
+    return this.httpClient.get<User[]>(this.base_url+'/users',this.httpHeader)
     .pipe(catchError(this.httpError));
   }
 
@@ -58,6 +60,10 @@ export class UserService {
     return this.httpClient.get<User>(this.base_url+'/users/'+userId).pipe(catchError(this.httpError))
   }
   
+  getUserByRoles(role:string):Observable<User[]>{
+    return this.httpClient.get<User[]>(this.base_url+'/users/role/'+role).pipe(catchError(this.httpError))
+  }
+
   deleteUserById(i: number): Observable<User> {
     // var index = this.arrUsers.findIndex((usr) => usr.id == i)
     // if (index == -1) return;
@@ -79,5 +85,9 @@ export class UserService {
     // // this.arrUsers.splice(index,1)
     // // this.arrUsers.fill(u,index,index+1)
     // console.log(this.arrUsers)
+  }
+
+  login(u:User):Observable<User>{
+    return this.httpClient.post<User>(this.base_url+'/users/login',JSON.stringify(u),this.httpHeader)
   }
 }

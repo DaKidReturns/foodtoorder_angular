@@ -11,7 +11,7 @@ import { CartService } from '../services/cart.service';
 })
 export class UserComponent {
   users:User[]=[]
-  
+  UserRole : string = ""
   constructor(private userService:UserService,private cartService:CartService,private router:Router){
     userService.getUsers().subscribe(data=>{this.users = data
     console.log(data)
@@ -34,6 +34,13 @@ export class UserComponent {
   deleteUser(id:number){
     this.userService.deleteUserById(id).subscribe((data)=>{
       this.cartService.deleteCartById(id).subscribe()
+    })
+  }
+
+  getUserByRole(){
+    console.log(this.UserRole)
+    this.userService.getUserByRoles(this.UserRole).subscribe((data)=>{
+      this.users = data
     })
   }
 

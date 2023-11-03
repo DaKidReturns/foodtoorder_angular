@@ -17,7 +17,7 @@ export class User{
         this.firstName=firstName
         this.lastName=lastName
         this.role=role
-        this.dob= "" ? "2000-01-01" : dob
+        this.dob= dob=="" ? new Date().toISOString() : dob
         this.email=email
         this.password=password
         this.address=address

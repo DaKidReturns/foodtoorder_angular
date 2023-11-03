@@ -72,6 +72,7 @@ export class OrderService {
     // this.arrOrders.splice(index, 1)
   }
   addOrder(order:Order): Observable<Order>{
+    console.log(JSON.stringify(order))
     return this.httpClient.post<Order>(this.base_url+'/orders',JSON.stringify(order),this.httpHeader)
     .pipe(catchError(this.httpError))
   }

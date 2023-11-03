@@ -1,3 +1,5 @@
+<input type="text" [(ngModel)]="UserRole">
+<button (click)="getUserByRole()">Search By role</button>
 <table class="table">
     <thead>
       <tr>
@@ -9,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let u of users">
+        <tr *ngFor="let u of users" >
             <td>{{u.id}}</td>
             <td>{{u.firstName}}</td>
             <td>{{u.lastName}}</td>

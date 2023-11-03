@@ -49,7 +49,7 @@ export class CartComponent {
         newId+=1
         var order = new Order(newId,this.loggedInUserId,this.cart.items,this.cart.amount,"",this.cart.quantity,this.cart.restaurantId)
         this.orderService.addOrder(order).subscribe((data)=>{
-          this.cart = new Cart(this.cart.id)
+          this.cart = new Cart(this.cart.id,[],0,[])
           this.cartService.updateCart(this.cart).subscribe()
         })
       }

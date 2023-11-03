@@ -6,6 +6,7 @@ import { RestaurantService } from '../services/restaurant.service';
 import { Observable, interval, map, take } from 'rxjs';
 import { Dish } from '../models/dish';
 import { Restaurant } from '../models/restaurant';
+import { Address } from '../models/address';
 
 @Component({
   selector: 'app-banner',
@@ -61,16 +62,19 @@ export class BannerComponent {
 
   VerifyCredentials(email: HTMLInputElement, password: HTMLInputElement) {
 
-    var foundUser = this.arrUsers.find((u) => u.email == email.value)
-    if (foundUser == null) {
-      alert("Usernot found");
-      return;
-    }
-    if (foundUser.password == password.value) {
-      // console.log(foundUser.role);
-      localStorage.setItem("role", foundUser.role)
-      localStorage.setItem("userId", foundUser.id.toString());
-      alert("Login Successful")
-    }
+    this.userService.login(new User(0,"","","","",email.value,password.value,new Address())).subscribe((data)=>{
+      console.log(data);
+    })
   }
+  //   var foundUser = this.arrUsers.find((u) => u.email == email.value)
+  //   if (foundUser == null) {
+  //     alert("Usernot found");
+  //     return;
+  //   }
+  //   if (foundUser.password == password.value) {
+  //     // console.log(foundUser.role);
+  //     localStorage.setItem("role", foundUser.role)
+  //     localStorage.setItem("userId", foundUser.id.toString());
+  //     alert("Login Successful")
+  //   }
 }

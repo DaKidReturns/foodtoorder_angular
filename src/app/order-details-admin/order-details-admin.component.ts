@@ -22,7 +22,7 @@ export class OrderDetailsAdminComponent {
       orderservice.getOrderById(params['orderId']).subscribe((value)=>{
         this.orderItem=value
         userService.getUserById(this.orderItem.userId).subscribe((data)=>this.userOrdered=data)
-        restaurantService.getRestaurantById(this.orderItem.userId).subscribe((data)=>this.restaurantOrdered=data)
+        restaurantService.getRestaurantById(this.orderItem.restaurantId).subscribe((data)=>this.restaurantOrdered=data)
       })
     })
   }

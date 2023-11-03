@@ -187,6 +187,9 @@ export class UpdateRestaurantFormComponent implements OnInit {
       //   console.log(item.isAvailable)
       // })
       // console.log(this.restaurant.items)
+      this.restaurant.items.forEach((item,i)=>{
+        item.isAvailable = item.isAvailable.toString() == "true" ? true : false;
+      })
       this.restaurantService.updateRestaurant(this.restaurant).subscribe()
     }
 
