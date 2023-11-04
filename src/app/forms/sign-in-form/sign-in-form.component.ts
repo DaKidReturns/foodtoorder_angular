@@ -34,7 +34,7 @@ export class SignInFormComponent {
       return
     }
     this.userService.login(new User(0,"","","","",this.signInForm.value.email,this.signInForm.value.password,new Address())).subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
       let usr = data as any;
       localStorage.setItem("role", usr.role)
       localStorage.setItem("userId", usr.userId.toString());

@@ -58,6 +58,7 @@ export class BannerComponent {
   logOut() {
     localStorage.removeItem('userId')
     localStorage.removeItem('role')
+    localStorage.removeItem('token')
   }
 
   VerifyCredentials(email: HTMLInputElement, password: HTMLInputElement) {

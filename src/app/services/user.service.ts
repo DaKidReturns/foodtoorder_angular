@@ -48,7 +48,6 @@ export class UserService {
   }
 
   getUsers():Observable<User[]>{
-    console.log(this.httpHeader)
     return this.httpClient.get<User[]>(this.base_url+'/users',this.httpHeader)
     .pipe(catchError(this.httpError));
   }
